@@ -1,0 +1,329 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xF3773C9BBCA807C8",
+      "device": "xc7s15ftgb196-1",
+      "gen_directory": "../../../../FPGA.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2025.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "ilvector_logic_0": "",
+      "ilvector_logic_1": "",
+      "ilvector_logic_2": "",
+      "ilvector_logic_3": "",
+      "ilvector_logic_4": "",
+      "ilvector_logic_5": "",
+      "ilvector_logic_6": "",
+      "ilvector_logic_7": "",
+      "ilvector_logic_8": "",
+      "ilvector_logic_9": "",
+      "ilvector_logic_10": "",
+      "ilvector_logic_11": "",
+      "ilvector_logic_12": ""
+    },
+    "ports": {
+      "SW22": {
+        "type": "data",
+        "direction": "I",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "SW21": {
+        "direction": "I",
+        "parameters": {
+          "PortType": {
+            "value": "undef",
+            "value_src": "ip_prop"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "SW19": {
+        "direction": "I",
+        "parameters": {
+          "PortType": {
+            "value": "undef",
+            "value_src": "ip_prop"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "SW17": {
+        "direction": "I",
+        "parameters": {
+          "PortType": {
+            "value": "undef",
+            "value_src": "ip_prop"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "D14": {
+        "type": "data",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "ilvector_logic_0": {
+        "vlnv": "xilinx.com:inline_hdl:ilvector_logic:1.0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ilvector_logic_1": {
+        "vlnv": "xilinx.com:inline_hdl:ilvector_logic:1.0",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ilvector_logic_2": {
+        "vlnv": "xilinx.com:inline_hdl:ilvector_logic:1.0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ilvector_logic_3": {
+        "vlnv": "xilinx.com:inline_hdl:ilvector_logic:1.0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ilvector_logic_4": {
+        "vlnv": "xilinx.com:inline_hdl:ilvector_logic:1.0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ilvector_logic_5": {
+        "vlnv": "xilinx.com:inline_hdl:ilvector_logic:1.0",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ilvector_logic_6": {
+        "vlnv": "xilinx.com:inline_hdl:ilvector_logic:1.0",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ilvector_logic_7": {
+        "vlnv": "xilinx.com:inline_hdl:ilvector_logic:1.0",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ilvector_logic_8": {
+        "vlnv": "xilinx.com:inline_hdl:ilvector_logic:1.0",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ilvector_logic_9": {
+        "vlnv": "xilinx.com:inline_hdl:ilvector_logic:1.0",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ilvector_logic_10": {
+        "vlnv": "xilinx.com:inline_hdl:ilvector_logic:1.0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ilvector_logic_11": {
+        "vlnv": "xilinx.com:inline_hdl:ilvector_logic:1.0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ilvector_logic_12": {
+        "vlnv": "xilinx.com:inline_hdl:ilvector_logic:1.0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      }
+    },
+    "nets": {
+      "SW17_1": {
+        "ports": [
+          "SW17",
+          "ilvector_logic_4/Op1",
+          "ilvector_logic_7/Op2"
+        ]
+      },
+      "SW19_1": {
+        "ports": [
+          "SW19",
+          "ilvector_logic_3/Op1",
+          "ilvector_logic_8/Op2"
+        ]
+      },
+      "SW21_1": {
+        "ports": [
+          "SW21",
+          "ilvector_logic_2/Op1",
+          "ilvector_logic_6/Op2"
+        ]
+      },
+      "SW22_1": {
+        "ports": [
+          "SW22",
+          "ilvector_logic_0/Op1",
+          "ilvector_logic_6/Op1"
+        ]
+      },
+      "ilvector_logic_0_Res": {
+        "ports": [
+          "ilvector_logic_0/Res",
+          "ilvector_logic_5/Op1"
+        ]
+      },
+      "ilvector_logic_10_Res": {
+        "ports": [
+          "ilvector_logic_10/Res",
+          "ilvector_logic_11/Op1"
+        ]
+      },
+      "ilvector_logic_11_Res": {
+        "ports": [
+          "ilvector_logic_11/Res",
+          "ilvector_logic_12/Op1"
+        ]
+      },
+      "ilvector_logic_12_Res": {
+        "ports": [
+          "ilvector_logic_12/Res",
+          "D14"
+        ]
+      },
+      "ilvector_logic_1_Res": {
+        "ports": [
+          "ilvector_logic_1/Res",
+          "ilvector_logic_10/Op1"
+        ]
+      },
+      "ilvector_logic_2_Res": {
+        "ports": [
+          "ilvector_logic_2/Res",
+          "ilvector_logic_5/Op2",
+          "ilvector_logic_8/Op1"
+        ]
+      },
+      "ilvector_logic_3_Res": {
+        "ports": [
+          "ilvector_logic_3/Res",
+          "ilvector_logic_1/Op1"
+        ]
+      },
+      "ilvector_logic_4_Res": {
+        "ports": [
+          "ilvector_logic_4/Res",
+          "ilvector_logic_1/Op2",
+          "ilvector_logic_9/Op2"
+        ]
+      },
+      "ilvector_logic_5_Res": {
+        "ports": [
+          "ilvector_logic_5/Res",
+          "ilvector_logic_10/Op2"
+        ]
+      },
+      "ilvector_logic_6_Res": {
+        "ports": [
+          "ilvector_logic_6/Res",
+          "ilvector_logic_7/Op1"
+        ]
+      },
+      "ilvector_logic_7_Res": {
+        "ports": [
+          "ilvector_logic_7/Res",
+          "ilvector_logic_11/Op2"
+        ]
+      },
+      "ilvector_logic_8_Res": {
+        "ports": [
+          "ilvector_logic_8/Res",
+          "ilvector_logic_9/Op1"
+        ]
+      },
+      "ilvector_logic_9_Res": {
+        "ports": [
+          "ilvector_logic_9/Res",
+          "ilvector_logic_12/Op2"
+        ]
+      }
+    }
+  }
+}
