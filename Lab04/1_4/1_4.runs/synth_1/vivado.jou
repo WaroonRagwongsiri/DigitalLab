@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Mon Jul 27 17:43:21 2026
-# Process ID         : 16940
+# Start of session at: Mon Jul 27 19:07:14 2026
+# Process ID         : 23668
 # Current directory  : E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.runs/synth_1
 # Command line       : vivado.exe -log hex_7seg.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hex_7seg.tcl
 # Log file           : E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.runs/synth_1/hex_7seg.vds
@@ -17,8 +17,8 @@
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 16487 MB
-# Swap memory        : 10268 MB
-# Total Virtual      : 26756 MB
-# Available Virtual  : 5909 MB
+# Swap memory        : 10266 MB
+# Total Virtual      : 26754 MB
+# Available Virtual  : 9241 MB
 #-----------------------------------------------------------
 source hex_7seg.tcl -notrace
