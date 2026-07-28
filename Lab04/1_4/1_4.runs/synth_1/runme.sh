@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log hex_7seg.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source hex_7seg.tcl
+EAStep vivado -log top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl

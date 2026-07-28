@@ -22,86 +22,59 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity hex_7seg is
-	Port ( SW22 : in STD_LOGIC;
-		SW21 : in STD_LOGIC;
-		SW19 : in STD_LOGIC;
-		SW17 : in STD_LOGIC;
-		D0 : out STD_LOGIC;
-		D1 : out STD_LOGIC;
-		D2 : out STD_LOGIC;
-		D3 : out STD_LOGIC;
-		A : out STD_LOGIC;
-		B : out STD_LOGIC;
-		C : out STD_LOGIC;
-		D : out STD_LOGIC;
-		E : out STD_LOGIC;
-		F : out STD_LOGIC;
-		G : out STD_LOGIC;
-		DP : out STD_LOGIC);
+	Port ( 
+		sw22 : in STD_LOGIC;
+		sw21 : in STD_LOGIC;
+		sw19 : in STD_LOGIC;
+		sw17 : in STD_LOGIC;
+		a : out STD_LOGIC;
+		b : out STD_LOGIC;
+		c : out STD_LOGIC;
+		d : out STD_LOGIC;
+		e : out STD_LOGIC;
+		f : out STD_LOGIC;
+		g : out STD_LOGIC
+	);
 end hex_7seg;
 
 architecture Behavioral of hex_7seg is
-
-	-- Internal signals to represent the input bits D3-D0
-	signal inD3 : STD_LOGIC; 
-	signal inD2 : STD_LOGIC; 
-	signal inD1 : STD_LOGIC; 
-	signal inD0 : STD_LOGIC; 
-
 begin
+	-- Segment A K-Map
+	a <= (not sw22 and not sw21 and not sw19 and sw17) or 
+		(not sw22 and sw21 and not sw19 and not sw17) or 
+		(sw22 and not sw21 and sw19 and sw17) or 
+		(sw22 and sw21 and not sw19 and sw17);
 
-	-- Map hardware switches to K-map input variables
-	inD3 <= SW22; -- MSB
-	inD2 <= SW21; 
-	inD1 <= SW19; 
-	inD0 <= SW17; -- LSB
+	-- Segment B K-Map
+	b <= (not sw22 and sw21 and not sw19 and sw17) or 
+		(sw22 and sw21 and not sw17) or 
+		(sw22 and sw19 and sw17) or 
+		(sw21 and sw19 and not sw17);
 
-	-- Segment A K-Map: A'B'C'D + A'BC'D' + AB'CD + ABC'D
-	A <= (not inD3 and not inD2 and not inD1 and inD0) or 
-			(not inD3 and inD2 and not inD1 and not inD0) or 
-			(inD3 and not inD2 and inD1 and inD0) or 
-			(inD3 and inD2 and not inD1 and inD0);
+	-- Segment C K-Map
+	c <= (not sw22 and not sw21 and sw19 and not sw17) or 
+		(sw22 and sw21 and sw19) or 
+		(sw22 and sw21 and not sw17);
 
-	-- Segment B K-Map: A'BC'D + ABD' + ACD + BCD'
-	B <= (not inD3 and inD2 and not inD1 and inD0) or 
-			(inD3 and inD2 and not inD0) or 
-			(inD3 and inD1 and inD0) or 
-			(inD2 and inD1 and not inD0);
+	-- Segment D K-Map
+	d <= (not sw22 and not sw21 and not sw19 and sw17) or 
+		(not sw22 and sw21 and not sw19 and not sw17) or 
+		(sw22 and not sw21 and sw19 and not sw17) or 
+		(sw21 and sw19 and sw17);
 
-	-- Segment C K-Map: A'B'CD' + ABC + ABD'
-	C <= (not inD3 and not inD2 and inD1 and not inD0) or 
-			(inD3 and inD2 and inD1) or 
-			(inD3 and inD2 and not inD0);
+	-- Segment E K-Map
+	e <= (not sw22 and sw21 and not sw19) or 
+		(not sw22 and sw17) or 
+		(not sw21 and not sw19 and sw17);
 
-	-- Segment D K-Map: A'B'C'D + A'BC'D' + AB'CD' + BCD
-	D <= (not inD3 and not inD2 and not inD1 and inD0) or 
-			(not inD3 and inD2 and not inD1 and not inD0) or 
-			(inD3 and not inD2 and inD1 and not inD0) or 
-			(inD2 and inD1 and inD0);
+	-- Segment F K-Map
+	f <= (not sw22 and not sw21 and sw19) or 
+		(not sw22 and not sw21 and sw17) or 
+		(not sw22 and sw19 and sw17) or 
+		(sw22 and sw21 and not sw19 and sw17);
 
-	-- Segment E K-Map: A'BC' + A'D + B'C'D
-	E <= (not inD3 and inD2 and not inD1) or 
-			(not inD3 and inD0) or 
-			(not inD2 and not inD1 and inD0);
-
-	-- Segment F K-Map: A'B'C + A'B'D + A'CD + ABC'D
-	F <= (not inD3 and not inD2 and inD1) or 
-			(not inD3 and not inD2 and inD0) or 
-			(not inD3 and inD1 and inD0) or 
-			(inD3 and inD2 and not inD1 and inD0);
-
-	-- Segment G K-Map: A'B'C' + A'BCD + ABC'D'
-	G <= (not inD3 and not inD2 and not inD1) or 
-			(not inD3 and inD2 and inD1 and inD0) or 
-			(inD3 and inD2 and not inD1 and not inD0);
-
-	-- Enable all 4 digits by driving the anodes low (Active-Low)
-	D0 <= '1';
-	D1 <= '1';
-	D2 <= '1';
-	D3 <= '1';
-
-	-- Turn off Decimal Point (Active-Low -> '1' is OFF)
-	DP <= '1';
-
+	-- Segment G K-Map
+	g <= (not sw22 and not sw21 and not sw19) or 
+		(not sw22 and sw21 and sw19 and sw17) or 
+		(sw22 and sw21 and not sw19 and not sw17);
 end Behavioral;
