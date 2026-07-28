@@ -23,10 +23,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity hex_7seg is
 	Port ( 
-		sw22 : in STD_LOGIC;
-		sw21 : in STD_LOGIC;
-		sw19 : in STD_LOGIC;
-		sw17 : in STD_LOGIC;
+		in1 : in STD_LOGIC;
+		in2 : in STD_LOGIC;
+		in3 : in STD_LOGIC;
+		in4 : in STD_LOGIC;
 		a : out STD_LOGIC;
 		b : out STD_LOGIC;
 		c : out STD_LOGIC;
@@ -40,41 +40,41 @@ end hex_7seg;
 architecture Behavioral of hex_7seg is
 begin
 	-- Segment A K-Map
-	a <= (not sw22 and not sw21 and not sw19 and sw17) or 
-		(not sw22 and sw21 and not sw19 and not sw17) or 
-		(sw22 and not sw21 and sw19 and sw17) or 
-		(sw22 and sw21 and not sw19 and sw17);
+	a <= (not in1 and not in2 and not in3 and in4) or 
+		(not in1 and in2 and not in3 and not in4) or 
+		(in1 and not in2 and in3 and in4) or 
+		(in1 and in2 and not in3 and in4);
 
 	-- Segment B K-Map
-	b <= (not sw22 and sw21 and not sw19 and sw17) or 
-		(sw22 and sw21 and not sw17) or 
-		(sw22 and sw19 and sw17) or 
-		(sw21 and sw19 and not sw17);
+	b <= (not in1 and in2 and not in3 and in4) or 
+		(in1 and in2 and not in4) or 
+		(in1 and in3 and in4) or 
+		(in2 and in3 and not in4);
 
 	-- Segment C K-Map
-	c <= (not sw22 and not sw21 and sw19 and not sw17) or 
-		(sw22 and sw21 and sw19) or 
-		(sw22 and sw21 and not sw17);
+	c <= (not in1 and not in2 and in3 and not in4) or 
+		(in1 and in2 and in3) or 
+		(in1 and in2 and not in4);
 
 	-- Segment D K-Map
-	d <= (not sw22 and not sw21 and not sw19 and sw17) or 
-		(not sw22 and sw21 and not sw19 and not sw17) or 
-		(sw22 and not sw21 and sw19 and not sw17) or 
-		(sw21 and sw19 and sw17);
+	d <= (not in1 and not in2 and not in3 and in4) or 
+		(not in1 and in2 and not in3 and not in4) or 
+		(in1 and not in2 and in3 and not in4) or 
+		(in2 and in3 and in4);
 
 	-- Segment E K-Map
-	e <= (not sw22 and sw21 and not sw19) or 
-		(not sw22 and sw17) or 
-		(not sw21 and not sw19 and sw17);
+	e <= (not in1 and in2 and not in3) or 
+		(not in1 and in4) or 
+		(not in2 and not in3 and in4);
 
 	-- Segment F K-Map
-	f <= (not sw22 and not sw21 and sw19) or 
-		(not sw22 and not sw21 and sw17) or 
-		(not sw22 and sw19 and sw17) or 
-		(sw22 and sw21 and not sw19 and sw17);
+	f <= (not in1 and not in2 and in3) or 
+		(not in1 and not in2 and in4) or 
+		(not in1 and in3 and in4) or 
+		(in1 and in2 and not in3 and in4);
 
 	-- Segment G K-Map
-	g <= (not sw22 and not sw21 and not sw19) or 
-		(not sw22 and sw21 and sw19 and sw17) or 
-		(sw22 and sw21 and not sw19 and not sw17);
+	g <= (not in1 and not in2 and not in3) or 
+		(not in1 and in2 and in3 and in4) or 
+		(in1 and in2 and not in3 and not in4);
 end Behavioral;
