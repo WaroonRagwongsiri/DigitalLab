@@ -1,70 +1,10 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="waroo" Host="LAPTOP-2P21F8GO" Pid="9848" HostCore="16" HostMemory="016487870464">
+    <Process Command="vivado.bat" Owner="waroo" Host="LAPTOP-2P21F8GO" Pid="9996" HostCore="16" HostMemory="016487870464">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="waroo" Host="LAPTOP-2P21F8GO" Pid="17192" HostCore="16" HostMemory="016487870464">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="waroo" Host="LAPTOP-2P21F8GO" Pid="6716" HostCore="16" HostMemory="016487870464">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="waroo" Host="LAPTOP-2P21F8GO" Pid="17928" HostCore="16" HostMemory="016487870464">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="waroo" Host="LAPTOP-2P21F8GO" Pid="12088" HostCore="16" HostMemory="016487870464">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="waroo" Host="LAPTOP-2P21F8GO" Pid="8624" HostCore="16" HostMemory="016487870464">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="waroo" Host="LAPTOP-2P21F8GO" Pid="5904" HostCore="16" HostMemory="016487870464">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="waroo" Host="LAPTOP-2P21F8GO" Pid="4356" HostCore="16" HostMemory="016487870464">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="waroo" Host="LAPTOP-2P21F8GO" Pid="15260" HostCore="16" HostMemory="016487870464">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="waroo" Host="LAPTOP-2P21F8GO" Pid="20240" HostCore="16" HostMemory="016487870464">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="waroo" Host="LAPTOP-2P21F8GO" Pid="21248" HostCore="16" HostMemory="016487870464">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="waroo" Host="LAPTOP-2P21F8GO" Pid="6348" HostCore="16" HostMemory="016487870464">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="waroo" Host="LAPTOP-2P21F8GO" Pid="13580" HostCore="16" HostMemory="016487870464">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="waroo" Host="LAPTOP-2P21F8GO" Pid="21368" HostCore="16" HostMemory="016487870464">
+    <Process Command="vivado.bat" Owner="waroo" Host="LAPTOP-2P21F8GO" Pid="10448" HostCore="16" HostMemory="016487870464">
     </Process>
 </ProcessHandle>

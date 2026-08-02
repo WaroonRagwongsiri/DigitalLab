@@ -37,68 +37,56 @@ entity counter_2345679 is
 end counter_2345679;
 
 architecture Behavioral of counter_2345679 is
-  component mod50m_async
-    Port (
-      clk : in  STD_LOGIC;
-      clk_mod50m : out STD_LOGIC
-    );
-  end component;
-  signal n1_clk_mod50m, n2_q, n2_qn, n3_q, n3_qn, n4_q, n4_qn, n5_q, n5_qn, n6_o, n8_o, n13_o : STD_LOGIC;
+  signal n1_q, n1_qn, n2_q, n2_qn, n3_q, n3_qn, n4_q, n4_qn, n5_o, n7_o, n12_o : STD_LOGIC;
 begin
 
   -- combinational logic
-  n6_o <= n4_qn or n3_qn;
-  n8_o <= n2_q and n3_q;
-  n13_o <= n2_q and n3_q and n4_q;
+  n5_o <= n3_qn or n2_qn;
+  n7_o <= n1_q and n2_q;
+  n12_o <= n1_q and n2_q and n3_q;
 
   -- sequential logic (flip-flops)
-  process(n1_clk_mod50m)
+  process(clk)
   begin
-    if rising_edge(n1_clk_mod50m) then
-      if    (STD_LOGIC'('1')='0' and n6_o='1') then n2_q <= '0'; n2_qn <= '1';
-      elsif (STD_LOGIC'('1')='1' and n6_o='0') then n2_q <= '1'; n2_qn <= '0';
-      elsif (STD_LOGIC'('1')='1' and n6_o='1') then n2_q <= not n2_q; n2_qn <= n2_q;
+    if rising_edge(clk) then
+      if    (STD_LOGIC'('1')='0' and n5_o='1') then n1_q <= '0'; n1_qn <= '1';
+      elsif (STD_LOGIC'('1')='1' and n5_o='0') then n1_q <= '1'; n1_qn <= '0';
+      elsif (STD_LOGIC'('1')='1' and n5_o='1') then n1_q <= not n1_q; n1_qn <= n1_q;
       end if;
     end if;
   end process;
-  process(n1_clk_mod50m)
+  process(clk)
   begin
-    if rising_edge(n1_clk_mod50m) then
-      if    (n2_q='0' and n2_q='1') then n3_q <= '0'; n3_qn <= '1';
-      elsif (n2_q='1' and n2_q='0') then n3_q <= '1'; n3_qn <= '0';
-      elsif (n2_q='1' and n2_q='1') then n3_q <= not n3_q; n3_qn <= n3_q;
+    if rising_edge(clk) then
+      if    (n1_q='0' and n1_q='1') then n2_q <= '0'; n2_qn <= '1';
+      elsif (n1_q='1' and n1_q='0') then n2_q <= '1'; n2_qn <= '0';
+      elsif (n1_q='1' and n1_q='1') then n2_q <= not n2_q; n2_qn <= n2_q;
       end if;
     end if;
   end process;
-  process(n1_clk_mod50m)
+  process(clk)
   begin
-    if rising_edge(n1_clk_mod50m) then
-      if    (n8_o='0' and n8_o='1') then n4_q <= '0'; n4_qn <= '1';
-      elsif (n8_o='1' and n8_o='0') then n4_q <= '1'; n4_qn <= '0';
-      elsif (n8_o='1' and n8_o='1') then n4_q <= not n4_q; n4_qn <= n4_q;
+    if rising_edge(clk) then
+      if    (n7_o='0' and n7_o='1') then n3_q <= '0'; n3_qn <= '1';
+      elsif (n7_o='1' and n7_o='0') then n3_q <= '1'; n3_qn <= '0';
+      elsif (n7_o='1' and n7_o='1') then n3_q <= not n3_q; n3_qn <= n3_q;
       end if;
     end if;
   end process;
-  process(n1_clk_mod50m)
+  process(clk)
   begin
-    if rising_edge(n1_clk_mod50m) then
-      if    (n13_o='0' and STD_LOGIC'('1')='1') then n5_q <= '0'; n5_qn <= '1';
-      elsif (n13_o='1' and STD_LOGIC'('1')='0') then n5_q <= '1'; n5_qn <= '0';
-      elsif (n13_o='1' and STD_LOGIC'('1')='1') then n5_q <= not n5_q; n5_qn <= n5_q;
+    if rising_edge(clk) then
+      if    (n12_o='0' and STD_LOGIC'('1')='1') then n4_q <= '0'; n4_qn <= '1';
+      elsif (n12_o='1' and STD_LOGIC'('1')='0') then n4_q <= '1'; n4_qn <= '0';
+      elsif (n12_o='1' and STD_LOGIC'('1')='1') then n4_q <= not n4_q; n4_qn <= n4_q;
       end if;
     end if;
   end process;
-
-  -- sub-component instantiations
-  u_0_c6112 : mod50m_async port map (
-    clk => clk,
-    clk_mod50m => n1_clk_mod50m
-  );
 
   -- output drivers
-  q3_msb <= n5_q;
-  q2 <= n4_q;
-  q1 <= n3_q;
-  q0_lsb <= n2_q;
+  q3_msb <= n4_q;
+  q2 <= n3_q;
+  q1 <= n2_q;
+  q0_lsb <= n1_q;
 
 end Behavioral;
