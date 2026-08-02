@@ -1,0 +1,3 @@
+[submodule "SchematicToVHDL"]
+	path = SchematicToVHDL
+	url = https://github.com/WaroonRagwongsiri/SchematicToVHDL.git
