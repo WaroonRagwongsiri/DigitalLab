@@ -1,0 +1,112 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Sun Aug  2 18:29:36 2026
+| Host         : LAPTOP-2P21F8GO running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file lab5_2_control_sets_placed.rpt
+| Design       : lab5_2
+| Device       : xc7s15
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    34 |
+|    Minimum number of control sets                        |    34 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   213 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    34 |
+| >= 0 to < 4        |    34 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     0 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               5 |            4 |
+| No           | No                    | Yes                    |              54 |           31 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------+---------------+-------------------------+------------------+----------------+--------------+
+|       Clock Signal       | Enable Signal |     Set/Reset Signal    | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------------+---------------+-------------------------+------------------+----------------+--------------+
+|  u_5_c5867/n3_qn_reg_n_0 |               | u_5_c5867/n14_clk_mod10 |                1 |              1 |         1.00 |
+|  u_3_c5864/n3_qn_reg_n_0 |               | u_3_c5864/n12_clk_mod10 |                1 |              1 |         1.00 |
+|  u_4_c5866/n3_qn_reg_n_0 |               | u_4_c5866/n13_clk_mod10 |                1 |              1 |         1.00 |
+|  u_2_c5863/n3_qn         |               | u_2_c5863/n11_clk_mod10 |                1 |              1 |         1.00 |
+|  u_6_c5868/n3_qn_reg_n_0 |               | u_6_c5868/n15_clk_mod10 |                1 |              1 |         1.00 |
+|  u_8_c5870/n3_qn_reg_n_0 |               | u_8_c5870/n17_clk_mod10 |                1 |              1 |         1.00 |
+|  u_7_c5869/n3_qn_reg_n_0 |               | u_7_c5869/n16_clk_mod10 |                1 |              1 |         1.00 |
+|  u_1_c5858/n2_qn         |               | u_1_c5858/n10_clk_mod5  |                1 |              1 |         1.00 |
+|  n2_qn_reg_n_0           |               |                         |                1 |              1 |         1.00 |
+|  u_3_c5864/n2_qn_reg_n_0 |               | u_3_c5864/n12_clk_mod10 |                1 |              2 |         2.00 |
+|  u_3_c5864/n1_qn_reg_n_0 |               | u_3_c5864/n12_clk_mod10 |                1 |              2 |         2.00 |
+|  u_4_c5866/n1_qn_reg_n_0 |               | u_4_c5866/n13_clk_mod10 |                1 |              2 |         2.00 |
+|  u_4_c5866/n13_clk_mod10 |               | u_5_c5867/n14_clk_mod10 |                1 |              2 |         2.00 |
+|  u_5_c5867/n14_clk_mod10 |               | u_6_c5868/n15_clk_mod10 |                1 |              2 |         2.00 |
+|  u_6_c5868/n15_clk_mod10 |               | u_7_c5869/n16_clk_mod10 |                1 |              2 |         2.00 |
+|  u_6_c5868/n2_qn_reg_n_0 |               | u_6_c5868/n15_clk_mod10 |                1 |              2 |         2.00 |
+|  u_5_c5867/n1_qn_reg_n_0 |               | u_5_c5867/n14_clk_mod10 |                1 |              2 |         2.00 |
+|  u_6_c5868/n1_qn_reg_n_0 |               | u_6_c5868/n15_clk_mod10 |                1 |              2 |         2.00 |
+|  u_2_c5863/n11_clk_mod10 |               |                         |                2 |              2 |         1.00 |
+|  u_5_c5867/n2_qn_reg_n_0 |               | u_5_c5867/n14_clk_mod10 |                1 |              2 |         2.00 |
+|  u_2_c5863/n1_qn_reg_n_0 |               | u_2_c5863/n11_clk_mod10 |                1 |              2 |         2.00 |
+|  u_1_c5858/n1_qn         |               | u_1_c5858/n10_clk_mod5  |                1 |              2 |         2.00 |
+|  u_1_c5858/n10_clk_mod5  |               | u_4_c5866/n13_clk_mod10 |                1 |              2 |         2.00 |
+|  u_8_c5870/n17_clk_mod10 |               | u_2_c5863/n11_clk_mod10 |                1 |              2 |         2.00 |
+|  u_8_c5870/n1_qn_reg_n_0 |               | u_8_c5870/n17_clk_mod10 |                1 |              2 |         2.00 |
+|  u_2_c5863/n2_qn_reg_n_0 |               | u_2_c5863/n11_clk_mod10 |                1 |              2 |         2.00 |
+|  u_7_c5869/n2_qn_reg_n_0 |               | u_7_c5869/n16_clk_mod10 |                1 |              2 |         2.00 |
+|  u_7_c5869/n16_clk_mod10 |               | u_3_c5864/n12_clk_mod10 |                1 |              2 |         2.00 |
+|  u_7_c5869/n1_qn_reg_n_0 |               | u_7_c5869/n16_clk_mod10 |                1 |              2 |         2.00 |
+|  u_8_c5870/n2_qn_reg_n_0 |               | u_8_c5870/n17_clk_mod10 |                1 |              2 |         2.00 |
+|  u_3_c5864/n12_clk_mod10 |               | u_8_c5870/n17_clk_mod10 |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG           |               | u_1_c5858/n10_clk_mod5  |                1 |              2 |         2.00 |
+|  u_4_c5866/n2_qn_reg_n_0 |               | u_4_c5866/n13_clk_mod10 |                1 |              2 |         2.00 |
+|  n1_qn_reg_n_0           |               |                         |                1 |              2 |         2.00 |
++--------------------------+---------------+-------------------------+------------------+----------------+--------------+
+
+

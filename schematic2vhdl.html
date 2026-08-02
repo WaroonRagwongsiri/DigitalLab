@@ -1061,20 +1061,31 @@ function healJunctions(sch){
           return straight && (Math.abs(kp.x-jp.x)+Math.abs(kp.y-jp.y)) <= 1.5*GRID;
         });
         if(twin){
-          const wA = sch.wires.find(w=>w.from.cid===j.id||w.to.cid===j.id);
-          const wB = sch.wires.find(w=>w.from.cid===twin.id||w.to.cid===twin.id);
+          // A dot the user dragged is pinned (params.fixed) so it stays exactly
+          // where they parked it — this merge must not silently delete it in
+          // favor of whichever junction happened to be iterated first. If both
+          // sides were parked by hand, leave them both alone; we can't guess
+          // which placement wins. Otherwise the pinned one (if any) survives
+          // and the unpinned one is the one folded away.
+          const jFixed = !!(j.params && j.params.fixed);
+          const twinFixed = !!(twin.params && twin.params.fixed);
+          if(jFixed && twinFixed) continue;
+          const keep = twinFixed ? twin : j;
+          const drop = twinFixed ? j : twin;
+          const wA = sch.wires.find(w=>w.from.cid===keep.id||w.to.cid===keep.id);
+          const wB = sch.wires.find(w=>w.from.cid===drop.id||w.to.cid===drop.id);
           // CRITICAL: two coincident dots of DIFFERENT nets (both scalar) would weld
           // and SHORT the nets — silently wrong VHDL. Weld only when they are already
           // electrically one net: joined by the stub, or tracing to the same driver.
           const drvKey = jj => { const wf = sch.wires.find(w=>w.from.cid===jj.id); if(!wf) return "solo:"+jj.id; const d = netDriverPort(sch, wf); return d ? d.cid+"."+d.pid : "solo:"+jj.id; };
-          const joinedByStub = sch.wires.some(w=>(w.from.cid===j.id&&w.to.cid===twin.id)||(w.from.cid===twin.id&&w.to.cid===j.id));
-          const sameNet = joinedByStub || drvKey(j)===drvKey(twin);
+          const joinedByStub = sch.wires.some(w=>(w.from.cid===keep.id&&w.to.cid===drop.id)||(w.from.cid===drop.id&&w.to.cid===keep.id));
+          const sameNet = joinedByStub || drvKey(keep)===drvKey(drop);
           if(sameNet && (!wA || !wB || netWidth(wA,sch)===netWidth(wB,sch))){   // don't weld across a width boundary
             sch.wires.forEach(w=>{
-              if(w.from.cid===twin.id) w.from = {cid:j.id, pid:"j"};
-              if(w.to.cid===twin.id)   w.to   = {cid:j.id, pid:"j"};
+              if(w.from.cid===drop.id) w.from = {cid:keep.id, pid:"j"};
+              if(w.to.cid===drop.id)   w.to   = {cid:keep.id, pid:"j"};
             });
-            sch.components = sch.components.filter(c=>c!==twin);
+            sch.components = sch.components.filter(c=>c!==drop);
             sch.wires = sch.wires.filter(w=>w.from.cid!==w.to.cid);   // drop the collapsed stub
             changed = true;
           }
@@ -2987,9 +2998,13 @@ function render(){
     g.appendChild(path);
     // wide invisible hit path (straight route): easy clicking + drag rerouting
     const hit = el("path",{d:r.d, class:"wire-hit"});
-    hit.style.cursor = state.tool==="select"
-      ? (r.kind==="z" ? "ew-resize" : r.kind==="s" ? "ns-resize" : "pointer")
-      : "inherit";
+    hit.style.cursor = state.tool!=="select" ? "inherit"
+      : r.kind==="z" ? "ew-resize"
+      : r.kind==="s" ? "ns-resize"
+      : r.kind==="h" ? "ns-resize"     // straight horizontal — drag vertically to bend it
+      : r.kind==="v" ? "ew-resize"     // straight vertical — drag horizontally to bend it
+      : (r.kind==="l" || r.kind==="lh") ? "move"   // single elbow — drag to reshape
+      : "pointer";
     hit.addEventListener("mousedown",ev=>{
       if(ev.button !== 0) return;
       ev.stopPropagation();
@@ -3350,6 +3365,15 @@ canvas.addEventListener("mousemove",ev=>{
     if(wd.moved){
       if(wd.kind==="z"){ wd.w.mx = snap(state.mouse.x); render(); }
       else if(wd.kind==="s"){ wd.w.my = snap(state.mouse.y); render(); }
+      else if(wd.kind==="h" || wd.kind==="v" || wd.kind==="l" || wd.kind==="lh"){
+        // these shapes have no free/adjustable leg of their own — the FIRST drag
+        // plants a manual waypoint at the drag point, switching the wire onto the
+        // same user-routed (poly) path used by hand-drawn multi-corner wires. From
+        // then on it's a normal draggable corner (see cornerDrag / w.pts above).
+        if(!wd.w.pts) wd.w.pts = [{x:0,y:0}];
+        wd.w.pts[0] = { x: snap(state.mouse.x), y: snap(state.mouse.y) };
+        render();
+      }
     }
   } else if(state.pendingWire){
     render();
@@ -3423,7 +3447,7 @@ window.addEventListener("mouseup",ev=>{
     const wd = state.wireDrag;
     state.wireDrag = null;
     if(wd.moved){
-      if(wd.kind==="z" || wd.kind==="s") snapshot();   // only these actually reroute
+      if(wd.kind==="z" || wd.kind==="s" || wd.kind==="h" || wd.kind==="v" || wd.kind==="l" || wd.kind==="lh") snapshot();   // these all actually reroute now
     } else {
       // plain click on a wire → select it (shift toggles)
       if(!wd.shift){ state.selection.clear(); state.selection.add(wd.w.id); }
@@ -3862,7 +3886,7 @@ function renderInspector(){
     // wire?
     const w = sch.wires.find(x=>x.id===id);
     if(w){
-      const hasCustomRoute = (typeof w.mx==="number") || (typeof w.my==="number");
+      const hasCustomRoute = (typeof w.mx==="number") || (typeof w.my==="number") || !!(w.pts && w.pts.length);
       const nw = netWidth(w, sch);
       root.innerHTML = `<div class="insp">
         <h3>Wire ${nw>1?`<span style="color:var(--wire-bus)">bus (${nw-1}:0)</span>`:""}</h3>
@@ -3873,7 +3897,7 @@ function renderInspector(){
       </div>`;
       $("#iWireName").addEventListener("change",ev=>{ applyWireName(w, ev.target.value); });
       $("#iWireRoute").addEventListener("click",()=>{
-        delete w.mx; delete w.my;
+        delete w.mx; delete w.my; delete w.pts;
         snapshot(); render(); renderInspector();
         toast("จัดแนวสายอัตโนมัติแล้ว","ok");
       });
@@ -4201,7 +4225,7 @@ function generateSchVhdl(sch){
   });
 
   // width-aware zero literal
-  const zlit = w => (w||1)>1 ? "(others => '0')" : "'0'";
+  const zlit = w => (w||1)>1 ? "(others => '0')" : "STD_LOGIC'('0')";
 
   function driver(cid, pid, visited){
     visited = visited || new Set();
@@ -4213,8 +4237,8 @@ function generateSchVhdl(sch){
     const src = comp(w.from.cid, sch);
     if(!src) return null;
     if(src.type==="IN") return src._net;
-    if(src.type==="VCC") return "'1'";
-    if(src.type==="GND") return "'0'";
+    if(src.type==="VCC") return "STD_LOGIC'('1')";
+    if(src.type==="GND") return "STD_LOGIC'('0')";
     if(src.type==="JUNCTION"){
       if(src._busSig) return src._busSig;                            // floating named bus
       return driver(src.id, "j", visited);                          // transparent
@@ -4356,7 +4380,12 @@ function generateSchVhdl(sch){
     /* ----- D-FF ----- */
     if(c.type==="DFF"){
       const D = driverFor("d");
-      const CLK = driverFor("clk");
+      // clk must NEVER fall back to a literal: process('0') / rising_edge('0')
+      // is not valid VHDL (rising_edge requires an actual signal, not a
+      // constant). If clk isn't wired, skip this flip-flop instead of
+      // emitting a literal into the sensitivity list.
+      const CLK = driver(c.id,"clk");
+      if(!CLK){ warns.push(`${compDisplay(c)} ขา 'clk' ยังไม่ได้ต่อสาย — ข้าม flip-flop นี้ในโค้ด (ต่อสัญญาณนาฬิกาก่อนสร้าง VHDL)`); return; }
       // unwired rst/pre must NOT reach the sensitivity list as a literal
       const RST = c.params.reset ? driver(c.id,"rst") : null;
       const PRE = c.params.preset? driver(c.id,"pre") : null;
@@ -4375,7 +4404,8 @@ function generateSchVhdl(sch){
     if(c.type==="JKFF"){
       const J = driverFor("j");
       const K = driverFor("k");
-      const CLK = driverFor("clk");
+      const CLK = driver(c.id,"clk");
+      if(!CLK){ warns.push(`${compDisplay(c)} ขา 'clk' ยังไม่ได้ต่อสาย — ข้าม flip-flop นี้ในโค้ด (ต่อสัญญาณนาฬิกาก่อนสร้าง VHDL)`); return; }
       const RST = c.params.reset ? driver(c.id,"rst") : null;
       const PRE = c.params.preset? driver(c.id,"pre") : null;
       if(c.params.reset && !RST)  warns.push(`${compDisplay(c)} เปิด async reset แต่ขา rst ไม่ได้ต่อสาย — ข้าม reset ในโค้ด`);
@@ -4399,7 +4429,8 @@ function generateSchVhdl(sch){
     /* ----- T-FF ----- */
     if(c.type==="TFF"){
       const T = driverFor("t");
-      const CLK = driverFor("clk");
+      const CLK = driver(c.id,"clk");
+      if(!CLK){ warns.push(`${compDisplay(c)} ขา 'clk' ยังไม่ได้ต่อสาย — ข้าม flip-flop นี้ในโค้ด (ต่อสัญญาณนาฬิกาก่อนสร้าง VHDL)`); return; }
       const RST = c.params.reset ? driver(c.id,"rst") : null;
       const PRE = c.params.preset? driver(c.id,"pre") : null;
       if(c.params.reset && !RST)  warns.push(`${compDisplay(c)} เปิด async reset แต่ขา rst ไม่ได้ต่อสาย — ข้าม reset ในโค้ด`);
@@ -4418,7 +4449,8 @@ function generateSchVhdl(sch){
     if(c.type==="SRFF"){
       const S = driverFor("s");
       const R = driverFor("r");
-      const CLK = driverFor("clk");
+      const CLK = driver(c.id,"clk");
+      if(!CLK){ warns.push(`${compDisplay(c)} ขา 'clk' ยังไม่ได้ต่อสาย — ข้าม flip-flop นี้ในโค้ด (ต่อสัญญาณนาฬิกาก่อนสร้าง VHDL)`); return; }
       const qsig = c._nets.q;
       processes.push({
         clk: CLK, edge: c.params.edge,
