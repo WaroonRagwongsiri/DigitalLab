@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Tue Jul 28 22:57:04 2026
+| Date         : Sun Aug  2 23:19:48 2026
 | Host         : LAPTOP-2P21F8GO running 64-bit major release  (build 9200)
 | Command      : report_drc -file lab4_drc_opted.rpt -pb lab4_drc_opted.pb -rpx lab4_drc_opted.rpx
 | Design       : lab4
@@ -24,12 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 2
+             Checks found: 6
 +-------------+----------+-------------------------------------------------------------+--------+
 | Rule        | Severity | Description                                                 | Checks |
 +-------------+----------+-------------------------------------------------------------+--------+
 | CFGBVS-1    | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties         | 1      |
-| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 1      |
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 5      |
 +-------------+----------+-------------------------------------------------------------+--------+
 
 2. REPORT DETAILS
@@ -49,9 +49,33 @@ Related violations: <none>
 
 PLHOLDVIO-2#1 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT u_0_c4085/count[2]_i_2 is driving clock pin of 4 cells. This could lead to large hold time violations. Involved cells are:
-u_1_c4087/clk_track_reg, u_1_c4087/count_reg[0], u_1_c4087/count_reg[1]
-u_1_c4087/count_reg[2]
+A LUT u_0_c4085/n1_q_i_2 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
+u_1_c4087/n1_q_reg, u_1_c4087/n1_qn_reg
+Related violations: <none>
+
+PLHOLDVIO-2#2 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT u_1_c4087/n1_q_i_2__0 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
+u_2_c4089/n1_q_reg, u_2_c4089/n1_qn_reg
+Related violations: <none>
+
+PLHOLDVIO-2#3 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT u_2_c4089/n1_q_i_2__1 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
+u_3_c4091/n1_q_reg, u_3_c4091/n1_qn_reg
+Related violations: <none>
+
+PLHOLDVIO-2#4 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT u_3_c4091/n1_q_i_2__2 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
+u_4_c4093/n1_q_reg, u_4_c4093/n1_qn_reg
+Related violations: <none>
+
+PLHOLDVIO-2#5 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT u_4_c4093/n1_q_i_2__3 is driving clock pin of 4 cells. This could lead to large hold time violations. Involved cells are:
+u_5_c5025/n1_q_reg, u_5_c5025/n1_qn_reg, u_5_c5025/n2_q_reg
+u_5_c5025/n2_qn_reg
 Related violations: <none>
 
 

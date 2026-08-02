@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Sun Aug  2 18:29:46 2026
+| Date         : Sun Aug  2 22:31:55 2026
 | Host         : LAPTOP-2P21F8GO running 64-bit major release  (build 9200)
 | Command      : report_drc -file lab5_2_drc_routed.rpt -pb lab5_2_drc_routed.pb -rpx lab5_2_drc_routed.rpx
 | Design       : lab5_2
@@ -50,90 +50,90 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net u_1_c5858/n10_clk_mod5 is a gated clock net sourced by a combinational pin u_1_c5858/n1_q_i_2/O, cell u_1_c5858/n1_q_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net u_1_c6109/u_0_c6091/n1_clk_mod5 is a gated clock net sourced by a combinational pin u_1_c6109/u_0_c6091/n1_q_i_2/O, cell u_1_c6109/u_0_c6091/n1_q_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net u_2_c5863/n11_clk_mod10 is a gated clock net sourced by a combinational pin u_2_c5863/n1_q_i_2__0/O, cell u_2_c5863/n1_q_i_2__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net u_1_c6109/u_1_c6092/n4_q_reg_0 is a gated clock net sourced by a combinational pin u_1_c6109/u_1_c6092/n1_q_i_2__0/O, cell u_1_c6109/u_1_c6092/n1_q_i_2__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net u_3_c5864/n12_clk_mod10 is a gated clock net sourced by a combinational pin u_3_c5864/n1_q_i_3/O, cell u_3_c5864/n1_q_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net u_1_c6109/u_2_c6093/n3_clk_mod10 is a gated clock net sourced by a combinational pin u_1_c6109/u_2_c6093/n1_q_i_3/O, cell u_1_c6109/u_2_c6093/n1_q_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#4 Warning
 Gated clock check  
-Net u_4_c5866/n13_clk_mod10 is a gated clock net sourced by a combinational pin u_4_c5866/n1_q_i_2__1/O, cell u_4_c5866/n1_q_i_2__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net u_1_c6109/u_3_c6094/n4_clk_mod10 is a gated clock net sourced by a combinational pin u_1_c6109/u_3_c6094/n1_q_i_2__1/O, cell u_1_c6109/u_3_c6094/n1_q_i_2__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#5 Warning
 Gated clock check  
-Net u_5_c5867/n14_clk_mod10 is a gated clock net sourced by a combinational pin u_5_c5867/n1_q_i_2__2/O, cell u_5_c5867/n1_q_i_2__2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net u_1_c6109/u_4_c6095/n5_clk_mod10 is a gated clock net sourced by a combinational pin u_1_c6109/u_4_c6095/n1_q_i_2__2/O, cell u_1_c6109/u_4_c6095/n1_q_i_2__2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#6 Warning
 Gated clock check  
-Net u_6_c5868/n15_clk_mod10 is a gated clock net sourced by a combinational pin u_6_c5868/n1_q_i_2__3/O, cell u_6_c5868/n1_q_i_2__3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net u_1_c6109/u_5_c6096/n6_clk_mod10 is a gated clock net sourced by a combinational pin u_1_c6109/u_5_c6096/n1_q_i_2__3/O, cell u_1_c6109/u_5_c6096/n1_q_i_2__3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#7 Warning
 Gated clock check  
-Net u_7_c5869/n16_clk_mod10 is a gated clock net sourced by a combinational pin u_7_c5869/n1_q_i_2__4/O, cell u_7_c5869/n1_q_i_2__4. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net u_1_c6109/u_6_c6097/n7_clk_mod10 is a gated clock net sourced by a combinational pin u_1_c6109/u_6_c6097/n1_q_i_2__4/O, cell u_1_c6109/u_6_c6097/n1_q_i_2__4. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#8 Warning
 Gated clock check  
-Net u_8_c5870/n17_clk_mod10 is a gated clock net sourced by a combinational pin u_8_c5870/n1_q_i_2__5/O, cell u_8_c5870/n1_q_i_2__5. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net u_1_c6109/u_7_c6098/n8_clk_mod10 is a gated clock net sourced by a combinational pin u_1_c6109/u_7_c6098/n1_q_i_2__5/O, cell u_1_c6109/u_7_c6098/n1_q_i_2__5. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PLHOLDVIO-2#1 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT u_1_c5858/n1_q_i_2 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
-u_4_c5866/n1_q_reg, u_4_c5866/n1_qn_reg
+A LUT u_1_c6109/u_0_c6091/n1_q_i_2 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
+u_1_c6109/u_3_c6094/n1_q_reg, u_1_c6109/u_3_c6094/n1_qn_reg
 Related violations: <none>
 
 PLHOLDVIO-2#2 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT u_2_c5863/n1_q_i_2__0 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
+A LUT u_1_c6109/u_1_c6092/n1_q_i_2__0 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
 n1_q_reg, n1_qn_reg
 Related violations: <none>
 
 PLHOLDVIO-2#3 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT u_3_c5864/n1_q_i_3 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
-u_8_c5870/n1_q_reg, u_8_c5870/n1_qn_reg
+A LUT u_1_c6109/u_2_c6093/n1_q_i_3 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
+u_1_c6109/u_7_c6098/n1_q_reg, u_1_c6109/u_7_c6098/n1_qn_reg
 Related violations: <none>
 
 PLHOLDVIO-2#4 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT u_4_c5866/n1_q_i_2__1 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
-u_5_c5867/n1_q_reg, u_5_c5867/n1_qn_reg
+A LUT u_1_c6109/u_3_c6094/n1_q_i_2__1 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
+u_1_c6109/u_4_c6095/n1_q_reg, u_1_c6109/u_4_c6095/n1_qn_reg
 Related violations: <none>
 
 PLHOLDVIO-2#5 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT u_5_c5867/n1_q_i_2__2 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
-u_6_c5868/n1_q_reg, u_6_c5868/n1_qn_reg
+A LUT u_1_c6109/u_4_c6095/n1_q_i_2__2 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
+u_1_c6109/u_5_c6096/n1_q_reg, u_1_c6109/u_5_c6096/n1_qn_reg
 Related violations: <none>
 
 PLHOLDVIO-2#6 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT u_6_c5868/n1_q_i_2__3 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
-u_7_c5869/n1_q_reg, u_7_c5869/n1_qn_reg
+A LUT u_1_c6109/u_5_c6096/n1_q_i_2__3 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
+u_1_c6109/u_6_c6097/n1_q_reg, u_1_c6109/u_6_c6097/n1_qn_reg
 Related violations: <none>
 
 PLHOLDVIO-2#7 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT u_7_c5869/n1_q_i_2__4 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
-u_3_c5864/n1_q_reg, u_3_c5864/n1_qn_reg
+A LUT u_1_c6109/u_6_c6097/n1_q_i_2__4 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
+u_1_c6109/u_2_c6093/n1_q_reg, u_1_c6109/u_2_c6093/n1_qn_reg
 Related violations: <none>
 
 PLHOLDVIO-2#8 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT u_8_c5870/n1_q_i_2__5 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
-u_2_c5863/n1_q_reg, u_2_c5863/n1_qn_reg
+A LUT u_1_c6109/u_7_c6098/n1_q_i_2__5 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
+u_1_c6109/u_1_c6092/n1_q_reg, u_1_c6109/u_1_c6092/n1_qn_reg
 Related violations: <none>
 
 

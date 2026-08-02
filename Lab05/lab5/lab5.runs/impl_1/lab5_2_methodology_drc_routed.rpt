@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Sun Aug  2 18:29:46 2026
+| Date         : Sun Aug  2 22:31:56 2026
 | Host         : LAPTOP-2P21F8GO running 64-bit major release  (build 9200)
 | Command      : report_methodology -file lab5_2_methodology_drc_routed.rpt -pb lab5_2_methodology_drc_routed.pb -rpx lab5_2_methodology_drc_routed.rpx
 | Design       : lab5_2
@@ -60,327 +60,335 @@ Related violations: <none>
 
 TIMING-17#6 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_1_c5858/n1_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_0_c6091/n1_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#7 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_1_c5858/n1_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_0_c6091/n1_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#8 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_1_c5858/n2_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_0_c6091/n2_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#9 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_1_c5858/n2_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_0_c6091/n2_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#10 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_1_c5858/n3_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_0_c6091/n3_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#11 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_2_c5863/n1_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_1_c6092/n1_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#12 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_2_c5863/n1_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_1_c6092/n1_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#13 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_2_c5863/n2_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_1_c6092/n2_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#14 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_2_c5863/n2_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_1_c6092/n2_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#15 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_2_c5863/n3_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_1_c6092/n3_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#16 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_2_c5863/n3_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_1_c6092/n3_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#17 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_2_c5863/n4_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_1_c6092/n4_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#18 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_3_c5864/n1_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_2_c6093/n1_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#19 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_3_c5864/n1_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_2_c6093/n1_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#20 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_3_c5864/n2_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_2_c6093/n2_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#21 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_3_c5864/n2_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_2_c6093/n2_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#22 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_3_c5864/n3_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_2_c6093/n3_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#23 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_3_c5864/n3_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_2_c6093/n3_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#24 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_3_c5864/n4_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_2_c6093/n4_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#25 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_4_c5866/n1_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_3_c6094/n1_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#26 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_4_c5866/n1_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_3_c6094/n1_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#27 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_4_c5866/n2_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_3_c6094/n2_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#28 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_4_c5866/n2_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_3_c6094/n2_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#29 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_4_c5866/n3_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_3_c6094/n3_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#30 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_4_c5866/n3_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_3_c6094/n3_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#31 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_4_c5866/n4_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_3_c6094/n4_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#32 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_5_c5867/n1_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_4_c6095/n1_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#33 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_5_c5867/n1_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_4_c6095/n1_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#34 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_5_c5867/n2_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_4_c6095/n2_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#35 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_5_c5867/n2_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_4_c6095/n2_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#36 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_5_c5867/n3_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_4_c6095/n3_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#37 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_5_c5867/n3_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_4_c6095/n3_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#38 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_5_c5867/n4_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_4_c6095/n4_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#39 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_6_c5868/n1_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_5_c6096/n1_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#40 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_6_c5868/n1_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_5_c6096/n1_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#41 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_6_c5868/n2_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_5_c6096/n2_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#42 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_6_c5868/n2_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_5_c6096/n2_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#43 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_6_c5868/n3_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_5_c6096/n3_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#44 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_6_c5868/n3_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_5_c6096/n3_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#45 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_6_c5868/n4_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_5_c6096/n4_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#46 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_7_c5869/n1_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_6_c6097/n1_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#47 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_7_c5869/n1_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_6_c6097/n1_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#48 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_7_c5869/n2_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_6_c6097/n2_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#49 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_7_c5869/n2_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_6_c6097/n2_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#50 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_7_c5869/n3_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_6_c6097/n3_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#51 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_7_c5869/n3_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_6_c6097/n3_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#52 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_7_c5869/n4_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_6_c6097/n4_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#53 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_8_c5870/n1_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_7_c6098/n1_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#54 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_8_c5870/n1_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_7_c6098/n1_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#55 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_8_c5870/n2_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_7_c6098/n2_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#56 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_8_c5870/n2_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_7_c6098/n2_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#57 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_8_c5870/n3_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_7_c6098/n3_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#58 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_8_c5870/n3_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_7_c6098/n3_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#59 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_8_c5870/n4_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6109/u_7_c6098/n4_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell u_1_c5858/n1_q_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_1_c5858/n1_q_reg/CLR, u_1_c5858/n1_qn_reg/PRE, u_1_c5858/n2_q_reg/CLR,
-u_1_c5858/n2_qn_reg/PRE, u_1_c5858/n3_q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_1_c6109/u_0_c6091/n1_q_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_1_c6109/u_0_c6091/n1_q_reg/CLR, u_1_c6109/u_0_c6091/n1_qn_reg/PRE,
+u_1_c6109/u_0_c6091/n2_q_reg/CLR, u_1_c6109/u_0_c6091/n2_qn_reg/PRE
+u_1_c6109/u_0_c6091/n3_q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#2 Warning
 LUT drives async reset alert  
-LUT cell u_2_c5863/n1_q_i_2__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_2_c5863/n1_q_reg/CLR, u_2_c5863/n1_qn_reg/PRE, u_2_c5863/n2_q_reg/CLR,
-u_2_c5863/n2_qn_reg/PRE, u_2_c5863/n3_q_reg/CLR, u_2_c5863/n3_qn_reg/PRE
-u_2_c5863/n4_q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_1_c6109/u_1_c6092/n1_q_i_2__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_1_c6109/u_1_c6092/n1_q_reg/CLR, u_1_c6109/u_1_c6092/n1_qn_reg/PRE,
+u_1_c6109/u_1_c6092/n2_q_reg/CLR, u_1_c6109/u_1_c6092/n2_qn_reg/PRE,
+u_1_c6109/u_1_c6092/n3_q_reg/CLR, u_1_c6109/u_1_c6092/n3_qn_reg/PRE
+u_1_c6109/u_1_c6092/n4_q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#3 Warning
 LUT drives async reset alert  
-LUT cell u_3_c5864/n1_q_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_3_c5864/n1_q_reg/CLR, u_3_c5864/n1_qn_reg/PRE, u_3_c5864/n2_q_reg/CLR,
-u_3_c5864/n2_qn_reg/PRE, u_3_c5864/n3_q_reg/CLR, u_3_c5864/n3_qn_reg/PRE
-u_3_c5864/n4_q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_1_c6109/u_2_c6093/n1_q_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_1_c6109/u_2_c6093/n1_q_reg/CLR, u_1_c6109/u_2_c6093/n1_qn_reg/PRE,
+u_1_c6109/u_2_c6093/n2_q_reg/CLR, u_1_c6109/u_2_c6093/n2_qn_reg/PRE,
+u_1_c6109/u_2_c6093/n3_q_reg/CLR, u_1_c6109/u_2_c6093/n3_qn_reg/PRE
+u_1_c6109/u_2_c6093/n4_q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#4 Warning
 LUT drives async reset alert  
-LUT cell u_4_c5866/n1_q_i_2__1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_4_c5866/n1_q_reg/CLR, u_4_c5866/n1_qn_reg/PRE, u_4_c5866/n2_q_reg/CLR,
-u_4_c5866/n2_qn_reg/PRE, u_4_c5866/n3_q_reg/CLR, u_4_c5866/n3_qn_reg/PRE
-u_4_c5866/n4_q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_1_c6109/u_3_c6094/n1_q_i_2__1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_1_c6109/u_3_c6094/n1_q_reg/CLR, u_1_c6109/u_3_c6094/n1_qn_reg/PRE,
+u_1_c6109/u_3_c6094/n2_q_reg/CLR, u_1_c6109/u_3_c6094/n2_qn_reg/PRE,
+u_1_c6109/u_3_c6094/n3_q_reg/CLR, u_1_c6109/u_3_c6094/n3_qn_reg/PRE
+u_1_c6109/u_3_c6094/n4_q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#5 Warning
 LUT drives async reset alert  
-LUT cell u_5_c5867/n1_q_i_2__2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_5_c5867/n1_q_reg/CLR, u_5_c5867/n1_qn_reg/PRE, u_5_c5867/n2_q_reg/CLR,
-u_5_c5867/n2_qn_reg/PRE, u_5_c5867/n3_q_reg/CLR, u_5_c5867/n3_qn_reg/PRE
-u_5_c5867/n4_q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_1_c6109/u_4_c6095/n1_q_i_2__2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_1_c6109/u_4_c6095/n1_q_reg/CLR, u_1_c6109/u_4_c6095/n1_qn_reg/PRE,
+u_1_c6109/u_4_c6095/n2_q_reg/CLR, u_1_c6109/u_4_c6095/n2_qn_reg/PRE,
+u_1_c6109/u_4_c6095/n3_q_reg/CLR, u_1_c6109/u_4_c6095/n3_qn_reg/PRE
+u_1_c6109/u_4_c6095/n4_q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#6 Warning
 LUT drives async reset alert  
-LUT cell u_6_c5868/n1_q_i_2__3, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_6_c5868/n1_q_reg/CLR, u_6_c5868/n1_qn_reg/PRE, u_6_c5868/n2_q_reg/CLR,
-u_6_c5868/n2_qn_reg/PRE, u_6_c5868/n3_q_reg/CLR, u_6_c5868/n3_qn_reg/PRE
-u_6_c5868/n4_q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_1_c6109/u_5_c6096/n1_q_i_2__3, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_1_c6109/u_5_c6096/n1_q_reg/CLR, u_1_c6109/u_5_c6096/n1_qn_reg/PRE,
+u_1_c6109/u_5_c6096/n2_q_reg/CLR, u_1_c6109/u_5_c6096/n2_qn_reg/PRE,
+u_1_c6109/u_5_c6096/n3_q_reg/CLR, u_1_c6109/u_5_c6096/n3_qn_reg/PRE
+u_1_c6109/u_5_c6096/n4_q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#7 Warning
 LUT drives async reset alert  
-LUT cell u_7_c5869/n1_q_i_2__4, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_7_c5869/n1_q_reg/CLR, u_7_c5869/n1_qn_reg/PRE, u_7_c5869/n2_q_reg/CLR,
-u_7_c5869/n2_qn_reg/PRE, u_7_c5869/n3_q_reg/CLR, u_7_c5869/n3_qn_reg/PRE
-u_7_c5869/n4_q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_1_c6109/u_6_c6097/n1_q_i_2__4, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_1_c6109/u_6_c6097/n1_q_reg/CLR, u_1_c6109/u_6_c6097/n1_qn_reg/PRE,
+u_1_c6109/u_6_c6097/n2_q_reg/CLR, u_1_c6109/u_6_c6097/n2_qn_reg/PRE,
+u_1_c6109/u_6_c6097/n3_q_reg/CLR, u_1_c6109/u_6_c6097/n3_qn_reg/PRE
+u_1_c6109/u_6_c6097/n4_q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#8 Warning
 LUT drives async reset alert  
-LUT cell u_8_c5870/n1_q_i_2__5, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_8_c5870/n1_q_reg/CLR, u_8_c5870/n1_qn_reg/PRE, u_8_c5870/n2_q_reg/CLR,
-u_8_c5870/n2_qn_reg/PRE, u_8_c5870/n3_q_reg/CLR, u_8_c5870/n3_qn_reg/PRE
-u_8_c5870/n4_q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_1_c6109/u_7_c6098/n1_q_i_2__5, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_1_c6109/u_7_c6098/n1_q_reg/CLR, u_1_c6109/u_7_c6098/n1_qn_reg/PRE,
+u_1_c6109/u_7_c6098/n2_q_reg/CLR, u_1_c6109/u_7_c6098/n2_qn_reg/PRE,
+u_1_c6109/u_7_c6098/n3_q_reg/CLR, u_1_c6109/u_7_c6098/n3_qn_reg/PRE
+u_1_c6109/u_7_c6098/n4_q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 

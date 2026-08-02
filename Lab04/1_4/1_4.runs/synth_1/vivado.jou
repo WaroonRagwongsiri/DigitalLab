@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Tue Jul 28 22:54:07 2026
-# Process ID         : 23420
+# Start of session at: Sun Aug  2 23:18:29 2026
+# Process ID         : 14168
 # Current directory  : E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.runs/synth_1
 # Command line       : vivado.exe -log lab4.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab4.tcl
 # Log file           : E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.runs/synth_1/lab4.vds
@@ -17,8 +17,8 @@
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 16487 MB
-# Swap memory        : 10264 MB
-# Total Virtual      : 26752 MB
-# Available Virtual  : 9975 MB
+# Swap memory        : 11898 MB
+# Total Virtual      : 28386 MB
+# Available Virtual  : 5655 MB
 #-----------------------------------------------------------
 source lab4.tcl -notrace

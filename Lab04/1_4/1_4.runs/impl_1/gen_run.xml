@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s15ftgb196-1" LaunchTime="1785254196">
+<GenRun Id="impl_1" LaunchPart="xc7s15ftgb196-1" LaunchTime="1785687560">
   <File Type="PA-TCL" Name="lab4.tcl"/>
   <File Type="REPORTS-TCL" Name="lab4_reports.tcl"/>
   <File Type="INIT-TIMING" Name="lab4_timing_summary_init.rpt"/>
@@ -56,12 +56,12 @@
   <File Type="ROUTE-RQS-PB" Name="lab4_rqs_routed.pb"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="lab4_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="lab4_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="hex_7seg_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="hex_7seg_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="hex_7seg_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="hex_7seg_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="hex_7seg_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="hex_7seg_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="lab4_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="lab4_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="lab4_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="lab4_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="lab4_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="lab4_bus_skew_postroute_physopted.rpx"/>
   <File Type="NOC_TRAFFIC_SPEC_FILE" Name="lab4.nts"/>
   <File Type="NOC_SOLUTION_FILE" Name="lab4.ncr"/>
   <File Type="BG-BIT" Name="lab4.bit"/>

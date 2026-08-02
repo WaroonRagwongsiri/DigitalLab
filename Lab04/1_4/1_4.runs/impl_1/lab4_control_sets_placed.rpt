@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Tue Jul 28 22:57:05 2026
+| Date         : Sun Aug  2 23:19:49 2026
 | Host         : LAPTOP-2P21F8GO running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file lab4_control_sets_placed.rpt
 | Design       : lab4
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     6 |
-|    Minimum number of control sets                        |     6 |
+| Total control sets                                       |    20 |
+|    Minimum number of control sets                        |    20 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    27 |
+| Unused register locations in slices containing registers |   123 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,9 +39,9 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     6 |
-| >= 0 to < 4        |     2 |
-| >= 4 to < 6        |     4 |
+| Total control sets |    20 |
+| >= 0 to < 4        |    19 |
+| >= 4 to < 6        |     1 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     0 |
 | >= 10 to < 12      |     0 |
@@ -58,8 +58,8 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              21 |            6 |
-| No           | No                    | Yes                    |               0 |            0 |
+| No           | No                    | No                     |               4 |            2 |
+| No           | No                    | Yes                    |              33 |           19 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
@@ -70,15 +70,29 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------------------+---------------+------------------+------------------+----------------+--------------+
-|        Clock Signal        | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------------------+---------------+------------------+------------------+----------------+--------------+
-|  u_4_c4093/CLK             |               |                  |                1 |              2 |         2.00 |
-|  clk_IBUF_BUFG             |               |                  |                1 |              3 |         3.00 |
-|  u_2_c4089/clk_track_reg_0 |               |                  |                1 |              4 |         4.00 |
-|  u_3_c4091/clk_track_reg_0 |               |                  |                1 |              4 |         4.00 |
-|  u_1_c4087/clk_track_reg_0 |               |                  |                1 |              4 |         4.00 |
-|  u_0_c4085/count_reg[2]_0  |               |                  |                1 |              4 |         4.00 |
-+----------------------------+---------------+------------------+------------------+----------------+--------------+
++--------------------------+---------------+------------------------+------------------+----------------+--------------+
+|       Clock Signal       | Enable Signal |    Set/Reset Signal    | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------------+---------------+------------------------+------------------+----------------+--------------+
+|  u_2_c4089/n3_qn_reg_n_0 |               | u_2_c4089/n3_clk_mod10 |                1 |              1 |         1.00 |
+|  u_1_c4087/n3_qn         |               | u_1_c4087/n2_clk_mod10 |                1 |              1 |         1.00 |
+|  u_3_c4091/n3_qn_reg_n_0 |               | u_3_c4091/n4_clk_mod10 |                1 |              1 |         1.00 |
+|  u_4_c4093/n3_qn_reg_n_0 |               | u_4_c4093/n5_clk_mod10 |                1 |              1 |         1.00 |
+|  u_0_c4085/n2_qn         |               | u_0_c4085/n1_clk_mod5  |                1 |              1 |         1.00 |
+|  u_1_c4087/n1_qn_reg_n_0 |               | u_1_c4087/n2_clk_mod10 |                1 |              2 |         2.00 |
+|  u_1_c4087/n2_clk_mod10  |               | u_2_c4089/n3_clk_mod10 |                1 |              2 |         2.00 |
+|  u_1_c4087/n2_qn_reg_n_0 |               | u_1_c4087/n2_clk_mod10 |                1 |              2 |         2.00 |
+|  u_2_c4089/n1_qn_reg_n_0 |               | u_2_c4089/n3_clk_mod10 |                1 |              2 |         2.00 |
+|  u_2_c4089/n2_qn_reg_n_0 |               | u_2_c4089/n3_clk_mod10 |                1 |              2 |         2.00 |
+|  u_2_c4089/n3_clk_mod10  |               | u_3_c4091/n4_clk_mod10 |                1 |              2 |         2.00 |
+|  u_3_c4091/n2_qn_reg_n_0 |               | u_3_c4091/n4_clk_mod10 |                1 |              2 |         2.00 |
+|  u_4_c4093/n1_qn_reg_n_0 |               | u_4_c4093/n5_clk_mod10 |                1 |              2 |         2.00 |
+|  u_4_c4093/n2_qn_reg_n_0 |               | u_4_c4093/n5_clk_mod10 |                1 |              2 |         2.00 |
+|  u_3_c4091/n4_clk_mod10  |               | u_4_c4093/n5_clk_mod10 |                1 |              2 |         2.00 |
+|  u_3_c4091/n1_qn_reg_n_0 |               | u_3_c4091/n4_clk_mod10 |                1 |              2 |         2.00 |
+|  u_0_c4085/n1_clk_mod5   |               | u_1_c4087/n2_clk_mod10 |                1 |              2 |         2.00 |
+|  u_0_c4085/n1_qn         |               | u_0_c4085/n1_clk_mod5  |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG           |               | u_0_c4085/n1_clk_mod5  |                1 |              2 |         2.00 |
+|  u_4_c4093/n5_clk_mod10  |               |                        |                2 |              4 |         2.00 |
++--------------------------+---------------+------------------------+------------------+----------------+--------------+
 
 

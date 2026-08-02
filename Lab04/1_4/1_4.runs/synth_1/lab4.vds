@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Tue Jul 28 22:54:07 2026
-# Process ID         : 23420
+# Start of session at: Sun Aug  2 23:18:29 2026
+# Process ID         : 14168
 # Current directory  : E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.runs/synth_1
 # Command line       : vivado.exe -log lab4.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab4.tcl
 # Log file           : E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.runs/synth_1/lab4.vds
@@ -17,9 +17,9 @@
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 16487 MB
-# Swap memory        : 10264 MB
-# Total Virtual      : 26752 MB
-# Available Virtual  : 9975 MB
+# Swap memory        : 11898 MB
+# Total Virtual      : 28386 MB
+# Available Virtual  : 5655 MB
 #-----------------------------------------------------------
 source lab4.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental {E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/utils_1/imports/synth_1/hex_7seg.dcp}
@@ -30,55 +30,59 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7s15'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s15'
 INFO: [Device 21-403] Loading part xc7s15ftgb196-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 19960
+INFO: [Synth 8-7075] Helper process launched with PID 12896
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1222.000 ; gain = 540.828
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1224.258 ; gain = 539.898
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'lab4' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:50]
-INFO: [Synth 8-3491] module 'mod_5' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod5.vhd:24' bound to instance 'u_0_c4085' of component 'mod_5' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:136]
-INFO: [Synth 8-638] synthesizing module 'mod_5' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod5.vhd:31]
-INFO: [Synth 8-256] done synthesizing module 'mod_5' (0#1) [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod5.vhd:31]
-INFO: [Synth 8-3491] module 'mod_10' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod10.vhd:24' bound to instance 'u_1_c4087' of component 'mod_10' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:140]
-INFO: [Synth 8-638] synthesizing module 'mod_10' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod10.vhd:31]
-INFO: [Synth 8-256] done synthesizing module 'mod_10' (0#1) [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod10.vhd:31]
-INFO: [Synth 8-3491] module 'mod_10' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod10.vhd:24' bound to instance 'u_2_c4089' of component 'mod_10' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:144]
-INFO: [Synth 8-3491] module 'mod_10' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod10.vhd:24' bound to instance 'u_3_c4091' of component 'mod_10' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:148]
-INFO: [Synth 8-3491] module 'mod_10' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod10.vhd:24' bound to instance 'u_4_c4093' of component 'mod_10' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:152]
-INFO: [Synth 8-3491] module 'digit_selector' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/digit_selector.vhd:24' bound to instance 'u_5_c5025' of component 'digit_selector' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:156]
+INFO: [Synth 8-638] synthesizing module 'lab4' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:54]
+INFO: [Synth 8-3491] module 'mod_5' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod5.vhd:28' bound to instance 'u_0_c4085' of component 'mod_5' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:140]
+INFO: [Synth 8-638] synthesizing module 'mod_5' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod5.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'mod_5' (0#1) [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod5.vhd:35]
+INFO: [Synth 8-3491] module 'mod_10' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod10.vhd:28' bound to instance 'u_1_c4087' of component 'mod_10' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:144]
+INFO: [Synth 8-638] synthesizing module 'mod_10' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod10.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'mod_10' (0#1) [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod10.vhd:35]
+INFO: [Synth 8-3491] module 'mod_10' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod10.vhd:28' bound to instance 'u_2_c4089' of component 'mod_10' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:148]
+INFO: [Synth 8-3491] module 'mod_10' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod10.vhd:28' bound to instance 'u_3_c4091' of component 'mod_10' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:152]
+INFO: [Synth 8-3491] module 'mod_10' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod10.vhd:28' bound to instance 'u_4_c4093' of component 'mod_10' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:156]
+INFO: [Synth 8-3491] module 'digit_selector' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/digit_selector.vhd:24' bound to instance 'u_5_c5025' of component 'digit_selector' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:160]
 INFO: [Synth 8-638] synthesizing module 'digit_selector' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/digit_selector.vhd:34]
 INFO: [Synth 8-256] done synthesizing module 'digit_selector' (0#1) [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/digit_selector.vhd:34]
-INFO: [Synth 8-3491] module 'hex_7seg' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/hex_7seg.vhd:24' bound to instance 'u_6_c5045' of component 'hex_7seg' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:163]
-INFO: [Synth 8-638] synthesizing module 'hex_7seg' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/hex_7seg.vhd:40]
-INFO: [Synth 8-256] done synthesizing module 'hex_7seg' (0#1) [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/hex_7seg.vhd:40]
-INFO: [Synth 8-3491] module 'fas8' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:28' bound to instance 'u_7_c5434' of component 'fas8' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:176]
+INFO: [Synth 8-3491] module 'hex_7seg' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/hex_7seg.vhd:28' bound to instance 'u_6_c5045' of component 'hex_7seg' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:167]
+INFO: [Synth 8-638] synthesizing module 'hex_7seg' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/hex_7seg.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'hex_7seg' (0#1) [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/hex_7seg.vhd:44]
+INFO: [Synth 8-3491] module 'fas8' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:28' bound to instance 'u_7_c5434' of component 'fas8' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:180]
 INFO: [Synth 8-638] synthesizing module 'fas8' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:59]
-INFO: [Synth 8-3491] module 'fa1' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:24' bound to instance 'u_0_c5272' of component 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:83]
-INFO: [Synth 8-638] synthesizing module 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:34]
-INFO: [Synth 8-256] done synthesizing module 'fa1' (0#1) [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:34]
-INFO: [Synth 8-3491] module 'fa1' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:24' bound to instance 'u_1_c5316' of component 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:90]
-INFO: [Synth 8-3491] module 'fa1' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:24' bound to instance 'u_2_c5325' of component 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:97]
-INFO: [Synth 8-3491] module 'fa1' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:24' bound to instance 'u_3_c5334' of component 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:104]
-INFO: [Synth 8-3491] module 'fa1' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:24' bound to instance 'u_4_c5343' of component 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:111]
-INFO: [Synth 8-3491] module 'fa1' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:24' bound to instance 'u_5_c5352' of component 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:118]
-INFO: [Synth 8-3491] module 'fa1' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:24' bound to instance 'u_6_c5361' of component 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:125]
-INFO: [Synth 8-3491] module 'fa1' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:24' bound to instance 'u_7_c5370' of component 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:132]
+INFO: [Synth 8-3491] module 'fa1' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:28' bound to instance 'u_0_c5272' of component 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:83]
+INFO: [Synth 8-638] synthesizing module 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'fa1' (0#1) [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:38]
+INFO: [Synth 8-3491] module 'fa1' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:28' bound to instance 'u_1_c5316' of component 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:90]
+INFO: [Synth 8-3491] module 'fa1' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:28' bound to instance 'u_2_c5325' of component 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:97]
+INFO: [Synth 8-3491] module 'fa1' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:28' bound to instance 'u_3_c5334' of component 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:104]
+INFO: [Synth 8-3491] module 'fa1' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:28' bound to instance 'u_4_c5343' of component 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:111]
+INFO: [Synth 8-3491] module 'fa1' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:28' bound to instance 'u_5_c5352' of component 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:118]
+INFO: [Synth 8-3491] module 'fa1' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:28' bound to instance 'u_6_c5361' of component 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:125]
+INFO: [Synth 8-3491] module 'fa1' declared at 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fa1.vhd:28' bound to instance 'u_7_c5370' of component 'fa1' [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:132]
 INFO: [Synth 8-256] done synthesizing module 'fas8' (0#1) [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/fas8.vhd:59]
-INFO: [Synth 8-256] done synthesizing module 'lab4' (0#1) [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'lab4' (0#1) [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/top.vhd:54]
+WARNING: [Synth 8-6014] Unused sequential element n3_qn_reg was removed.  [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod5.vhd:72]
+WARNING: [Synth 8-6014] Unused sequential element n4_qn_reg was removed.  [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/sources_1/new/mod10.vhd:85]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1339.848 ; gain = 658.676
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1343.828 ; gain = 659.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1339.848 ; gain = 658.676
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1343.828 ; gain = 659.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1339.848 ; gain = 658.676
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1343.828 ; gain = 659.469
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1339.848 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1343.828 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -106,65 +110,40 @@ Resolution: If [get_<value>] was used to populate the object, check to make sure
 Finished Parsing XDC File [E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/constrs_1/new/fa1_constraint.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1423.547 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1431.367 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1423.547 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1431.367 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1423.547 ; gain = 742.375
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1431.367 ; gain = 747.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s15ftgb196-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1423.547 ; gain = 742.375
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1431.367 ; gain = 747.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1423.547 ; gain = 742.375
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1431.367 ; gain = 747.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start Preparing Guide Design
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1431.367 ; gain = 747.008
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-6895] The reference checkpoint E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.srcs/utils_1/imports/synth_1/hex_7seg.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
----------------------------------------------------------------------------------
-Finished Doing Graph Differ : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1423.547 ; gain = 742.375
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Preparing Guide Design : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1423.547 ; gain = 742.375
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1423.547 ; gain = 742.375
----------------------------------------------------------------------------------
-
-
-Incremental Synthesis Report Summary:
-
-1. Incremental synthesis run: no
-
-   Reason for not running incremental synthesis : 
-
-
-INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input    3 Bit       Adders := 5     
-	   2 Input    2 Bit       Adders := 1     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 24    
 +---Registers : 
-	                3 Bit    Registers := 5     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 4     
-+---Muxes : 
-	   2 Input    1 Bit        Muxes := 4     
+	                1 Bit    Registers := 37    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -181,25 +160,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1423.547 ; gain = 742.375
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1431.367 ; gain = 747.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1530.945 ; gain = 849.773
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1534.996 ; gain = 850.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1531.020 ; gain = 849.848
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1534.996 ; gain = 850.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1543.238 ; gain = 862.066
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1546.383 ; gain = 862.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -217,37 +196,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1789.973 ; gain = 1108.801
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1793.617 ; gain = 1109.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1789.973 ; gain = 1108.801
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1793.617 ; gain = 1109.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1789.973 ; gain = 1108.801
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1793.617 ; gain = 1109.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1789.973 ; gain = 1108.801
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1793.617 ; gain = 1109.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1789.973 ; gain = 1108.801
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1793.617 ; gain = 1109.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1789.973 ; gain = 1108.801
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1793.617 ; gain = 1109.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -264,37 +243,39 @@ Report Cell Usage:
 |      |Cell |Count |
 +------+-----+------+
 |1     |BUFG |     1|
-|2     |LUT1 |     1|
-|3     |LUT2 |    12|
-|4     |LUT3 |    17|
-|5     |LUT4 |    13|
-|6     |LUT5 |     3|
-|7     |LUT6 |     9|
-|8     |FDRE |    21|
-|9     |IBUF |    18|
-|10    |OBUF |    11|
+|2     |LUT1 |    20|
+|3     |LUT2 |    10|
+|4     |LUT3 |     5|
+|5     |LUT4 |    14|
+|6     |LUT5 |     1|
+|7     |LUT6 |    12|
+|8     |FDCE |    19|
+|9     |FDPE |    14|
+|10    |FDRE |     4|
+|11    |IBUF |    18|
+|12    |OBUF |    11|
 +------+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1789.973 ; gain = 1108.801
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1793.617 ; gain = 1109.258
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 1 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 1789.973 ; gain = 1025.102
-Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1789.973 ; gain = 1108.801
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:27 . Memory (MB): peak = 1793.617 ; gain = 1021.719
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1793.617 ; gain = 1109.258
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1799.176 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1802.789 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.828 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1806.477 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 3dcae6b7
+Synth Design complete | Checksum: 889f093b
 INFO: [Common 17-83] Releasing license: Synthesis
-46 Infos, 5 Warnings, 6 Critical Warnings and 0 Errors encountered.
+49 Infos, 7 Warnings, 5 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 1802.828 ; gain = 1274.840
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1806.477 ; gain = 1277.523
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.828 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1806.477 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'E:/Second Year/First Semester/Digital/Lab/Lab04/1_4/1_4.runs/synth_1/lab4.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file lab4_utilization_synth.rpt -pb lab4_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jul 28 22:54:47 2026...
+INFO: [Common 17-206] Exiting Vivado at Sun Aug  2 23:19:09 2026...

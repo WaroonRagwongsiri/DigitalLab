@@ -58,25 +58,19 @@ architecture Behavioral of lab5_2 is
       g : out STD_LOGIC
     );
   end component;
-  component mod_5
+  component mod50m_async
     Port (
       clk : in  STD_LOGIC;
-      clk_mod5 : out STD_LOGIC
+      clk_mod50m : out STD_LOGIC
     );
   end component;
-  component mod_10
-    Port (
-      clk : in  STD_LOGIC;
-      clk_mod10 : out STD_LOGIC
-    );
-  end component;
-  signal n1_q, n1_qn, n2_q, n2_qn, n3_q, n3_qn, n9_a, n9_b, n9_c, n9_d, n9_e, n9_f, n9_g, n10_clk_mod5, n11_clk_mod10, n12_clk_mod10, n13_clk_mod10, n14_clk_mod10, n15_clk_mod10, n16_clk_mod10, n17_clk_mod10 : STD_LOGIC;
+  signal n1_q, n1_qn, n2_q, n2_qn, n3_q, n3_qn, n9_a, n9_b, n9_c, n9_d, n9_e, n9_f, n9_g, n14_clk_mod50m : STD_LOGIC;
 begin
 
   -- sequential logic (flip-flops)
-  process(n11_clk_mod10)
+  process(n14_clk_mod50m)
   begin
-    if rising_edge(n11_clk_mod10) then
+    if rising_edge(n14_clk_mod50m) then
       if    (STD_LOGIC'('1')='0' and STD_LOGIC'('1')='1') then n1_q <= '0'; n1_qn <= '1';
       elsif (STD_LOGIC'('1')='1' and STD_LOGIC'('1')='0') then n1_q <= '1'; n1_qn <= '0';
       elsif (STD_LOGIC'('1')='1' and STD_LOGIC'('1')='1') then n1_q <= not n1_q; n1_qn <= n1_q;
@@ -116,37 +110,9 @@ begin
     f => n9_f,
     g => n9_g
   );
-  u_1_c5858 : mod_5 port map (
+  u_1_c6109 : mod50m_async port map (
     clk => clk,
-    clk_mod5 => n10_clk_mod5
-  );
-  u_2_c5863 : mod_10 port map (
-    clk => n17_clk_mod10,
-    clk_mod10 => n11_clk_mod10
-  );
-  u_3_c5864 : mod_10 port map (
-    clk => n16_clk_mod10,
-    clk_mod10 => n12_clk_mod10
-  );
-  u_4_c5866 : mod_10 port map (
-    clk => n10_clk_mod5,
-    clk_mod10 => n13_clk_mod10
-  );
-  u_5_c5867 : mod_10 port map (
-    clk => n13_clk_mod10,
-    clk_mod10 => n14_clk_mod10
-  );
-  u_6_c5868 : mod_10 port map (
-    clk => n14_clk_mod10,
-    clk_mod10 => n15_clk_mod10
-  );
-  u_7_c5869 : mod_10 port map (
-    clk => n15_clk_mod10,
-    clk_mod10 => n16_clk_mod10
-  );
-  u_8_c5870 : mod_10 port map (
-    clk => n12_clk_mod10,
-    clk_mod10 => n17_clk_mod10
+    clk_mod50m => n14_clk_mod50m
   );
 
   -- output drivers

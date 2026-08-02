@@ -75,6 +75,7 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
   {E:/Second Year/First Semester/Digital/Lab/Lab05/lab5/lab5.srcs/sources_1/new/hex_7seg.vhd}
+  {E:/Second Year/First Semester/Digital/Lab/Lab05/lab5/lab5.srcs/sources_1/new/mod50m_async.vhd}
   {E:/Second Year/First Semester/Digital/Lab/Lab05/lab5/lab5.srcs/sources_1/new/mod_10.vhd}
   {E:/Second Year/First Semester/Digital/Lab/Lab05/lab5/lab5.srcs/sources_1/new/mod_5.vhd}
   {E:/Second Year/First Semester/Digital/Lab/Lab05/lab5/lab5.srcs/sources_1/new/lab5_2.vhd}

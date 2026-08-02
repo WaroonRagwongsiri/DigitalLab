@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Tue Jul 28 22:54:47 2026
+| Date         : Sun Aug  2 23:19:09 2026
 | Host         : LAPTOP-2P21F8GO running 64-bit major release  (build 9200)
 | Command      : report_utilization -file lab4_utilization_synth.rpt -pb lab4_utilization_synth.pb
 | Design       : lab4
@@ -31,15 +31,15 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |   33 |     0 |          0 |      8000 |  0.41 |
-|   LUT as Logic          |   33 |     0 |          0 |      8000 |  0.41 |
+| Slice LUTs*             |   50 |     0 |          0 |      8000 |  0.63 |
+|   LUT as Logic          |   50 |     0 |          0 |      8000 |  0.63 |
 |   LUT as Memory         |    0 |     0 |          0 |      2400 |  0.00 |
-| Slice Registers         |   21 |     0 |          0 |     16000 |  0.13 |
-|   Register as Flip Flop |   21 |     0 |          0 |     16000 |  0.13 |
+| Slice Registers         |   37 |     0 |          0 |     16000 |  0.23 |
+|   Register as Flip Flop |   37 |     0 |          0 |     16000 |  0.23 |
 |   Register as Latch     |    0 |     0 |          0 |     16000 |  0.00 |
 | F7 Muxes                |    0 |     0 |          0 |      4000 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |      2000 |  0.00 |
-| Unique Control Sets     |    6 |       |          0 |      2000 |  0.30 |
+| Unique Control Sets     |   20 |       |          0 |      2000 |  1.00 |
 +-------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -59,10 +59,10 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 0     |          Yes |           - |          Set |
-| 0     |          Yes |           - |        Reset |
+| 14    |          Yes |           - |          Set |
+| 19    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 21    |          Yes |       Reset |            - |
+| 4     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -148,15 +148,17 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |   21 |        Flop & Latch |
+| LUT1     |   20 |                 LUT |
+| FDCE     |   19 |        Flop & Latch |
 | IBUF     |   18 |                  IO |
-| LUT3     |   17 |                 LUT |
-| LUT4     |   13 |                 LUT |
-| LUT2     |   12 |                 LUT |
+| LUT4     |   14 |                 LUT |
+| FDPE     |   14 |        Flop & Latch |
+| LUT6     |   12 |                 LUT |
 | OBUF     |   11 |                  IO |
-| LUT6     |    9 |                 LUT |
-| LUT5     |    3 |                 LUT |
-| LUT1     |    1 |                 LUT |
+| LUT2     |   10 |                 LUT |
+| LUT3     |    5 |                 LUT |
+| FDRE     |    4 |        Flop & Latch |
+| LUT5     |    1 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
