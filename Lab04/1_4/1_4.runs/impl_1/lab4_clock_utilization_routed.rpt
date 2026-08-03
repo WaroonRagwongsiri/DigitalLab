@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Sun Aug  2 23:19:59 2026
+| Date         : Mon Aug  3 16:52:15 2026
 | Host         : LAPTOP-2P21F8GO running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file lab4_clock_utilization_routed.rpt
 | Design       : lab4
@@ -69,20 +69,20 @@ Table of Contents
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+-----------------------+-------------------------+
 | Local Id | Driver Type/Pin | Constraint | Site/BEL          | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin            | Net                     |
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+-----------------------+-------------------------+
-| 0        | FDPE/Q          | None       | SLICE_X36Y14/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c4085/n1_qn_reg/Q | u_0_c4085/n1_qn         |
-| 1        | FDPE/Q          | None       | SLICE_X37Y14/A5FF | X1Y0         |           2 |               0 |              |       | u_1_c4087/n1_qn_reg/Q | u_1_c4087/n1_qn_reg_n_0 |
-| 2        | FDPE/Q          | None       | SLICE_X35Y14/A5FF | X1Y0         |           2 |               0 |              |       | u_1_c4087/n2_qn_reg/Q | u_1_c4087/n2_qn_reg_n_0 |
-| 3        | FDPE/Q          | None       | SLICE_X35Y13/A5FF | X1Y0         |           2 |               0 |              |       | u_2_c4089/n1_qn_reg/Q | u_2_c4089/n1_qn_reg_n_0 |
-| 4        | FDPE/Q          | None       | SLICE_X34Y13/A5FF | X1Y0         |           2 |               0 |              |       | u_2_c4089/n2_qn_reg/Q | u_2_c4089/n2_qn_reg_n_0 |
-| 5        | FDPE/Q          | None       | SLICE_X35Y12/A5FF | X1Y0         |           2 |               0 |              |       | u_3_c4091/n1_qn_reg/Q | u_3_c4091/n1_qn_reg_n_0 |
-| 6        | FDPE/Q          | None       | SLICE_X36Y12/A5FF | X1Y0         |           2 |               0 |              |       | u_3_c4091/n2_qn_reg/Q | u_3_c4091/n2_qn_reg_n_0 |
-| 7        | FDPE/Q          | None       | SLICE_X36Y10/A5FF | X1Y0         |           2 |               0 |              |       | u_4_c4093/n1_qn_reg/Q | u_4_c4093/n1_qn_reg_n_0 |
-| 8        | FDPE/Q          | None       | SLICE_X37Y10/A5FF | X1Y0         |           2 |               0 |              |       | u_4_c4093/n2_qn_reg/Q | u_4_c4093/n2_qn_reg_n_0 |
-| 9        | FDPE/Q          | None       | SLICE_X36Y15/A5FF | X1Y0         |           1 |               0 |              |       | u_0_c4085/n2_qn_reg/Q | u_0_c4085/n2_qn         |
-| 10       | FDPE/Q          | None       | SLICE_X36Y13/A5FF | X1Y0         |           1 |               0 |              |       | u_1_c4087/n3_qn_reg/Q | u_1_c4087/n3_qn         |
-| 11       | FDPE/Q          | None       | SLICE_X34Y12/A5FF | X1Y0         |           1 |               0 |              |       | u_2_c4089/n3_qn_reg/Q | u_2_c4089/n3_qn_reg_n_0 |
-| 12       | FDPE/Q          | None       | SLICE_X37Y12/A5FF | X1Y0         |           1 |               0 |              |       | u_3_c4091/n3_qn_reg/Q | u_3_c4091/n3_qn_reg_n_0 |
-| 13       | FDPE/Q          | None       | SLICE_X37Y11/A5FF | X1Y0         |           1 |               0 |              |       | u_4_c4093/n3_qn_reg/Q | u_4_c4093/n3_qn_reg_n_0 |
+| 0        | FDPE/Q          | None       | SLICE_X36Y13/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c4085/n1_qn_reg/Q | u_0_c4085/n1_qn         |
+| 1        | FDPE/Q          | None       | SLICE_X37Y13/A5FF | X1Y0         |           2 |               0 |              |       | u_1_c4087/n1_qn_reg/Q | u_1_c4087/n1_qn_reg_n_0 |
+| 2        | FDPE/Q          | None       | SLICE_X36Y12/A5FF | X1Y0         |           2 |               0 |              |       | u_1_c4087/n2_qn_reg/Q | u_1_c4087/n2_qn_reg_n_0 |
+| 3        | FDPE/Q          | None       | SLICE_X34Y12/A5FF | X1Y0         |           2 |               0 |              |       | u_2_c4089/n1_qn_reg/Q | u_2_c4089/n1_qn_reg_n_0 |
+| 4        | FDPE/Q          | None       | SLICE_X35Y12/A5FF | X1Y0         |           2 |               0 |              |       | u_2_c4089/n2_qn_reg/Q | u_2_c4089/n2_qn_reg_n_0 |
+| 5        | FDPE/Q          | None       | SLICE_X36Y11/A5FF | X1Y0         |           2 |               0 |              |       | u_3_c4091/n1_qn_reg/Q | u_3_c4091/n1_qn_reg_n_0 |
+| 6        | FDPE/Q          | None       | SLICE_X37Y11/A5FF | X1Y0         |           2 |               0 |              |       | u_3_c4091/n2_qn_reg/Q | u_3_c4091/n2_qn_reg_n_0 |
+| 7        | FDPE/Q          | None       | SLICE_X37Y9/A5FF  | X1Y0         |           2 |               0 |              |       | u_4_c4093/n1_qn_reg/Q | u_4_c4093/n1_qn_reg_n_0 |
+| 8        | FDPE/Q          | None       | SLICE_X36Y10/A5FF | X1Y0         |           2 |               0 |              |       | u_4_c4093/n2_qn_reg/Q | u_4_c4093/n2_qn_reg_n_0 |
+| 9        | FDPE/Q          | None       | SLICE_X36Y14/A5FF | X1Y0         |           1 |               0 |              |       | u_0_c4085/n2_qn_reg/Q | u_0_c4085/n2_qn         |
+| 10       | FDPE/Q          | None       | SLICE_X37Y12/A5FF | X1Y0         |           1 |               0 |              |       | u_1_c4087/n3_qn_reg/Q | u_1_c4087/n3_qn         |
+| 11       | FDPE/Q          | None       | SLICE_X35Y11/A5FF | X1Y0         |           1 |               0 |              |       | u_2_c4089/n3_qn_reg/Q | u_2_c4089/n3_qn_reg_n_0 |
+| 12       | FDPE/Q          | None       | SLICE_X34Y11/A5FF | X1Y0         |           1 |               0 |              |       | u_3_c4091/n3_qn_reg/Q | u_3_c4091/n3_qn_reg_n_0 |
+| 13       | FDPE/Q          | None       | SLICE_X37Y10/A5FF | X1Y0         |           1 |               0 |              |       | u_4_c4093/n3_qn_reg/Q | u_4_c4093/n3_qn_reg_n_0 |
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+-----------------------+-------------------------+
 * Local Clocks in this context represents only clocks driven by non-global buffers
 ** Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered

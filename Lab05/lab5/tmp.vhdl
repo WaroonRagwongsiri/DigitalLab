@@ -293,36 +293,48 @@ begin
   n12_o <= n1_q and n2_q and n3_q;
 
   -- sequential logic (flip-flops)
-  process(clk)
+  process(clk, STD_LOGIC'('0'))
   begin
-    if rising_edge(clk) then
+    if STD_LOGIC'('0') = '1' then
+      n1_q <= '1';
+      n1_qn <= '0';
+    elsif rising_edge(clk) then
       if    (STD_LOGIC'('1')='0' and n5_o='1') then n1_q <= '0'; n1_qn <= '1';
       elsif (STD_LOGIC'('1')='1' and n5_o='0') then n1_q <= '1'; n1_qn <= '0';
       elsif (STD_LOGIC'('1')='1' and n5_o='1') then n1_q <= not n1_q; n1_qn <= n1_q;
       end if;
     end if;
   end process;
-  process(clk)
+  process(clk, STD_LOGIC'('1'))
   begin
-    if rising_edge(clk) then
+    if STD_LOGIC'('1') = '1' then
+      n2_q <= '1';
+      n2_qn <= '0';
+    elsif rising_edge(clk) then
       if    (n1_q='0' and n1_q='1') then n2_q <= '0'; n2_qn <= '1';
       elsif (n1_q='1' and n1_q='0') then n2_q <= '1'; n2_qn <= '0';
       elsif (n1_q='1' and n1_q='1') then n2_q <= not n2_q; n2_qn <= n2_q;
       end if;
     end if;
   end process;
-  process(clk)
+  process(clk, STD_LOGIC'('0'))
   begin
-    if rising_edge(clk) then
+    if STD_LOGIC'('0') = '1' then
+      n3_q <= '1';
+      n3_qn <= '0';
+    elsif rising_edge(clk) then
       if    (n7_o='0' and n7_o='1') then n3_q <= '0'; n3_qn <= '1';
       elsif (n7_o='1' and n7_o='0') then n3_q <= '1'; n3_qn <= '0';
       elsif (n7_o='1' and n7_o='1') then n3_q <= not n3_q; n3_qn <= n3_q;
       end if;
     end if;
   end process;
-  process(clk)
+  process(clk, STD_LOGIC'('0'))
   begin
-    if rising_edge(clk) then
+    if STD_LOGIC'('0') = '1' then
+      n4_q <= '1';
+      n4_qn <= '0';
+    elsif rising_edge(clk) then
       if    (n12_o='0' and STD_LOGIC'('1')='1') then n4_q <= '0'; n4_qn <= '1';
       elsif (n12_o='1' and STD_LOGIC'('1')='0') then n4_q <= '1'; n4_qn <= '0';
       elsif (n12_o='1' and STD_LOGIC'('1')='1') then n4_q <= not n4_q; n4_qn <= n4_q;

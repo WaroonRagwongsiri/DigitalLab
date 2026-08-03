@@ -214,7 +214,7 @@ begin
   e <= n7_e;
   f <= n7_f;
   g <= n7_g;
-  d0 <= n6_d0;
+  d0 <= STD_LOGIC'('0');
   d1 <= n6_d1;
   d2 <= n6_d2;
   d3 <= n6_d3;

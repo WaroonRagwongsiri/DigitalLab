@@ -1,24 +1,6 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 08/02/2026 09:55:27 PM
--- Design Name: 
--- Module Name: counter_2345679 - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
+-- ============================================================
+-- Entity: counter_2345679
+-- ============================================================
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -37,7 +19,15 @@ entity counter_2345679 is
 end counter_2345679;
 
 architecture Behavioral of counter_2345679 is
-  signal n1_q, n1_qn, n2_q, n2_qn, n3_q, n3_qn, n4_q, n4_qn, n5_o, n7_o, n12_o : STD_LOGIC;
+  -- Main counter signals (Uninitialized)
+  signal n1_q, n1_qn, n2_q, n2_qn, n3_q, n3_qn, n4_q, n4_qn : STD_LOGIC;
+  
+  -- ONLY the Init-FF is explicitly initialized
+  signal n19_q : STD_LOGIC := '0';
+  signal n19_qn : STD_LOGIC := '1';
+  
+  -- Combinational signals
+  signal n5_o, n7_o, n12_o : STD_LOGIC;
 begin
 
   -- combinational logic
@@ -55,9 +45,12 @@ begin
       end if;
     end if;
   end process;
-  process(clk)
+  process(clk, n19_qn)
   begin
-    if rising_edge(clk) then
+    if n19_qn = '1' then
+      n2_q <= '1';
+      n2_qn <= '0';
+    elsif rising_edge(clk) then
       if    (n1_q='0' and n1_q='1') then n2_q <= '0'; n2_qn <= '1';
       elsif (n1_q='1' and n1_q='0') then n2_q <= '1'; n2_qn <= '0';
       elsif (n1_q='1' and n1_q='1') then n2_q <= not n2_q; n2_qn <= n2_q;
@@ -79,6 +72,15 @@ begin
       if    (n12_o='0' and STD_LOGIC'('1')='1') then n4_q <= '0'; n4_qn <= '1';
       elsif (n12_o='1' and STD_LOGIC'('1')='0') then n4_q <= '1'; n4_qn <= '0';
       elsif (n12_o='1' and STD_LOGIC'('1')='1') then n4_q <= not n4_q; n4_qn <= n4_q;
+      end if;
+    end if;
+  end process;
+  process(clk)
+  begin
+    if rising_edge(clk) then
+      if    (STD_LOGIC'('1')='0' and STD_LOGIC'('0')='1') then n19_q <= '0'; n19_qn <= '1';
+      elsif (STD_LOGIC'('1')='1' and STD_LOGIC'('0')='0') then n19_q <= '1'; n19_qn <= '0';
+      elsif (STD_LOGIC'('1')='1' and STD_LOGIC'('0')='1') then n19_q <= not n19_q; n19_qn <= n19_q;
       end if;
     end if;
   end process;

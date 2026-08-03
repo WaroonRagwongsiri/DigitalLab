@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Sun Aug  2 23:29:32 2026
+| Date         : Mon Aug  3 17:54:37 2026
 | Host         : LAPTOP-2P21F8GO running 64-bit major release  (build 9200)
 | Command      : report_methodology -file lab5_3_methodology_drc_routed.rpt -pb lab5_3_methodology_drc_routed.pb -rpx lab5_3_methodology_drc_routed.rpx
 | Design       : lab5_3
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 68
+             Checks found: 69
 +-----------+------------------+------------------------------+--------+
 | Rule      | Severity         | Description                  | Checks |
 +-----------+------------------+------------------------------+--------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell  | 60     |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell  | 61     |
 | LUTAR-1   | Warning          | LUT drives async reset alert | 8      |
 +-----------+------------------+------------------------------+--------+
 
@@ -305,30 +305,35 @@ Related violations: <none>
 
 TIMING-17#55 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_1_c6233/n1_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6233/n19_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#56 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_1_c6233/n2_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6233/n1_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#57 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_1_c6233/n2_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6233/n2_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#58 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_1_c6233/n3_q_reg/C is not reached by a timing clock
+The clock pin u_1_c6233/n2_qn_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#59 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_1_c6233/n3_qn_reg/C is not reached by a timing clock
+The clock pin u_1_c6233/n3_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#60 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_1_c6233/n3_qn_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#61 Critical Warning
 Non-clocked sequential cell  
 The clock pin u_1_c6233/n4_q_reg/C is not reached by a timing clock
 Related violations: <none>

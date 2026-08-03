@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Sun Aug  2 23:28:41 2026
+| Date         : Mon Aug  3 17:53:29 2026
 | Host         : LAPTOP-2P21F8GO running 64-bit major release  (build 9200)
 | Command      : report_utilization -file lab5_3_utilization_synth.rpt -pb lab5_3_utilization_synth.pb
 | Design       : lab5_3
@@ -34,12 +34,12 @@ Table of Contents
 | Slice LUTs*             |   46 |     0 |          0 |      8000 |  0.58 |
 |   LUT as Logic          |   46 |     0 |          0 |      8000 |  0.58 |
 |   LUT as Memory         |    0 |     0 |          0 |      2400 |  0.00 |
-| Slice Registers         |   60 |     0 |          0 |     16000 |  0.38 |
-|   Register as Flip Flop |   60 |     0 |          0 |     16000 |  0.38 |
+| Slice Registers         |   61 |     0 |          0 |     16000 |  0.38 |
+|   Register as Flip Flop |   61 |     0 |          0 |     16000 |  0.38 |
 |   Register as Latch     |    0 |     0 |          0 |     16000 |  0.00 |
 | F7 Muxes                |    0 |     0 |          0 |      4000 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |      2000 |  0.00 |
-| Unique Control Sets     |   32 |       |          0 |      2000 |  1.60 |
+| Unique Control Sets     |   33 |       |          0 |      2000 |  1.65 |
 +-------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -59,10 +59,10 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 23    |          Yes |           - |          Set |
-| 31    |          Yes |           - |        Reset |
+| 24    |          Yes |           - |          Set |
+| 32    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 6     |          Yes |       Reset |            - |
+| 5     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -148,14 +148,13 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT1     |   31 |                 LUT |
-| FDCE     |   31 |        Flop & Latch |
-| FDPE     |   23 |        Flop & Latch |
+| LUT1     |   32 |                 LUT |
+| FDCE     |   32 |        Flop & Latch |
+| FDPE     |   24 |        Flop & Latch |
 | LUT4     |   16 |                 LUT |
 | OBUF     |   11 |                  IO |
-| FDRE     |    6 |        Flop & Latch |
-| LUT3     |    4 |                 LUT |
-| LUT2     |    1 |                 LUT |
+| FDRE     |    5 |        Flop & Latch |
+| LUT3     |    3 |                 LUT |
 | IBUF     |    1 |                  IO |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+

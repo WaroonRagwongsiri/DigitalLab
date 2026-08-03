@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Sun Aug  2 23:29:33 2026
+| Date         : Mon Aug  3 17:54:37 2026
 | Host         : LAPTOP-2P21F8GO running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file lab5_3_clock_utilization_routed.rpt
 | Design       : lab5_3
@@ -69,29 +69,29 @@ Table of Contents
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+---------------------------------+-----------------------------------+
 | Local Id | Driver Type/Pin | Constraint | Site/BEL          | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin                      | Net                               |
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+---------------------------------+-----------------------------------+
-| 0        | FDPE/Q          | None       | SLICE_X34Y14/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_0_c6091/n1_qn_reg/Q | u_0_c6232/u_0_c6091/n1_qn         |
-| 1        | FDPE/Q          | None       | SLICE_X36Y14/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_1_c6092/n1_qn_reg/Q | u_0_c6232/u_1_c6092/n1_qn_reg_n_0 |
-| 2        | FDPE/Q          | None       | SLICE_X36Y12/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_1_c6092/n2_qn_reg/Q | u_0_c6232/u_1_c6092/n2_qn_reg_n_0 |
-| 3        | FDPE/Q          | None       | SLICE_X39Y11/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_2_c6093/n1_qn_reg/Q | u_0_c6232/u_2_c6093/n1_qn_reg_n_0 |
-| 4        | FDPE/Q          | None       | SLICE_X38Y11/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_2_c6093/n2_qn_reg/Q | u_0_c6232/u_2_c6093/n2_qn_reg_n_0 |
-| 5        | FDPE/Q          | None       | SLICE_X35Y14/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_3_c6094/n1_qn_reg/Q | u_0_c6232/u_3_c6094/n1_qn_reg_n_0 |
-| 6        | FDPE/Q          | None       | SLICE_X35Y13/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_3_c6094/n2_qn_reg/Q | u_0_c6232/u_3_c6094/n2_qn_reg_n_0 |
-| 7        | FDPE/Q          | None       | SLICE_X34Y12/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_4_c6095/n1_qn_reg/Q | u_0_c6232/u_4_c6095/n1_qn_reg_n_0 |
-| 8        | FDPE/Q          | None       | SLICE_X31Y12/AFF  | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_4_c6095/n2_qn_reg/Q | u_0_c6232/u_4_c6095/n2_qn_reg_n_0 |
-| 9        | FDPE/Q          | None       | SLICE_X36Y10/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_5_c6096/n1_qn_reg/Q | u_0_c6232/u_5_c6096/n1_qn_reg_n_0 |
-| 10       | FDPE/Q          | None       | SLICE_X37Y10/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_5_c6096/n2_qn_reg/Q | u_0_c6232/u_5_c6096/n2_qn_reg_n_0 |
-| 11       | FDPE/Q          | None       | SLICE_X37Y11/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_6_c6097/n1_qn_reg/Q | u_0_c6232/u_6_c6097/n1_qn_reg_n_0 |
-| 12       | FDPE/Q          | None       | SLICE_X36Y11/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_6_c6097/n2_qn_reg/Q | u_0_c6232/u_6_c6097/n2_qn_reg_n_0 |
-| 13       | FDPE/Q          | None       | SLICE_X38Y12/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_7_c6098/n1_qn_reg/Q | u_0_c6232/u_7_c6098/n1_qn_reg_n_0 |
-| 14       | FDPE/Q          | None       | SLICE_X38Y13/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_7_c6098/n2_qn_reg/Q | u_0_c6232/u_7_c6098/n2_qn_reg_n_0 |
-| 15       | FDPE/Q          | None       | SLICE_X34Y15/A5FF | X1Y0         |           1 |               0 |              |       | u_0_c6232/u_0_c6091/n2_qn_reg/Q | u_0_c6232/u_0_c6091/n2_qn         |
-| 16       | FDPE/Q          | None       | SLICE_X36Y13/A5FF | X1Y0         |           1 |               0 |              |       | u_0_c6232/u_1_c6092/n3_qn_reg/Q | u_0_c6232/u_1_c6092/n3_qn         |
-| 17       | FDPE/Q          | None       | SLICE_X39Y12/A5FF | X1Y0         |           1 |               0 |              |       | u_0_c6232/u_2_c6093/n3_qn_reg/Q | u_0_c6232/u_2_c6093/n3_qn_reg_n_0 |
-| 18       | FDPE/Q          | None       | SLICE_X34Y13/A5FF | X1Y0         |           1 |               0 |              |       | u_0_c6232/u_3_c6094/n3_qn_reg/Q | u_0_c6232/u_3_c6094/n3_qn_reg_n_0 |
-| 19       | FDPE/Q          | None       | SLICE_X32Y12/A5FF | X1Y0         |           1 |               0 |              |       | u_0_c6232/u_4_c6095/n3_qn_reg/Q | u_0_c6232/u_4_c6095/n3_qn_reg_n_0 |
-| 20       | FDPE/Q          | None       | SLICE_X37Y9/A5FF  | X1Y0         |           1 |               0 |              |       | u_0_c6232/u_5_c6096/n3_qn_reg/Q | u_0_c6232/u_5_c6096/n3_qn_reg_n_0 |
-| 21       | FDPE/Q          | None       | SLICE_X35Y11/A5FF | X1Y0         |           1 |               0 |              |       | u_0_c6232/u_6_c6097/n3_qn_reg/Q | u_0_c6232/u_6_c6097/n3_qn_reg_n_0 |
-| 22       | FDPE/Q          | None       | SLICE_X39Y13/A5FF | X1Y0         |           1 |               0 |              |       | u_0_c6232/u_7_c6098/n3_qn_reg/Q | u_0_c6232/u_7_c6098/n3_qn_reg_n_0 |
+| 0        | FDPE/Q          | None       | SLICE_X35Y12/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_0_c6091/n1_qn_reg/Q | u_0_c6232/u_0_c6091/n1_qn         |
+| 1        | FDPE/Q          | None       | SLICE_X38Y10/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_1_c6092/n1_qn_reg/Q | u_0_c6232/u_1_c6092/n1_qn_reg_n_0 |
+| 2        | FDPE/Q          | None       | SLICE_X39Y10/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_1_c6092/n2_qn_reg/Q | u_0_c6232/u_1_c6092/n2_qn_reg_n_0 |
+| 3        | FDPE/Q          | None       | SLICE_X36Y10/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_2_c6093/n1_qn_reg/Q | u_0_c6232/u_2_c6093/n1_qn_reg_n_0 |
+| 4        | FDPE/Q          | None       | SLICE_X37Y10/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_2_c6093/n2_qn_reg/Q | u_0_c6232/u_2_c6093/n2_qn_reg_n_0 |
+| 5        | FDPE/Q          | None       | SLICE_X34Y13/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_3_c6094/n1_qn_reg/Q | u_0_c6232/u_3_c6094/n1_qn_reg_n_0 |
+| 6        | FDPE/Q          | None       | SLICE_X34Y14/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_3_c6094/n2_qn_reg/Q | u_0_c6232/u_3_c6094/n2_qn_reg_n_0 |
+| 7        | FDPE/Q          | None       | SLICE_X35Y14/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_4_c6095/n1_qn_reg/Q | u_0_c6232/u_4_c6095/n1_qn_reg_n_0 |
+| 8        | FDPE/Q          | None       | SLICE_X36Y14/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_4_c6095/n2_qn_reg/Q | u_0_c6232/u_4_c6095/n2_qn_reg_n_0 |
+| 9        | FDPE/Q          | None       | SLICE_X34Y11/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_5_c6096/n1_qn_reg/Q | u_0_c6232/u_5_c6096/n1_qn_reg_n_0 |
+| 10       | FDPE/Q          | None       | SLICE_X34Y10/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_5_c6096/n2_qn_reg/Q | u_0_c6232/u_5_c6096/n2_qn_reg_n_0 |
+| 11       | FDPE/Q          | None       | SLICE_X35Y11/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_6_c6097/n1_qn_reg/Q | u_0_c6232/u_6_c6097/n1_qn_reg_n_0 |
+| 12       | FDPE/Q          | None       | SLICE_X36Y12/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_6_c6097/n2_qn_reg/Q | u_0_c6232/u_6_c6097/n2_qn_reg_n_0 |
+| 13       | FDPE/Q          | None       | SLICE_X38Y11/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_7_c6098/n1_qn_reg/Q | u_0_c6232/u_7_c6098/n1_qn_reg_n_0 |
+| 14       | FDPE/Q          | None       | SLICE_X38Y12/A5FF | X1Y0         |           2 |               0 |              |       | u_0_c6232/u_7_c6098/n2_qn_reg/Q | u_0_c6232/u_7_c6098/n2_qn_reg_n_0 |
+| 15       | FDPE/Q          | None       | SLICE_X34Y12/A5FF | X1Y0         |           1 |               0 |              |       | u_0_c6232/u_0_c6091/n2_qn_reg/Q | u_0_c6232/u_0_c6091/n2_qn         |
+| 16       | FDPE/Q          | None       | SLICE_X39Y9/A5FF  | X1Y0         |           1 |               0 |              |       | u_0_c6232/u_1_c6092/n3_qn_reg/Q | u_0_c6232/u_1_c6092/n3_qn         |
+| 17       | FDPE/Q          | None       | SLICE_X37Y9/A5FF  | X1Y0         |           1 |               0 |              |       | u_0_c6232/u_2_c6093/n3_qn_reg/Q | u_0_c6232/u_2_c6093/n3_qn_reg_n_0 |
+| 18       | FDPE/Q          | None       | SLICE_X35Y13/A5FF | X1Y0         |           1 |               0 |              |       | u_0_c6232/u_3_c6094/n3_qn_reg/Q | u_0_c6232/u_3_c6094/n3_qn_reg_n_0 |
+| 19       | FDPE/Q          | None       | SLICE_X37Y14/A5FF | X1Y0         |           1 |               0 |              |       | u_0_c6232/u_4_c6095/n3_qn_reg/Q | u_0_c6232/u_4_c6095/n3_qn_reg_n_0 |
+| 20       | FDPE/Q          | None       | SLICE_X35Y10/A5FF | X1Y0         |           1 |               0 |              |       | u_0_c6232/u_5_c6096/n3_qn_reg/Q | u_0_c6232/u_5_c6096/n3_qn_reg_n_0 |
+| 21       | FDPE/Q          | None       | SLICE_X36Y11/A5FF | X1Y0         |           1 |               0 |              |       | u_0_c6232/u_6_c6097/n3_qn_reg/Q | u_0_c6232/u_6_c6097/n3_qn_reg_n_0 |
+| 22       | FDPE/Q          | None       | SLICE_X37Y12/A5FF | X1Y0         |           1 |               0 |              |       | u_0_c6232/u_7_c6098/n3_qn_reg/Q | u_0_c6232/u_7_c6098/n3_qn_reg_n_0 |
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+---------------------------------+-----------------------------------+
 * Local Clocks in this context represents only clocks driven by non-global buffers
 ** Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
@@ -107,7 +107,7 @@ Table of Contents
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | X0Y0              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |   900 |    0 |   200 |    0 |     0 |    0 |     0 |    0 |     0 |
-| X1Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   40 |  1100 |   13 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X1Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   40 |  1100 |   10 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 * Global Clock column represents track count; while other columns represents cell counts
 

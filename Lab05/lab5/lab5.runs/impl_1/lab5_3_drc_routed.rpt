@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Sun Aug  2 23:29:32 2026
+| Date         : Mon Aug  3 17:54:36 2026
 | Host         : LAPTOP-2P21F8GO running 64-bit major release  (build 9200)
 | Command      : report_drc -file lab5_3_drc_routed.rpt -pb lab5_3_drc_routed.pb -rpx lab5_3_drc_routed.rpx
 | Design       : lab5_3
@@ -96,9 +96,10 @@ Related violations: <none>
 
 PLHOLDVIO-2#2 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT u_0_c6232/u_1_c6092/n1_q_i_3 is driving clock pin of 6 cells. This could lead to large hold time violations. Involved cells are:
-u_1_c6233/n1_q_reg, u_1_c6233/n2_q_reg, u_1_c6233/n2_qn_reg,
-u_1_c6233/n3_q_reg, u_1_c6233/n3_qn_reg, u_1_c6233/n4_q_reg
+A LUT u_0_c6232/u_1_c6092/n1_q_i_3 is driving clock pin of 7 cells. This could lead to large hold time violations. Involved cells are:
+u_1_c6233/n19_qn_reg, u_1_c6233/n1_q_reg, u_1_c6233/n2_q_reg,
+u_1_c6233/n2_qn_reg, u_1_c6233/n3_q_reg, u_1_c6233/n3_qn_reg
+u_1_c6233/n4_q_reg
 Related violations: <none>
 
 PLHOLDVIO-2#3 Warning

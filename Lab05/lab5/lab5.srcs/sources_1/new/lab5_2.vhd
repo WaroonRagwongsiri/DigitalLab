@@ -123,9 +123,9 @@ begin
   e <= n9_e;
   f <= n9_f;
   g <= n9_g;
-  d0 <= STD_LOGIC'('1');
-  d1 <= STD_LOGIC'('1');
-  d2 <= STD_LOGIC'('1');
+  d0 <= STD_LOGIC'('0');
+  d1 <= STD_LOGIC'('0');
+  d2 <= STD_LOGIC'('0');
   d3 <= STD_LOGIC'('1');
 
 end Behavioral;

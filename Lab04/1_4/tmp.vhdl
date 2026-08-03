@@ -389,7 +389,7 @@ begin
   e <= n7_e;
   f <= n7_f;
   g <= n7_g;
-  d0 <= n6_d0;
+  d0 <= STD_LOGIC'('0');
   d1 <= n6_d1;
   d2 <= n6_d2;
   d3 <= n6_d3;
@@ -498,34 +498,28 @@ entity digit_selector is
 end digit_selector;
 
 architecture Behavioral of digit_selector is
-  signal n1_q, n1_qn, n2_q, n2_qn, n8_o, n9_o, n10_o, n11_o : STD_LOGIC;
+  signal n1_q, n1_qn, n2_q, n2_qn, n5_o, n6_o, n7_o, n8_o : STD_LOGIC;
 begin
 
   -- combinational logic
-  n8_o <= n2_q and STD_LOGIC'('1');
-  n9_o <= n2_q and n1_qn;
-  n10_o <= n2_qn and STD_LOGIC'('1');
-  n11_o <= n2_qn and n1_qn;
+  n5_o <= n2_q and n1_q;
+  n6_o <= n2_q and n1_qn;
+  n7_o <= n2_qn and n1_q;
+  n8_o <= n2_qn and n1_qn;
 
   -- sequential logic (flip-flops)
-  process(clk, n8_o)
+  process(clk)
   begin
-    if n8_o = '1' then
-      n1_q <= '0';
-      n1_qn <= '1';
-    elsif rising_edge(clk) then
+    if rising_edge(clk) then
       if    (STD_LOGIC'('1')='0' and STD_LOGIC'('1')='1') then n1_q <= '0'; n1_qn <= '1';
       elsif (STD_LOGIC'('1')='1' and STD_LOGIC'('1')='0') then n1_q <= '1'; n1_qn <= '0';
       elsif (STD_LOGIC'('1')='1' and STD_LOGIC'('1')='1') then n1_q <= not n1_q; n1_qn <= n1_q;
       end if;
     end if;
   end process;
-  process(n1_qn, n8_o)
+  process(clk)
   begin
-    if n8_o = '1' then
-      n2_q <= '0';
-      n2_qn <= '1';
-    elsif rising_edge(n1_qn) then
+    if rising_edge(clk) then
       if    (STD_LOGIC'('1')='0' and STD_LOGIC'('1')='1') then n2_q <= '0'; n2_qn <= '1';
       elsif (STD_LOGIC'('1')='1' and STD_LOGIC'('1')='0') then n2_q <= '1'; n2_qn <= '0';
       elsif (STD_LOGIC'('1')='1' and STD_LOGIC'('1')='1') then n2_q <= not n2_q; n2_qn <= n2_q;
@@ -534,10 +528,10 @@ begin
   end process;
 
   -- output drivers
-  d3 <= n8_o;
-  d2 <= n9_o;
-  d1 <= n10_o;
-  d0 <= n11_o;
+  d3 <= n5_o;
+  d2 <= n6_o;
+  d1 <= n7_o;
+  d0 <= n8_o;
 
 end Behavioral;
 
