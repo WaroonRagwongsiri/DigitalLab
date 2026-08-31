@@ -1,1 +1,23 @@
+# OS
 .DS_Store
+
+# Vivado - generated/temp files
+*.jou
+*.log
+*.str
+*.pb
+webtalk*.log
+webtalk*.jou
+usage_statistics_webtalk.html
+
+# Vivado - generated directories (matches <project>.cache, <project>.runs, etc. for any project name)
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.gen/
+.Xil/
+
+# Simulation waveform databases (can be very large, e.g. the 177MB file that broke this push)
+*.wdb

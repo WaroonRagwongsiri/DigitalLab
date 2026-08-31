@@ -19,15 +19,17 @@ entity counter_2345679 is
 end counter_2345679;
 
 architecture Behavioral of counter_2345679 is
-  -- Main counter signals (Uninitialized)
-  signal n1_q, n1_qn, n2_q, n2_qn, n3_q, n3_qn, n4_q, n4_qn : STD_LOGIC;
-  
-  -- ONLY the Init-FF is explicitly initialized
+  signal n5_o, n7_o, n12_o : STD_LOGIC;
+  signal n1_q : STD_LOGIC := '0';
+  signal n1_qn : STD_LOGIC := '1';
+  signal n2_q : STD_LOGIC := '0';
+  signal n2_qn : STD_LOGIC := '1';
+  signal n3_q : STD_LOGIC := '0';
+  signal n3_qn : STD_LOGIC := '1';
+  signal n4_q : STD_LOGIC := '0';
+  signal n4_qn : STD_LOGIC := '1';
   signal n19_q : STD_LOGIC := '0';
   signal n19_qn : STD_LOGIC := '1';
-  
-  -- Combinational signals
-  signal n5_o, n7_o, n12_o : STD_LOGIC;
 begin
 
   -- combinational logic

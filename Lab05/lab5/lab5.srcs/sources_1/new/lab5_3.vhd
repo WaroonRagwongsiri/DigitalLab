@@ -1,24 +1,6 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 08/02/2026 09:54:44 PM
--- Design Name: 
--- Module Name: lab5_3 - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
+-- ============================================================
+-- Entity: lab5_3
+-- ============================================================
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -44,12 +26,6 @@ entity lab5_3 is
 end lab5_3;
 
 architecture Behavioral of lab5_3 is
-  component mod50m_async
-    Port (
-      clk : in  STD_LOGIC;
-      clk_mod50m : out STD_LOGIC
-    );
-  end component;
   component counter_2345679
     Port (
       clk : in  STD_LOGIC;
@@ -74,46 +50,52 @@ architecture Behavioral of lab5_3 is
       g : out STD_LOGIC
     );
   end component;
-  signal n1_clk_mod50m, n2_q3_msb, n2_q2, n2_q1, n2_q0_lsb, n3_a, n3_b, n3_c, n3_d, n3_e, n3_f, n3_g : STD_LOGIC;
+  component mod50m_sync
+    Port (
+      clk : in  STD_LOGIC;
+      clk_mod50m : out STD_LOGIC
+    );
+  end component;
+  signal n1_q3_msb, n1_q2, n1_q1, n1_q0_lsb, n2_a, n2_b, n2_c, n2_d, n2_e, n2_f, n2_g, n4_clk_mod50m : STD_LOGIC;
 begin
 
   -- sub-component instantiations
-  u_0_c6232 : mod50m_async port map (
+  u_0_c6233 : counter_2345679 port map (
+    clk => n4_clk_mod50m,
+    q3_msb => n1_q3_msb,
+    q2 => n1_q2,
+    q1 => n1_q1,
+    q0_lsb => n1_q0_lsb
+  );
+  u_1_c6237 : hex_7seg port map (
+    in1_msb => n1_q3_msb,
+    in2 => n1_q2,
+    in3 => n1_q1,
+    in4_lsb => n1_q0_lsb,
+    a => n2_a,
+    b => n2_b,
+    c => n2_c,
+    d => n2_d,
+    e => n2_e,
+    f => n2_f,
+    g => n2_g
+  );
+  u_2_c7040 : mod50m_sync port map (
     clk => clk,
-    clk_mod50m => n1_clk_mod50m
-  );
-  u_1_c6233 : counter_2345679 port map (
-    clk => n1_clk_mod50m,
-    q3_msb => n2_q3_msb,
-    q2 => n2_q2,
-    q1 => n2_q1,
-    q0_lsb => n2_q0_lsb
-  );
-  u_2_c6237 : hex_7seg port map (
-    in1_msb => n2_q3_msb,
-    in2 => n2_q2,
-    in3 => n2_q1,
-    in4_lsb => n2_q0_lsb,
-    a => n3_a,
-    b => n3_b,
-    c => n3_c,
-    d => n3_d,
-    e => n3_e,
-    f => n3_f,
-    g => n3_g
+    clk_mod50m => n4_clk_mod50m
   );
 
   -- output drivers
-  a <= n3_a;
-  b <= n3_b;
-  c <= n3_c;
-  d <= n3_d;
-  e <= n3_e;
-  f <= n3_f;
-  g <= n3_g;
-  d0 <= STD_LOGIC'('0');
+  a <= n2_a;
+  b <= n2_b;
+  c <= n2_c;
+  d <= n2_d;
+  e <= n2_e;
+  f <= n2_f;
+  g <= n2_g;
+  d0 <= STD_LOGIC'('1');
   d1 <= STD_LOGIC'('0');
   d2 <= STD_LOGIC'('0');
-  d3 <= STD_LOGIC'('1');
+  d3 <= STD_LOGIC'('0');
 
 end Behavioral;
