@@ -2,7 +2,7 @@
   "version": 1,
   "project": {
     "name": "lab6",
-    "topId": "sch8433",
+    "topId": "sch7261",
     "schematics": {
       "sch1564": {
         "id": "sch1564",
@@ -12249,8 +12249,8 @@
           {
             "id": "c6783",
             "type": "IN",
-            "x": 198,
-            "y": 132,
+            "x": 187,
+            "y": 66,
             "params": {
               "name": "last_output",
               "width": 1
@@ -12260,7 +12260,7 @@
           {
             "id": "c6784",
             "type": "IN",
-            "x": 231,
+            "x": 209,
             "y": 220,
             "params": {
               "name": "clk",
@@ -12270,80 +12270,10 @@
             "label": ""
           },
           {
-            "id": "c6785",
-            "type": "TFF",
-            "x": 363,
-            "y": 132,
-            "params": {
-              "edge": "rising",
-              "reset": true,
-              "preset": false
-            },
-            "label": ""
-          },
-          {
-            "id": "c6787",
-            "type": "TFF",
-            "x": 605,
-            "y": 132,
-            "params": {
-              "edge": "rising",
-              "reset": true,
-              "preset": false
-            },
-            "label": ""
-          },
-          {
-            "id": "c6789",
-            "type": "AND",
-            "x": 495,
-            "y": 44,
-            "params": {
-              "inputs": 2
-            },
-            "label": ""
-          },
-          {
-            "id": "c6796",
-            "type": "JUNCTION",
-            "x": 335,
-            "y": 148,
-            "params": {}
-          },
-          {
-            "id": "c6811",
-            "type": "TFF",
-            "x": 847,
-            "y": 132,
-            "params": {
-              "edge": "rising",
-              "reset": true,
-              "preset": false
-            },
-            "label": ""
-          },
-          {
-            "id": "c6814",
-            "type": "AND",
-            "x": 737,
-            "y": 44,
-            "params": {
-              "inputs": 2
-            },
-            "label": ""
-          },
-          {
-            "id": "c6819",
-            "type": "JUNCTION",
-            "x": 577,
-            "y": 71,
-            "params": {}
-          },
-          {
             "id": "c6834",
             "type": "OUT",
-            "x": 1144,
-            "y": 363,
+            "x": 1430,
+            "y": 77,
             "params": {
               "name": "mod5_out",
               "width": 1
@@ -12351,367 +12281,358 @@
             "label": ""
           },
           {
-            "id": "c6837",
-            "type": "JUNCTION",
-            "x": 863,
-            "y": 214,
-            "params": {}
-          },
-          {
-            "id": "c6842",
-            "type": "JUNCTION",
-            "x": 621,
-            "y": 214,
-            "params": {}
-          },
-          {
-            "id": "c6852",
-            "type": "JUNCTION",
-            "x": 357,
-            "y": 236,
-            "params": {}
-          },
-          {
-            "id": "c6856",
-            "type": "JUNCTION",
-            "x": 599,
-            "y": 236,
-            "params": {}
-          },
-          {
-            "id": "c7050",
-            "type": "AND",
-            "x": 1023,
-            "y": 341,
-            "params": {
-              "inputs": 3
-            },
-            "label": ""
-          },
-          {
-            "id": "c7114",
-            "type": "DFF",
-            "x": 1155,
-            "y": 187,
+            "id": "c10614",
+            "type": "TFF",
+            "x": 418,
+            "y": 132,
             "params": {
               "edge": "rising",
-              "reset": true,
+              "reset": false,
               "preset": false
+            },
+            "label": "T0"
+          },
+          {
+            "id": "c10615",
+            "type": "TFF",
+            "x": 759,
+            "y": 132,
+            "params": {
+              "edge": "rising",
+              "reset": false,
+              "preset": false
+            },
+            "label": "T1"
+          },
+          {
+            "id": "c10616",
+            "type": "TFF",
+            "x": 1177,
+            "y": 132,
+            "params": {
+              "edge": "rising",
+              "reset": false,
+              "preset": false
+            },
+            "label": "T2"
+          },
+          {
+            "id": "c10618",
+            "type": "AND",
+            "x": 330,
+            "y": 121,
+            "params": {
+              "inputs": 2
             },
             "label": ""
           },
           {
-            "id": "c7119",
+            "id": "c10622",
+            "type": "AND",
+            "x": 594,
+            "y": 110,
+            "params": {
+              "inputs": 2
+            },
+            "label": ""
+          },
+          {
+            "id": "c10624",
             "type": "JUNCTION",
-            "x": 1116,
-            "y": 379,
+            "x": 302,
+            "y": 82,
             "params": {}
           },
           {
-            "id": "c7123",
+            "id": "c10629",
+            "type": "AND",
+            "x": 902,
+            "y": 132,
+            "params": {
+              "inputs": 2
+            },
+            "label": ""
+          },
+          {
+            "id": "c10647",
             "type": "JUNCTION",
-            "x": 841,
+            "x": 544,
+            "y": 148,
+            "params": {}
+          },
+          {
+            "id": "c10651",
+            "type": "OR",
+            "x": 990,
+            "y": 121,
+            "params": {
+              "inputs": 2
+            },
+            "label": ""
+          },
+          {
+            "id": "c10654",
+            "type": "AND",
+            "x": 1067,
+            "y": 110,
+            "params": {
+              "inputs": 2
+            },
+            "label": ""
+          },
+          {
+            "id": "c10657",
+            "type": "JUNCTION",
+            "x": 588,
+            "y": 82,
+            "params": {}
+          },
+          {
+            "id": "c10661",
+            "type": "AND",
+            "x": 1320,
+            "y": 66,
+            "params": {
+              "inputs": 2
+            },
+            "label": ""
+          },
+          {
+            "id": "c10663",
+            "type": "JUNCTION",
+            "x": 1061,
+            "y": 82,
+            "params": {}
+          },
+          {
+            "id": "c10667",
+            "type": "JUNCTION",
+            "x": 1292,
+            "y": 148,
+            "params": {
+              "fixed": true
+            }
+          },
+          {
+            "id": "c10673",
+            "type": "JUNCTION",
+            "x": 412,
             "y": 236,
             "params": {}
           },
           {
-            "id": "c7253",
+            "id": "c10677",
             "type": "JUNCTION",
-            "x": 1171,
-            "y": 159,
-            "params": {}
-          },
-          {
-            "id": "c9971",
-            "type": "JUNCTION",
-            "x": 467,
-            "y": 148,
+            "x": 753,
+            "y": 236,
             "params": {}
           }
         ],
         "wires": [
           {
-            "id": "w6797",
+            "id": "w10619",
+            "from": {
+              "cid": "c10618",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c10614",
+              "pid": "t"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10621",
+            "from": {
+              "cid": "c10616",
+              "pid": "qn"
+            },
+            "to": {
+              "cid": "c10618",
+              "pid": "i1"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 1320,
+                "y": 187
+              },
+              {
+                "x": 1320,
+                "y": 264
+              },
+              {
+                "x": 330,
+                "y": 264
+              }
+            ]
+          },
+          {
+            "id": "w10625",
             "from": {
               "cid": "c6783",
               "pid": "o"
             },
             "to": {
-              "cid": "c6796",
+              "cid": "c10624",
               "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6798",
-            "from": {
-              "cid": "c6796",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6785",
-              "pid": "t"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6799",
-            "from": {
-              "cid": "c6796",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6789",
-              "pid": "i0"
             },
             "name": "",
-            "pts": [
-              {
-                "x": 341,
-                "y": 66
-              }
-            ]
+            "mx": 308
           },
           {
-            "id": "w6820",
+            "id": "w10626",
             "from": {
-              "cid": "c6789",
+              "cid": "c10624",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10618",
+              "pid": "i0"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10645",
+            "from": {
+              "cid": "c10622",
               "pid": "o"
             },
             "to": {
-              "cid": "c6819",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6821",
-            "from": {
-              "cid": "c6819",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6787",
+              "cid": "c10615",
               "pid": "t"
             },
             "name": ""
           },
           {
-            "id": "w6822",
+            "id": "w10646",
             "from": {
-              "cid": "c6819",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6814",
-              "pid": "i0"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 572,
-                "y": 66
-              }
-            ]
-          },
-          {
-            "id": "w6823",
-            "from": {
-              "cid": "c6787",
+              "cid": "c10615",
               "pid": "q"
             },
             "to": {
-              "cid": "c6814",
+              "cid": "c10629",
+              "pid": "i0"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10648",
+            "from": {
+              "cid": "c10614",
+              "pid": "q"
+            },
+            "to": {
+              "cid": "c10647",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10649",
+            "from": {
+              "cid": "c10647",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10622",
+              "pid": "i1"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10650",
+            "from": {
+              "cid": "c10647",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10629",
               "pid": "i1"
             },
             "name": "",
             "pts": [
               {
-                "x": 715,
-                "y": 154
+                "x": 550,
+                "y": 220
               },
               {
-                "x": 715,
-                "y": 88
-              }
-            ]
-          },
-          {
-            "id": "w6839",
-            "from": {
-              "cid": "c6837",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6811",
-              "pid": "rst"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6843",
-            "from": {
-              "cid": "c6837",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6842",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6844",
-            "from": {
-              "cid": "c6842",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6787",
-              "pid": "rst"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6845",
-            "from": {
-              "cid": "c6842",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6785",
-              "pid": "rst"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 385,
+                "x": 902,
                 "y": 220
               }
             ]
           },
           {
-            "id": "w6853",
+            "id": "w10652",
             "from": {
-              "cid": "c6784",
+              "cid": "c10629",
               "pid": "o"
             },
             "to": {
-              "cid": "c6852",
-              "pid": "j"
+              "cid": "c10651",
+              "pid": "i1"
             },
             "name": ""
           },
           {
-            "id": "w6854",
+            "id": "w10655",
             "from": {
-              "cid": "c6852",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6785",
-              "pid": "clk"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6857",
-            "from": {
-              "cid": "c6852",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6856",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6858",
-            "from": {
-              "cid": "c6856",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6787",
-              "pid": "clk"
-            },
-            "name": ""
-          },
-          {
-            "id": "w7049",
-            "from": {
-              "cid": "c6814",
+              "cid": "c10654",
               "pid": "o"
             },
             "to": {
-              "cid": "c6811",
+              "cid": "c10616",
               "pid": "t"
             },
-            "name": "",
-            "mx": 825
+            "name": ""
           },
           {
-            "id": "w7117",
+            "id": "w10656",
             "from": {
-              "cid": "c6811",
-              "pid": "q"
+              "cid": "c10651",
+              "pid": "o"
             },
             "to": {
-              "cid": "c7050",
+              "cid": "c10654",
+              "pid": "i1"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10658",
+            "from": {
+              "cid": "c10624",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10657",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10659",
+            "from": {
+              "cid": "c10657",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10622",
               "pid": "i0"
             },
             "name": "",
             "pts": [
               {
-                "x": 968,
-                "y": 253
-              },
-              {
-                "x": 968,
-                "y": 363
+                "x": 594,
+                "y": 88
               }
             ]
           },
           {
-            "id": "w7118",
+            "id": "w10662",
             "from": {
-              "cid": "c6787",
-              "pid": "qn"
-            },
-            "to": {
-              "cid": "c7050",
-              "pid": "i1"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 715,
-                "y": 275
-              },
-              {
-                "x": 715,
-                "y": 385
-              }
-            ]
-          },
-          {
-            "id": "w7120",
-            "from": {
-              "cid": "c7050",
+              "cid": "c10661",
               "pid": "o"
-            },
-            "to": {
-              "cid": "c7119",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w7121",
-            "from": {
-              "cid": "c7119",
-              "pid": "j"
             },
             "to": {
               "cid": "c6834",
@@ -12720,151 +12641,178 @@
             "name": ""
           },
           {
-            "id": "w7122",
+            "id": "w10664",
             "from": {
-              "cid": "c7119",
+              "cid": "c10657",
               "pid": "j"
             },
             "to": {
-              "cid": "c7114",
-              "pid": "d"
+              "cid": "c10663",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10665",
+            "from": {
+              "cid": "c10663",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10654",
+              "pid": "i0"
             },
             "name": "",
             "pts": [
               {
-                "x": 1122,
-                "y": 286
+                "x": 1067,
+                "y": 88
               }
             ]
           },
           {
-            "id": "w7124",
+            "id": "w10666",
             "from": {
-              "cid": "c6856",
+              "cid": "c10663",
               "pid": "j"
             },
             "to": {
-              "cid": "c7123",
-              "pid": "j"
+              "cid": "c10661",
+              "pid": "i0"
             },
             "name": ""
           },
           {
-            "id": "w7125",
+            "id": "w10669",
             "from": {
-              "cid": "c7123",
+              "cid": "c10667",
               "pid": "j"
             },
             "to": {
-              "cid": "c6811",
-              "pid": "clk"
-            },
-            "name": ""
-          },
-          {
-            "id": "w7126",
-            "from": {
-              "cid": "c7123",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c7114",
-              "pid": "clk"
-            },
-            "name": ""
-          },
-          {
-            "id": "w7254",
-            "from": {
-              "cid": "c7114",
-              "pid": "q"
-            },
-            "to": {
-              "cid": "c7253",
-              "pid": "j"
+              "cid": "c10651",
+              "pid": "i0"
             },
             "name": "",
             "pts": [
               {
-                "x": 1276,
-                "y": 209
+                "x": 1298,
+                "y": 154
               },
               {
-                "x": 1276,
-                "y": 165
-              }
-            ]
-          },
-          {
-            "id": "w7255",
-            "from": {
-              "cid": "c7253",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6837",
-              "pid": "j"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 1089,
-                "y": 165
-              },
-              {
-                "x": 1089,
+                "x": 1298,
                 "y": 220
+              },
+              {
+                "x": 979,
+                "y": 220
+              },
+              {
+                "x": 979,
+                "y": 143
               }
             ]
           },
           {
-            "id": "w7256",
+            "id": "w10670",
             "from": {
-              "cid": "c7253",
+              "cid": "c10667",
               "pid": "j"
             },
             "to": {
-              "cid": "c7114",
-              "pid": "rst"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9972",
-            "from": {
-              "cid": "c6785",
-              "pid": "q"
-            },
-            "to": {
-              "cid": "c9971",
-              "pid": "j"
-            },
-            "name": "",
-            "mx": 473
-          },
-          {
-            "id": "w9973",
-            "from": {
-              "cid": "c9971",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6789",
+              "cid": "c10661",
               "pid": "i1"
             },
             "name": ""
           },
           {
-            "id": "w9974",
+            "id": "w10671",
             "from": {
-              "cid": "c9971",
+              "cid": "c10616",
+              "pid": "q"
+            },
+            "to": {
+              "cid": "c10667",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10674",
+            "from": {
+              "cid": "c6784",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c10673",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10675",
+            "from": {
+              "cid": "c10673",
               "pid": "j"
             },
             "to": {
-              "cid": "c7050",
-              "pid": "i2"
+              "cid": "c10614",
+              "pid": "clk"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 418,
+                "y": 242
+              }
+            ]
+          },
+          {
+            "id": "w10678",
+            "from": {
+              "cid": "c10673",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10677",
+              "pid": "j"
             },
             "name": ""
+          },
+          {
+            "id": "w10679",
+            "from": {
+              "cid": "c10677",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10615",
+              "pid": "clk"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 759,
+                "y": 242
+              }
+            ]
+          },
+          {
+            "id": "w10680",
+            "from": {
+              "cid": "c10677",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10616",
+              "pid": "clk"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 1177,
+                "y": 242
+              }
+            ]
           }
         ],
         "locked": false
@@ -12887,8 +12835,8 @@
           {
             "id": "c6867",
             "type": "IN",
-            "x": 1001,
-            "y": 803,
+            "x": 990,
+            "y": 770,
             "params": {
               "name": "clk",
               "width": 1,
@@ -12897,130 +12845,10 @@
             "label": ""
           },
           {
-            "id": "c6868",
-            "type": "TFF",
-            "x": 1133,
-            "y": 715,
-            "params": {
-              "edge": "rising",
-              "reset": true,
-              "preset": false
-            },
-            "label": ""
-          },
-          {
-            "id": "c6869",
-            "type": "TFF",
-            "x": 1375,
-            "y": 715,
-            "params": {
-              "edge": "rising",
-              "reset": true,
-              "preset": false
-            },
-            "label": ""
-          },
-          {
-            "id": "c6870",
-            "type": "AND",
-            "x": 1265,
-            "y": 627,
-            "params": {
-              "inputs": 2
-            },
-            "label": ""
-          },
-          {
-            "id": "c6871",
-            "type": "JUNCTION",
-            "x": 1105,
-            "y": 731,
-            "params": {}
-          },
-          {
-            "id": "c6872",
-            "type": "TFF",
-            "x": 1617,
-            "y": 715,
-            "params": {
-              "edge": "rising",
-              "reset": true,
-              "preset": false
-            },
-            "label": ""
-          },
-          {
-            "id": "c6873",
-            "type": "AND",
-            "x": 1507,
-            "y": 627,
-            "params": {
-              "inputs": 2
-            },
-            "label": ""
-          },
-          {
-            "id": "c6874",
-            "type": "JUNCTION",
-            "x": 1347,
-            "y": 654,
-            "params": {}
-          },
-          {
-            "id": "c6881",
-            "type": "JUNCTION",
-            "x": 1127,
-            "y": 819,
-            "params": {}
-          },
-          {
-            "id": "c6882",
-            "type": "JUNCTION",
-            "x": 1369,
-            "y": 819,
-            "params": {}
-          },
-          {
-            "id": "c6909",
-            "type": "TFF",
-            "x": 1870,
-            "y": 715,
-            "params": {
-              "edge": "rising",
-              "reset": true,
-              "preset": false
-            },
-            "label": ""
-          },
-          {
-            "id": "c6910",
-            "type": "AND",
-            "x": 1760,
-            "y": 627,
-            "params": {
-              "inputs": 2
-            },
-            "label": ""
-          },
-          {
-            "id": "c6919",
-            "type": "JUNCTION",
-            "x": 1589,
-            "y": 654,
-            "params": {}
-          },
-          {
-            "id": "c6923",
-            "type": "JUNCTION",
-            "x": 1611,
-            "y": 819,
-            "params": {}
-          },
-          {
             "id": "c6935",
             "type": "OUT",
-            "x": 2244,
-            "y": 968,
+            "x": 1364,
+            "y": 715,
             "params": {
               "name": "mod10_out",
               "width": 1
@@ -13028,636 +12856,109 @@
             "label": ""
           },
           {
-            "id": "c6937",
-            "type": "JUNCTION",
-            "x": 1886,
-            "y": 797,
-            "params": {}
-          },
-          {
-            "id": "c6941",
-            "type": "JUNCTION",
-            "x": 1633,
-            "y": 797,
-            "params": {}
-          },
-          {
-            "id": "c6945",
-            "type": "JUNCTION",
-            "x": 1391,
-            "y": 797,
-            "params": {}
-          },
-          {
-            "id": "c7074",
-            "type": "AND",
-            "x": 2024,
-            "y": 935,
-            "params": {
-              "inputs": 4
-            },
+            "id": "c10681",
+            "type": "SCH:sch6782",
+            "x": 1232,
+            "y": 715,
+            "params": {},
             "label": ""
           },
           {
-            "id": "c7131",
-            "type": "DFF",
-            "x": 2178,
-            "y": 770,
-            "params": {
-              "edge": "rising",
-              "reset": true,
-              "preset": false
-            },
+            "id": "c10682",
+            "type": "SCH:sch9934",
+            "x": 1089,
+            "y": 715,
+            "params": {},
             "label": ""
           },
           {
-            "id": "c7132",
+            "id": "c10686",
             "type": "JUNCTION",
-            "x": 2139,
-            "y": 984,
-            "params": {}
-          },
-          {
-            "id": "c7137",
-            "type": "JUNCTION",
-            "x": 1864,
-            "y": 819,
-            "params": {}
-          },
-          {
-            "id": "c7257",
-            "type": "JUNCTION",
-            "x": 2293,
+            "x": 1083,
             "y": 786,
             "params": {
               "fixed": true
             }
-          },
-          {
-            "id": "c9976",
-            "type": "JUNCTION",
-            "x": 1479,
-            "y": 731,
-            "params": {}
           }
         ],
         "wires": [
           {
-            "id": "w6883",
+            "id": "w10684",
             "from": {
               "cid": "c6866",
               "pid": "o"
             },
             "to": {
-              "cid": "c6871",
-              "pid": "j"
+              "cid": "c10682",
+              "pid": "last_output"
             },
             "name": ""
           },
           {
-            "id": "w6884",
+            "id": "w10685",
             "from": {
-              "cid": "c6871",
-              "pid": "j"
+              "cid": "c10682",
+              "pid": "mod2_out"
             },
             "to": {
-              "cid": "c6868",
-              "pid": "t"
+              "cid": "c10681",
+              "pid": "last_output"
             },
             "name": ""
           },
           {
-            "id": "w6885",
-            "from": {
-              "cid": "c6871",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6870",
-              "pid": "i0"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 1111,
-                "y": 649
-              }
-            ]
-          },
-          {
-            "id": "w6886",
-            "from": {
-              "cid": "c6870",
-              "pid": "o"
-            },
-            "to": {
-              "cid": "c6874",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6887",
-            "from": {
-              "cid": "c6874",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6869",
-              "pid": "t"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6888",
-            "from": {
-              "cid": "c6874",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6873",
-              "pid": "i0"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 1342,
-                "y": 649
-              }
-            ]
-          },
-          {
-            "id": "w6903",
+            "id": "w10687",
             "from": {
               "cid": "c6867",
               "pid": "o"
             },
             "to": {
-              "cid": "c6881",
+              "cid": "c10686",
               "pid": "j"
             },
             "name": ""
           },
           {
-            "id": "w6904",
+            "id": "w10688",
             "from": {
-              "cid": "c6881",
+              "cid": "c10686",
               "pid": "j"
             },
             "to": {
-              "cid": "c6868",
+              "cid": "c10682",
               "pid": "clk"
             },
             "name": ""
           },
           {
-            "id": "w6905",
+            "id": "w10689",
             "from": {
-              "cid": "c6881",
+              "cid": "c10686",
               "pid": "j"
             },
             "to": {
-              "cid": "c6882",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6906",
-            "from": {
-              "cid": "c6882",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6869",
+              "cid": "c10681",
               "pid": "clk"
             },
-            "name": ""
-          },
-          {
-            "id": "w6913",
-            "from": {
-              "cid": "c6872",
-              "pid": "q"
-            },
-            "to": {
-              "cid": "c6910",
-              "pid": "i1"
-            },
             "name": "",
             "pts": [
               {
-                "x": 1727,
-                "y": 737
-              },
-              {
-                "x": 1727,
-                "y": 682
+                "x": 1232,
+                "y": 792
               }
             ]
           },
           {
-            "id": "w6920",
+            "id": "w10690",
             "from": {
-              "cid": "c6873",
-              "pid": "o"
-            },
-            "to": {
-              "cid": "c6919",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6921",
-            "from": {
-              "cid": "c6919",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6872",
-              "pid": "t"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6922",
-            "from": {
-              "cid": "c6919",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6910",
-              "pid": "i0"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 1595,
-                "y": 649
-              }
-            ]
-          },
-          {
-            "id": "w6924",
-            "from": {
-              "cid": "c6882",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6923",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6925",
-            "from": {
-              "cid": "c6923",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6872",
-              "pid": "clk"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6939",
-            "from": {
-              "cid": "c6937",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6909",
-              "pid": "rst"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6942",
-            "from": {
-              "cid": "c6937",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6941",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6943",
-            "from": {
-              "cid": "c6941",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6872",
-              "pid": "rst"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6946",
-            "from": {
-              "cid": "c6941",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6945",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6947",
-            "from": {
-              "cid": "c6945",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6869",
-              "pid": "rst"
-            },
-            "name": ""
-          },
-          {
-            "id": "w6948",
-            "from": {
-              "cid": "c6945",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6868",
-              "pid": "rst"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 1155,
-                "y": 803
-              }
-            ]
-          },
-          {
-            "id": "w7073",
-            "from": {
-              "cid": "c6910",
-              "pid": "o"
-            },
-            "to": {
-              "cid": "c6909",
-              "pid": "t"
-            },
-            "name": "",
-            "mx": 1848
-          },
-          {
-            "id": "w7129",
-            "from": {
-              "cid": "c6909",
-              "pid": "q"
-            },
-            "to": {
-              "cid": "c7074",
-              "pid": "i0"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 1991,
-                "y": 825
-              },
-              {
-                "x": 1991,
-                "y": 957
-              }
-            ]
-          },
-          {
-            "id": "w7130",
-            "from": {
-              "cid": "c6872",
-              "pid": "qn"
-            },
-            "to": {
-              "cid": "c7074",
-              "pid": "i1"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 1738,
-                "y": 847
-              },
-              {
-                "x": 1738,
-                "y": 968
-              }
-            ]
-          },
-          {
-            "id": "w7133",
-            "from": {
-              "cid": "c7074",
-              "pid": "o"
-            },
-            "to": {
-              "cid": "c7132",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w7134",
-            "from": {
-              "cid": "c7132",
-              "pid": "j"
+              "cid": "c10681",
+              "pid": "mod5_out"
             },
             "to": {
               "cid": "c6935",
               "pid": "i"
             },
             "name": ""
-          },
-          {
-            "id": "w7135",
-            "from": {
-              "cid": "c7132",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c7131",
-              "pid": "d"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 2145,
-                "y": 836
-              }
-            ]
-          },
-          {
-            "id": "w7138",
-            "from": {
-              "cid": "c6923",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c7137",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w7139",
-            "from": {
-              "cid": "c7137",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6909",
-              "pid": "clk"
-            },
-            "name": ""
-          },
-          {
-            "id": "w7140",
-            "from": {
-              "cid": "c7137",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c7131",
-              "pid": "clk"
-            },
-            "name": ""
-          },
-          {
-            "id": "w7258",
-            "from": {
-              "cid": "c7131",
-              "pid": "q"
-            },
-            "to": {
-              "cid": "c7257",
-              "pid": "j"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 2299,
-                "y": 792
-              },
-              {
-                "x": 2299,
-                "y": 792
-              }
-            ]
-          },
-          {
-            "id": "w7259",
-            "from": {
-              "cid": "c7257",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6937",
-              "pid": "j"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 2112,
-                "y": 748
-              },
-              {
-                "x": 2112,
-                "y": 803
-              }
-            ]
-          },
-          {
-            "id": "w7260",
-            "from": {
-              "cid": "c7257",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c7131",
-              "pid": "rst"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 2299,
-                "y": 858
-              }
-            ]
-          },
-          {
-            "id": "w9975",
-            "from": {
-              "cid": "c6868",
-              "pid": "q"
-            },
-            "to": {
-              "cid": "c6870",
-              "pid": "i1"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9977",
-            "from": {
-              "cid": "c6869",
-              "pid": "q"
-            },
-            "to": {
-              "cid": "c9976",
-              "pid": "j"
-            },
-            "name": "",
-            "mx": 1485
-          },
-          {
-            "id": "w9978",
-            "from": {
-              "cid": "c9976",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c6873",
-              "pid": "i1"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9979",
-            "from": {
-              "cid": "c9976",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c7074",
-              "pid": "i2"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9980",
-            "from": {
-              "cid": "c6868",
-              "pid": "qn"
-            },
-            "to": {
-              "cid": "c7074",
-              "pid": "i3"
-            },
-            "name": "",
-            "mx": 1254
           }
         ],
         "locked": false
@@ -16421,172 +15722,11 @@
           {
             "id": "c8286",
             "type": "COMPM",
-            "x": 528,
-            "y": 275,
+            "x": 341,
+            "y": 308,
             "params": {
-              "width": 8
+              "width": 4
             },
-            "label": ""
-          },
-          {
-            "id": "c8289",
-            "type": "JUNCTION",
-            "x": 478,
-            "y": 170,
-            "params": {}
-          },
-          {
-            "id": "c8295",
-            "type": "BUSTAP",
-            "x": 242,
-            "y": 286,
-            "params": {
-              "bit": 6,
-              "dir": "left",
-              "mode": "merge"
-            },
-            "label": ""
-          },
-          {
-            "id": "c8296",
-            "type": "BUSTAP",
-            "x": 242,
-            "y": 319,
-            "params": {
-              "bit": 5,
-              "dir": "left",
-              "mode": "merge"
-            },
-            "label": ""
-          },
-          {
-            "id": "c8297",
-            "type": "BUSTAP",
-            "x": 242,
-            "y": 352,
-            "params": {
-              "bit": 4,
-              "dir": "left",
-              "mode": "merge"
-            },
-            "label": ""
-          },
-          {
-            "id": "c8298",
-            "type": "BUSTAP",
-            "x": 242,
-            "y": 385,
-            "params": {
-              "bit": 3,
-              "dir": "left",
-              "mode": "merge"
-            },
-            "label": ""
-          },
-          {
-            "id": "c8299",
-            "type": "BUSTAP",
-            "x": 242,
-            "y": 418,
-            "params": {
-              "bit": 2,
-              "dir": "left",
-              "mode": "merge"
-            },
-            "label": ""
-          },
-          {
-            "id": "c8300",
-            "type": "BUSTAP",
-            "x": 242,
-            "y": 451,
-            "params": {
-              "bit": 1,
-              "dir": "left",
-              "mode": "merge"
-            },
-            "label": ""
-          },
-          {
-            "id": "c8301",
-            "type": "BUSTAP",
-            "x": 242,
-            "y": 484,
-            "params": {
-              "bit": 0,
-              "dir": "left",
-              "mode": "merge"
-            },
-            "label": ""
-          },
-          {
-            "id": "c8314",
-            "type": "BUSTAP",
-            "x": 242,
-            "y": 253,
-            "params": {
-              "bit": 7,
-              "dir": "left",
-              "mode": "merge"
-            },
-            "label": ""
-          },
-          {
-            "id": "c8315",
-            "type": "JUNCTION",
-            "x": 401,
-            "y": 357,
-            "params": {}
-          },
-          {
-            "id": "c8319",
-            "type": "JUNCTION",
-            "x": 401,
-            "y": 291,
-            "params": {}
-          },
-          {
-            "id": "c8323",
-            "type": "JUNCTION",
-            "x": 401,
-            "y": 324,
-            "params": {}
-          },
-          {
-            "id": "c8328",
-            "type": "JUNCTION",
-            "x": 401,
-            "y": 390,
-            "params": {}
-          },
-          {
-            "id": "c8332",
-            "type": "JUNCTION",
-            "x": 401,
-            "y": 423,
-            "params": {}
-          },
-          {
-            "id": "c8336",
-            "type": "JUNCTION",
-            "x": 401,
-            "y": 456,
-            "params": {}
-          },
-          {
-            "id": "c8340",
-            "type": "GND",
-            "x": 198,
-            "y": 517,
-            "params": {},
-            "label": ""
-          },
-          {
-            "id": "c8342",
-            "type": "VCC",
-            "x": 165,
-            "y": 198,
-            "params": {},
             "label": ""
           },
           {
@@ -16607,45 +15747,249 @@
             "params": {}
           },
           {
-            "id": "c9079",
+            "id": "c10694",
+            "type": "COMPM",
+            "x": 341,
+            "y": 506,
+            "params": {
+              "width": 4
+            },
+            "label": ""
+          },
+          {
+            "id": "c10695",
+            "type": "OR",
+            "x": 495,
+            "y": 330,
+            "params": {
+              "inputs": 2
+            },
+            "label": ""
+          },
+          {
+            "id": "c10699",
+            "type": "BUSTAP",
+            "x": 286,
+            "y": 319,
+            "params": {
+              "bit": 0,
+              "width": 1,
+              "dir": "right",
+              "mode": "split"
+            },
+            "label": ""
+          },
+          {
+            "id": "c10700",
+            "type": "BUSTAP",
+            "x": 286,
+            "y": 341,
+            "params": {
+              "bit": 1,
+              "width": 1,
+              "dir": "right",
+              "mode": "split"
+            },
+            "label": ""
+          },
+          {
+            "id": "c10701",
+            "type": "BUSTAP",
+            "x": 286,
+            "y": 363,
+            "params": {
+              "bit": 2,
+              "width": 1,
+              "dir": "right",
+              "mode": "split"
+            },
+            "label": ""
+          },
+          {
+            "id": "c10702",
+            "type": "BUSTAP",
+            "x": 286,
+            "y": 385,
+            "params": {
+              "bit": 3,
+              "width": 1,
+              "dir": "right",
+              "mode": "split"
+            },
+            "label": ""
+          },
+          {
+            "id": "c10703",
+            "type": "BUSTAP",
+            "x": 286,
+            "y": 517,
+            "params": {
+              "bit": 4,
+              "width": 1,
+              "dir": "right",
+              "mode": "split"
+            },
+            "label": ""
+          },
+          {
+            "id": "c10704",
+            "type": "BUSTAP",
+            "x": 286,
+            "y": 539,
+            "params": {
+              "bit": 5,
+              "width": 1,
+              "dir": "right",
+              "mode": "split"
+            },
+            "label": ""
+          },
+          {
+            "id": "c10705",
+            "type": "BUSTAP",
+            "x": 286,
+            "y": 561,
+            "params": {
+              "bit": 6,
+              "width": 1,
+              "dir": "right",
+              "mode": "split"
+            },
+            "label": ""
+          },
+          {
+            "id": "c10706",
+            "type": "BUSTAP",
+            "x": 286,
+            "y": 583,
+            "params": {
+              "bit": 7,
+              "width": 1,
+              "dir": "right",
+              "mode": "split"
+            },
+            "label": ""
+          },
+          {
+            "id": "c10707",
             "type": "JUNCTION",
-            "x": 170,
-            "y": 258,
+            "x": 489,
+            "y": 170,
             "params": {}
           },
           {
-            "id": "c9083",
+            "id": "c10711",
             "type": "JUNCTION",
-            "x": 170,
-            "y": 357,
-            "params": {}
-          },
-          {
-            "id": "c9087",
-            "type": "JUNCTION",
-            "x": 170,
-            "y": 390,
-            "params": {}
-          },
-          {
-            "id": "c9092",
-            "type": "JUNCTION",
-            "x": 203,
+            "x": 258,
             "y": 324,
             "params": {}
           },
           {
-            "id": "c9096",
+            "id": "c10715",
             "type": "JUNCTION",
-            "x": 203,
-            "y": 423,
+            "x": 258,
+            "y": 346,
             "params": {}
           },
           {
-            "id": "c9100",
+            "id": "c10719",
             "type": "JUNCTION",
-            "x": 203,
+            "x": 258,
+            "y": 368,
+            "params": {}
+          },
+          {
+            "id": "c10726",
+            "type": "JUNCTION",
+            "x": 258,
+            "y": 390,
+            "params": {}
+          },
+          {
+            "id": "c10730",
+            "type": "JUNCTION",
+            "x": 258,
+            "y": 522,
+            "params": {}
+          },
+          {
+            "id": "c10734",
+            "type": "JUNCTION",
+            "x": 258,
+            "y": 544,
+            "params": {}
+          },
+          {
+            "id": "c10738",
+            "type": "JUNCTION",
+            "x": 258,
+            "y": 566,
+            "params": {}
+          },
+          {
+            "id": "c10750",
+            "type": "VCC",
+            "x": 275,
+            "y": 407,
+            "params": {},
+            "label": ""
+          },
+          {
+            "id": "c10752",
+            "type": "JUNCTION",
+            "x": 302,
+            "y": 434,
+            "params": {
+              "fixed": true
+            }
+          },
+          {
+            "id": "c10756",
+            "type": "GND",
+            "x": 275,
+            "y": 462,
+            "params": {},
+            "label": ""
+          },
+          {
+            "id": "c10758",
+            "type": "JUNCTION",
+            "x": 313,
             "y": 456,
+            "params": {
+              "fixed": true
+            }
+          },
+          {
+            "id": "c10762",
+            "type": "VCC",
+            "x": 275,
+            "y": 605,
+            "params": {},
+            "label": ""
+          },
+          {
+            "id": "c10763",
+            "type": "GND",
+            "x": 275,
+            "y": 660,
+            "params": {},
+            "label": ""
+          },
+          {
+            "id": "c10765",
+            "type": "JUNCTION",
+            "x": 302,
+            "y": 632,
+            "params": {
+              "fixed": true
+            }
+          },
+          {
+            "id": "c10770",
+            "type": "JUNCTION",
+            "x": 313,
+            "y": 654,
             "params": {}
           }
         ],
@@ -16675,52 +16019,6 @@
             "name": ""
           },
           {
-            "id": "w8290",
-            "from": {
-              "cid": "c7709",
-              "pid": "o"
-            },
-            "to": {
-              "cid": "c8289",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w8291",
-            "from": {
-              "cid": "c8289",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8286",
-              "pid": "a"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 484,
-                "y": 176
-              },
-              {
-                "x": 484,
-                "y": 319
-              }
-            ]
-          },
-          {
-            "id": "w8292",
-            "from": {
-              "cid": "c8289",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c7711",
-              "pid": "a"
-            },
-            "name": ""
-          },
-          {
             "id": "w8293",
             "from": {
               "cid": "c7734",
@@ -16729,210 +16027,6 @@
             "to": {
               "cid": "c7711",
               "pid": "b"
-            },
-            "name": ""
-          },
-          {
-            "id": "w8316",
-            "from": {
-              "cid": "c8315",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8286",
-              "pid": "b"
-            },
-            "name": ""
-          },
-          {
-            "id": "w8317",
-            "from": {
-              "cid": "c8315",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8297",
-              "pid": "d"
-            },
-            "name": ""
-          },
-          {
-            "id": "w8321",
-            "from": {
-              "cid": "c8319",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8314",
-              "pid": "d"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 407,
-                "y": 264
-              }
-            ]
-          },
-          {
-            "id": "w8322",
-            "from": {
-              "cid": "c8319",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8295",
-              "pid": "d"
-            },
-            "name": ""
-          },
-          {
-            "id": "w8324",
-            "from": {
-              "cid": "c8315",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8323",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w8325",
-            "from": {
-              "cid": "c8323",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8319",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w8326",
-            "from": {
-              "cid": "c8323",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8296",
-              "pid": "d"
-            },
-            "name": ""
-          },
-          {
-            "id": "w8329",
-            "from": {
-              "cid": "c8315",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8328",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w8330",
-            "from": {
-              "cid": "c8328",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8298",
-              "pid": "d"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 407,
-                "y": 396
-              }
-            ]
-          },
-          {
-            "id": "w8333",
-            "from": {
-              "cid": "c8328",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8332",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w8334",
-            "from": {
-              "cid": "c8332",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8299",
-              "pid": "d"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 407,
-                "y": 429
-              }
-            ]
-          },
-          {
-            "id": "w8337",
-            "from": {
-              "cid": "c8332",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8336",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w8338",
-            "from": {
-              "cid": "c8336",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8300",
-              "pid": "d"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 407,
-                "y": 462
-              }
-            ]
-          },
-          {
-            "id": "w8339",
-            "from": {
-              "cid": "c8336",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8301",
-              "pid": "d"
-            },
-            "name": ""
-          },
-          {
-            "id": "w8370",
-            "from": {
-              "cid": "c8286",
-              "pid": "gt"
-            },
-            "to": {
-              "cid": "c8369",
-              "pid": "i1"
             },
             "name": ""
           },
@@ -16985,198 +16079,6 @@
             "name": ""
           },
           {
-            "id": "w9080",
-            "from": {
-              "cid": "c8342",
-              "pid": "o"
-            },
-            "to": {
-              "cid": "c9079",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9081",
-            "from": {
-              "cid": "c9079",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8314",
-              "pid": "y"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 176,
-                "y": 264
-              }
-            ]
-          },
-          {
-            "id": "w9084",
-            "from": {
-              "cid": "c9079",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c9083",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9085",
-            "from": {
-              "cid": "c9083",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8297",
-              "pid": "y"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 176,
-                "y": 363
-              }
-            ]
-          },
-          {
-            "id": "w9088",
-            "from": {
-              "cid": "c9083",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c9087",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9089",
-            "from": {
-              "cid": "c9087",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8298",
-              "pid": "y"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 176,
-                "y": 396
-              }
-            ]
-          },
-          {
-            "id": "w9090",
-            "from": {
-              "cid": "c9087",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8301",
-              "pid": "y"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 176,
-                "y": 495
-              }
-            ]
-          },
-          {
-            "id": "w9094",
-            "from": {
-              "cid": "c9092",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8295",
-              "pid": "y"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9095",
-            "from": {
-              "cid": "c9092",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8296",
-              "pid": "y"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9098",
-            "from": {
-              "cid": "c9096",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c9092",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9099",
-            "from": {
-              "cid": "c9096",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8299",
-              "pid": "y"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9101",
-            "from": {
-              "cid": "c8340",
-              "pid": "o"
-            },
-            "to": {
-              "cid": "c9100",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9102",
-            "from": {
-              "cid": "c9100",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c9096",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9103",
-            "from": {
-              "cid": "c9100",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8300",
-              "pid": "y"
-            },
-            "name": ""
-          },
-          {
             "id": "w9873",
             "from": {
               "cid": "c7718",
@@ -17185,6 +16087,502 @@
             "to": {
               "cid": "c7727",
               "pid": "i"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10696",
+            "from": {
+              "cid": "c8286",
+              "pid": "gt"
+            },
+            "to": {
+              "cid": "c10695",
+              "pid": "i0"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10697",
+            "from": {
+              "cid": "c10694",
+              "pid": "gt"
+            },
+            "to": {
+              "cid": "c10695",
+              "pid": "i1"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10698",
+            "from": {
+              "cid": "c10695",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c8369",
+              "pid": "i1"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10708",
+            "from": {
+              "cid": "c7709",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c10707",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10709",
+            "from": {
+              "cid": "c10707",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c7711",
+              "pid": "a"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10712",
+            "from": {
+              "cid": "c10707",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10711",
+              "pid": "j"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 495,
+                "y": 275
+              },
+              {
+                "x": 264,
+                "y": 275
+              }
+            ]
+          },
+          {
+            "id": "w10713",
+            "from": {
+              "cid": "c10711",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10699",
+              "pid": "d"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 264,
+                "y": 330
+              }
+            ]
+          },
+          {
+            "id": "w10716",
+            "from": {
+              "cid": "c10711",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10715",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10717",
+            "from": {
+              "cid": "c10715",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10700",
+              "pid": "d"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10720",
+            "from": {
+              "cid": "c10715",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10719",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10721",
+            "from": {
+              "cid": "c10719",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10701",
+              "pid": "d"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10727",
+            "from": {
+              "cid": "c10719",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10726",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10728",
+            "from": {
+              "cid": "c10726",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10702",
+              "pid": "d"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10731",
+            "from": {
+              "cid": "c10726",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10730",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10732",
+            "from": {
+              "cid": "c10730",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10703",
+              "pid": "d"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10735",
+            "from": {
+              "cid": "c10730",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10734",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10736",
+            "from": {
+              "cid": "c10734",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10704",
+              "pid": "d"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10739",
+            "from": {
+              "cid": "c10734",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10738",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10740",
+            "from": {
+              "cid": "c10738",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10705",
+              "pid": "d"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10741",
+            "from": {
+              "cid": "c10738",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10706",
+              "pid": "d"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10742",
+            "from": {
+              "cid": "c10699",
+              "pid": "y"
+            },
+            "to": {
+              "cid": "c8286",
+              "pid": "a0"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10743",
+            "from": {
+              "cid": "c10700",
+              "pid": "y"
+            },
+            "to": {
+              "cid": "c8286",
+              "pid": "a1"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10744",
+            "from": {
+              "cid": "c10701",
+              "pid": "y"
+            },
+            "to": {
+              "cid": "c8286",
+              "pid": "a2"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10745",
+            "from": {
+              "cid": "c10702",
+              "pid": "y"
+            },
+            "to": {
+              "cid": "c8286",
+              "pid": "a3"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10746",
+            "from": {
+              "cid": "c10703",
+              "pid": "y"
+            },
+            "to": {
+              "cid": "c10694",
+              "pid": "a0"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10747",
+            "from": {
+              "cid": "c10704",
+              "pid": "y"
+            },
+            "to": {
+              "cid": "c10694",
+              "pid": "a1"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10748",
+            "from": {
+              "cid": "c10705",
+              "pid": "y"
+            },
+            "to": {
+              "cid": "c10694",
+              "pid": "a2"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10749",
+            "from": {
+              "cid": "c10706",
+              "pid": "y"
+            },
+            "to": {
+              "cid": "c10694",
+              "pid": "a3"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10753",
+            "from": {
+              "cid": "c10750",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c10752",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10754",
+            "from": {
+              "cid": "c10752",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c8286",
+              "pid": "b0"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10755",
+            "from": {
+              "cid": "c10752",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c8286",
+              "pid": "b3"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10759",
+            "from": {
+              "cid": "c10756",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c10758",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10760",
+            "from": {
+              "cid": "c10758",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c8286",
+              "pid": "b2"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10761",
+            "from": {
+              "cid": "c10758",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c8286",
+              "pid": "b1"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10766",
+            "from": {
+              "cid": "c10762",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c10765",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10767",
+            "from": {
+              "cid": "c10765",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10694",
+              "pid": "b0"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10768",
+            "from": {
+              "cid": "c10765",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10694",
+              "pid": "b3"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10771",
+            "from": {
+              "cid": "c10763",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c10770",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10772",
+            "from": {
+              "cid": "c10770",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10694",
+              "pid": "b2"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10773",
+            "from": {
+              "cid": "c10770",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10694",
+              "pid": "b1"
             },
             "name": ""
           }
@@ -28443,7 +27841,7 @@
             "id": "c9935",
             "type": "IN",
             "x": 165,
-            "y": 143,
+            "y": 110,
             "params": {
               "name": "last_output",
               "width": 1
@@ -28454,7 +27852,7 @@
             "id": "c9936",
             "type": "IN",
             "x": 198,
-            "y": 242,
+            "y": 187,
             "params": {
               "name": "clk",
               "width": 1,
@@ -28465,8 +27863,8 @@
           {
             "id": "c9937",
             "type": "OUT",
-            "x": 825,
-            "y": 220,
+            "x": 605,
+            "y": 143,
             "params": {
               "name": "mod2_out",
               "width": 1
@@ -28474,61 +27872,10 @@
             "label": ""
           },
           {
-            "id": "c9938",
+            "id": "c10598",
             "type": "TFF",
-            "x": 319,
-            "y": 143,
-            "params": {
-              "edge": "rising",
-              "reset": true,
-              "preset": false
-            },
-            "label": ""
-          },
-          {
-            "id": "c9939",
-            "type": "AND",
-            "x": 451,
-            "y": 121,
-            "params": {
-              "inputs": 2
-            },
-            "label": ""
-          },
-          {
-            "id": "c9940",
-            "type": "TFF",
-            "x": 561,
-            "y": 143,
-            "params": {
-              "edge": "rising",
-              "reset": true,
-              "preset": false
-            },
-            "label": ""
-          },
-          {
-            "id": "c9945",
-            "type": "JUNCTION",
-            "x": 280,
-            "y": 159,
-            "params": {}
-          },
-          {
-            "id": "c9950",
-            "type": "AND",
-            "x": 693,
-            "y": 253,
-            "params": {
-              "inputs": 2
-            },
-            "label": ""
-          },
-          {
-            "id": "c9953",
-            "type": "DFF",
-            "x": 825,
-            "y": 264,
+            "x": 352,
+            "y": 154,
             "params": {
               "edge": "rising",
               "reset": false,
@@ -28537,146 +27884,72 @@
             "label": ""
           },
           {
-            "id": "c9955",
-            "type": "JUNCTION",
-            "x": 786,
-            "y": 280,
+            "id": "c10599",
+            "type": "AND",
+            "x": 484,
+            "y": 132,
             "params": {
-              "fixed": true
-            }
+              "inputs": 2
+            },
+            "label": ""
           },
           {
-            "id": "c9961",
+            "id": "c10606",
             "type": "JUNCTION",
-            "x": 313,
-            "y": 258,
+            "x": 291,
+            "y": 126,
             "params": {}
-          },
-          {
-            "id": "c9967",
-            "type": "JUNCTION",
-            "x": 577,
-            "y": 346,
-            "params": {
-              "fixed": true
-            }
           }
         ],
         "wires": [
           {
-            "id": "w9944",
-            "from": {
-              "cid": "c9938",
-              "pid": "q"
-            },
-            "to": {
-              "cid": "c9939",
-              "pid": "i1"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9946",
+            "id": "w10607",
             "from": {
               "cid": "c9935",
               "pid": "o"
             },
             "to": {
-              "cid": "c9945",
+              "cid": "c10606",
               "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9947",
-            "from": {
-              "cid": "c9945",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c9938",
-              "pid": "t"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9948",
-            "from": {
-              "cid": "c9945",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c9939",
-              "pid": "i0"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9949",
-            "from": {
-              "cid": "c9939",
-              "pid": "o"
-            },
-            "to": {
-              "cid": "c9940",
-              "pid": "t"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9951",
-            "from": {
-              "cid": "c9940",
-              "pid": "q"
-            },
-            "to": {
-              "cid": "c9950",
-              "pid": "i0"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9952",
-            "from": {
-              "cid": "c9938",
-              "pid": "qn"
-            },
-            "to": {
-              "cid": "c9950",
-              "pid": "i1"
             },
             "name": "",
-            "mx": 429
+            "mx": 297
           },
           {
-            "id": "w9956",
+            "id": "w10608",
             "from": {
-              "cid": "c9950",
+              "cid": "c10606",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10598",
+              "pid": "t"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10609",
+            "from": {
+              "cid": "c10606",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c10599",
+              "pid": "i0"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 484,
+                "y": 132
+              }
+            ]
+          },
+          {
+            "id": "w10610",
+            "from": {
+              "cid": "c10599",
               "pid": "o"
-            },
-            "to": {
-              "cid": "c9955",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9957",
-            "from": {
-              "cid": "c9955",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c9953",
-              "pid": "d"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9958",
-            "from": {
-              "cid": "c9955",
-              "pid": "j"
             },
             "to": {
               "cid": "c9937",
@@ -28685,128 +27958,28 @@
             "name": ""
           },
           {
-            "id": "w9962",
+            "id": "w10611",
+            "from": {
+              "cid": "c10598",
+              "pid": "q"
+            },
+            "to": {
+              "cid": "c10599",
+              "pid": "i1"
+            },
+            "name": ""
+          },
+          {
+            "id": "w10612",
             "from": {
               "cid": "c9936",
               "pid": "o"
             },
             "to": {
-              "cid": "c9961",
-              "pid": "j"
+              "cid": "c10598",
+              "pid": "clk"
             },
             "name": ""
-          },
-          {
-            "id": "w9963",
-            "from": {
-              "cid": "c9961",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c9938",
-              "pid": "clk"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 319,
-                "y": 264
-              }
-            ]
-          },
-          {
-            "id": "w9964",
-            "from": {
-              "cid": "c9961",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c9940",
-              "pid": "clk"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 561,
-                "y": 264
-              }
-            ]
-          },
-          {
-            "id": "w9965",
-            "from": {
-              "cid": "c9961",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c9953",
-              "pid": "clk"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 319,
-                "y": 319
-              }
-            ]
-          },
-          {
-            "id": "w9968",
-            "from": {
-              "cid": "c9953",
-              "pid": "q"
-            },
-            "to": {
-              "cid": "c9967",
-              "pid": "j"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 935,
-                "y": 286
-              },
-              {
-                "x": 935,
-                "y": 352
-              }
-            ]
-          },
-          {
-            "id": "w9969",
-            "from": {
-              "cid": "c9967",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c9940",
-              "pid": "rst"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 583,
-                "y": 352
-              }
-            ]
-          },
-          {
-            "id": "w9970",
-            "from": {
-              "cid": "c9967",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c9938",
-              "pid": "rst"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 341,
-                "y": 352
-              }
-            ]
           }
         ],
         "locked": false
@@ -28840,40 +28013,23 @@
       "sch7708",
       "sch7863",
       "sch8398",
+      "sch8433",
       "sch9319",
       "sch8629",
       "sch7588",
       "sch8609",
-      "sch8433",
       "sch9023",
       "sch9424"
     ]
   },
-  "activeId": "sch8433",
+  "activeId": "sch7261",
   "openTabs": [
-    "sch8433",
-    "sch8398",
-    "sch7864",
-    "sch7863",
-    "sch7261",
-    "sch7527",
-    "sch7708",
-    "sch7588",
-    "sch7815",
-    "sch8609",
-    "sch8629",
-    "sch9023",
-    "sch7432",
-    "sch7494",
-    "sch9231",
-    "sch9319",
-    "sch6089",
-    "sch6861",
-    "sch3902",
-    "sch9424",
-    "sch5631",
-    "sch3905",
+    "sch1564",
     "sch6782",
-    "sch9934"
+    "sch9934",
+    "sch6861",
+    "sch7708",
+    "sch7527",
+    "sch7261"
   ]
 }
