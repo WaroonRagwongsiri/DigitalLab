@@ -1,6 +1,3 @@
--- ============================================================
--- Entity: mod5_sync
--- ============================================================
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -31,7 +28,7 @@ begin
   -- combinational logic
   n3_o <= last_output and n1_q;
   n6_o <= n3_o and n2_q;
-  n12_o <= n5_q and n2_qn and n1_qn;
+  n12_o <= n5_q and n2_qn and n1_q;
 
   -- sequential logic (flip-flops)
   process(clk, n13_q)

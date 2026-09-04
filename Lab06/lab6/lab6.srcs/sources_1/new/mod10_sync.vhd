@@ -1,6 +1,3 @@
--- ============================================================
--- Entity: mod10_sync
--- ============================================================
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -34,7 +31,7 @@ begin
   n3_o <= last_output and n1_q;
   n6_o <= n3_o and n2_q;
   n11_o <= n6_o and n5_q;
-  n17_o <= n10_q and n5_qn and n2_qn and n1_q;
+  n17_o <= n10_q and n5_qn and n2_q and n1_qn;
 
   -- sequential logic (flip-flops)
   process(clk, n18_q)
