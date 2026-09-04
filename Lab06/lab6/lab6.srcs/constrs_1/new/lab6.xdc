@@ -4,17 +4,17 @@
 # ## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
 
 # # Clock signal
-set_property -dict { PACKAGE_PIN H11    IOSTANDARD LVCMOS33 } [get_ports { clk }];
+set_property -dict { PACKAGE_PIN H11    IOSTANDARD LVCMOS33 } [get_ports { clk50mhz }];
 
 # # Switches
-# set_property -dict { PACKAGE_PIN K11    IOSTANDARD LVCMOS33 } [get_ports { sw[0] }];#LSB
-# set_property -dict { PACKAGE_PIN M11    IOSTANDARD LVCMOS33 } [get_ports { sw[1] }];
-# set_property -dict { PACKAGE_PIN N14    IOSTANDARD LVCMOS33 } [get_ports { sw[2] }];
-# set_property -dict { PACKAGE_PIN P12    IOSTANDARD LVCMOS33 } [get_ports { sw[3] }];
-# set_property -dict { PACKAGE_PIN N10    IOSTANDARD LVCMOS33 } [get_ports { sw[4] }];
-# set_property -dict { PACKAGE_PIN P10    IOSTANDARD LVCMOS33 } [get_ports { sw[5] }];
-# set_property -dict { PACKAGE_PIN M10    IOSTANDARD LVCMOS33 } [get_ports { sw[6] }];
-# set_property -dict { PACKAGE_PIN N4    IOSTANDARD LVCMOS33 } [get_ports { sw[7] }];
+set_property -dict { PACKAGE_PIN K11    IOSTANDARD LVCMOS33 } [get_ports { sw_target_bcd[0] }];#LSB
+set_property -dict { PACKAGE_PIN M11    IOSTANDARD LVCMOS33 } [get_ports { sw_target_bcd[1] }];
+set_property -dict { PACKAGE_PIN N14    IOSTANDARD LVCMOS33 } [get_ports { sw_target_bcd[2] }];
+set_property -dict { PACKAGE_PIN P12    IOSTANDARD LVCMOS33 } [get_ports { sw_target_bcd[3] }];
+set_property -dict { PACKAGE_PIN N10    IOSTANDARD LVCMOS33 } [get_ports { sw_target_bcd[4] }];
+set_property -dict { PACKAGE_PIN P10    IOSTANDARD LVCMOS33 } [get_ports { sw_target_bcd[5] }];
+set_property -dict { PACKAGE_PIN M10    IOSTANDARD LVCMOS33 } [get_ports { sw_target_bcd[6] }];
+set_property -dict { PACKAGE_PIN N4    IOSTANDARD LVCMOS33 } [get_ports { sw_target_bcd[7] }];
 # set_property -dict { PACKAGE_PIN L2    IOSTANDARD LVCMOS33 } [get_ports { sw[8] }];
 # set_property -dict { PACKAGE_PIN P3    IOSTANDARD LVCMOS33 } [get_ports { sw[9] }];
 # set_property -dict { PACKAGE_PIN N1    IOSTANDARD LVCMOS33 } [get_ports { sw[10] }];
@@ -47,13 +47,13 @@ set_property -dict { PACKAGE_PIN H11    IOSTANDARD LVCMOS33 } [get_ports { clk }
 # set_property -dict {PACKAGE_PIN L13 IOSTANDARD LVCMOS33 PULLDOWN true} [get_ports {pb[1]}]; #Button-bottom
 # set_property -dict {PACKAGE_PIN J14 IOSTANDARD LVCMOS33 PULLDOWN true} [get_ports {pb[2]}]; #Button-left
 # set_property -dict {PACKAGE_PIN J11 IOSTANDARD LVCMOS33 PULLDOWN true} [get_ports {pb[3]}]; #Button-right
-# set_property -dict {PACKAGE_PIN J12 IOSTANDARD LVCMOS33 PULLDOWN true} [get_ports { toggle_switch }]; #Button-center
+set_property -dict {PACKAGE_PIN J12 IOSTANDARD LVCMOS33 PULLDOWN true} [get_ports { btn_start_stop }]; #Button-center
 
 # #7 segment display
 set_property -dict { PACKAGE_PIN H4    IOSTANDARD LVCMOS33 } [get_ports { d0 }]; #LSB
-# set_property -dict { PACKAGE_PIN H3    IOSTANDARD LVCMOS33 } [get_ports { d1 }];
-# set_property -dict { PACKAGE_PIN H2    IOSTANDARD LVCMOS33 } [get_ports { d2 }];
-# set_property -dict { PACKAGE_PIN H1    IOSTANDARD LVCMOS33 } [get_ports { d3 }]; #MSB
+set_property -dict { PACKAGE_PIN H3    IOSTANDARD LVCMOS33 } [get_ports { d1 }];
+set_property -dict { PACKAGE_PIN H2    IOSTANDARD LVCMOS33 } [get_ports { d2 }];
+set_property -dict { PACKAGE_PIN H1    IOSTANDARD LVCMOS33 } [get_ports { d3 }]; #MSB
 
 set_property -dict { PACKAGE_PIN L3    IOSTANDARD LVCMOS33 } [get_ports { a }];#A
 set_property -dict { PACKAGE_PIN P4    IOSTANDARD LVCMOS33 } [get_ports { b }];#B
@@ -72,7 +72,7 @@ set_property -dict { PACKAGE_PIN K4    IOSTANDARD LVCMOS33 } [get_ports { g }];#
 # set_property -dict { PACKAGE_PIN P13 IOSTANDARD LVCMOS33 } [get_ports {data[4]}];
 # set_property -dict { PACKAGE_PIN M14 IOSTANDARD LVCMOS33 } [get_ports {data[5]}];
 # set_property -dict { PACKAGE_PIN M12 IOSTANDARD LVCMOS33 } [get_ports {data[6]}];
-# set_property -dict { PACKAGE_PIN K12 IOSTANDARD LVCMOS33 } [get_ports {data[7]}];
+set_property -dict { PACKAGE_PIN K12 IOSTANDARD LVCMOS33 } [get_ports { led_status }];
 # set_property -dict { PACKAGE_PIN P5 IOSTANDARD LVCMOS33 } [get_ports {lcd_e}];
 # set_property -dict { PACKAGE_PIN M5 IOSTANDARD LVCMOS33 } [get_ports {lcd_rs}];
 # #LCD R/W pin is connected to ground by default.No need to assign LCD R/W Pin.

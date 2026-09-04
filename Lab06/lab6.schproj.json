@@ -2,7 +2,7 @@
   "version": 1,
   "project": {
     "name": "lab6",
-    "topId": "sch7527",
+    "topId": "sch7261",
     "schematics": {
       "sch1564": {
         "id": "sch1564",
@@ -14324,6 +14324,43 @@
             "y": 330,
             "params": {},
             "label": ""
+          },
+          {
+            "id": "c9879",
+            "type": "OUT",
+            "x": 1177,
+            "y": 627,
+            "params": {
+              "name": "d2",
+              "width": 1
+            },
+            "label": ""
+          },
+          {
+            "id": "c9880",
+            "type": "OUT",
+            "x": 1177,
+            "y": 649,
+            "params": {
+              "name": "d3",
+              "width": 1
+            },
+            "label": ""
+          },
+          {
+            "id": "c9881",
+            "type": "GND",
+            "x": 1144,
+            "y": 693,
+            "params": {},
+            "label": ""
+          },
+          {
+            "id": "c9883",
+            "type": "JUNCTION",
+            "x": 1149,
+            "y": 665,
+            "params": {}
           }
         ],
         "wires": [
@@ -14623,6 +14660,42 @@
             },
             "name": "",
             "mx": 803
+          },
+          {
+            "id": "w9884",
+            "from": {
+              "cid": "c9881",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c9883",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w9885",
+            "from": {
+              "cid": "c9883",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c9880",
+              "pid": "i"
+            },
+            "name": ""
+          },
+          {
+            "id": "w9886",
+            "from": {
+              "cid": "c9883",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c9879",
+              "pid": "i"
+            },
+            "name": ""
           }
         ],
         "locked": false
@@ -26614,7 +26687,7 @@
             "id": "c9397",
             "type": "OUT",
             "x": 792,
-            "y": 649,
+            "y": 682,
             "params": {
               "name": "d0",
               "width": 1
@@ -26625,7 +26698,7 @@
             "id": "c9398",
             "type": "OUT",
             "x": 792,
-            "y": 682,
+            "y": 649,
             "params": {
               "name": "d1",
               "width": 1
@@ -26633,13 +26706,11 @@
             "label": ""
           },
           {
-            "id": "c9399",
+            "id": "c9890",
             "type": "JUNCTION",
             "x": 610,
             "y": 665,
-            "params": {
-              "fixed": true
-            }
+            "params": {}
           }
         ],
         "wires": [
@@ -27065,22 +27136,33 @@
             "name": ""
           },
           {
-            "id": "w9400",
+            "id": "w9889",
+            "from": {
+              "cid": "c9390",
+              "pid": "qn"
+            },
+            "to": {
+              "cid": "c9397",
+              "pid": "i"
+            },
+            "name": ""
+          },
+          {
+            "id": "w9891",
             "from": {
               "cid": "c9390",
               "pid": "q"
             },
             "to": {
-              "cid": "c9399",
+              "cid": "c9890",
               "pid": "j"
             },
-            "name": "",
-            "mx": 594
+            "name": ""
           },
           {
-            "id": "w9401",
+            "id": "w9892",
             "from": {
-              "cid": "c9399",
+              "cid": "c9890",
               "pid": "j"
             },
             "to": {
@@ -27090,22 +27172,10 @@
             "name": ""
           },
           {
-            "id": "w9402",
+            "id": "w9893",
             "from": {
-              "cid": "c9399",
+              "cid": "c9890",
               "pid": "j"
-            },
-            "to": {
-              "cid": "c9397",
-              "pid": "i"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9403",
-            "from": {
-              "cid": "c9390",
-              "pid": "qn"
             },
             "to": {
               "cid": "c9398",
@@ -28380,7 +28450,7 @@
       "sch9424"
     ]
   },
-  "activeId": "sch7432",
+  "activeId": "sch7527",
   "openTabs": [
     "sch8433",
     "sch8398",

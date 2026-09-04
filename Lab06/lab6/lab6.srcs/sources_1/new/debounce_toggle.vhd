@@ -10,83 +10,56 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity debounce_toggle is
   Port (
-    clk : in  STD_LOGIC;
     sw_in : in  STD_LOGIC;
+    clk_50mhz : in  STD_LOGIC;
+    clk_1khz : in  STD_LOGIC;
     toggle_output : out STD_LOGIC
   );
 end debounce_toggle;
 
 architecture Behavioral of debounce_toggle is
-  signal n5_o, n6_o, n13_o : STD_LOGIC;
-  signal n1_q : STD_LOGIC := '0';
-  signal n1_qn : STD_LOGIC := '1';
+  component debounce_button
+    Port (
+      button_signal : in  STD_LOGIC;
+      clk_50mhz : in  STD_LOGIC;
+      clk_1khz : in  STD_LOGIC;
+      debounce_signal : out STD_LOGIC
+    );
+  end component;
+  signal n1_debounce_signal, n6_o : STD_LOGIC;
   signal n2_q : STD_LOGIC := '0';
   signal n2_qn : STD_LOGIC := '1';
   signal n3_q : STD_LOGIC := '0';
   signal n3_qn : STD_LOGIC := '1';
-  signal n4_q : STD_LOGIC := '0';
-  signal n4_qn : STD_LOGIC := '1';
-  signal n14_q : STD_LOGIC := '0';
-  signal n14_qn : STD_LOGIC := '1';
 begin
 
   -- combinational logic
-  n5_o <= n2_q xor n3_q;
-  n6_o <= n2_q and n5_o;
-  n13_o <= n4_q xor n6_o;
+  n6_o <= n1_debounce_signal and n3_qn;
 
   -- sequential logic (flip-flops)
-  process(clk, n14_qn)
+  process(clk_50mhz)
   begin
-    if n14_qn = '1' then
-      n1_q  <= '0';
-      n1_qn <= '1';
-    elsif rising_edge(clk) then
-      n1_q  <= sw_in;
-      n1_qn <= not (sw_in);
+    if rising_edge(clk_50mhz) then
+      if (n6_o='1') then n2_q <= not n2_q; n2_qn <= not n2_qn; end if;
     end if;
   end process;
-  process(clk, n14_qn)
+  process(clk_50mhz)
   begin
-    if n14_qn = '1' then
-      n2_q  <= '0';
-      n2_qn <= '1';
-    elsif rising_edge(clk) then
-      n2_q  <= n1_q;
-      n2_qn <= not (n1_q);
-    end if;
-  end process;
-  process(clk, n14_qn)
-  begin
-    if n14_qn = '1' then
-      n3_q  <= '0';
-      n3_qn <= '1';
-    elsif rising_edge(clk) then
-      n3_q  <= n2_q;
-      n3_qn <= not (n2_q);
-    end if;
-  end process;
-  process(clk, n14_qn)
-  begin
-    if n14_qn = '1' then
-      n4_q  <= '0';
-      n4_qn <= '1';
-    elsif rising_edge(clk) then
-      n4_q  <= n13_o;
-      n4_qn <= not (n13_o);
-    end if;
-  end process;
-  process(clk)
-  begin
-    if rising_edge(clk) then
-      if    (STD_LOGIC'('1')='0' and STD_LOGIC'('0')='1') then n14_q <= '0'; n14_qn <= '1';
-      elsif (STD_LOGIC'('1')='1' and STD_LOGIC'('0')='0') then n14_q <= '1'; n14_qn <= '0';
-      elsif (STD_LOGIC'('1')='1' and STD_LOGIC'('0')='1') then n14_q <= not n14_q; n14_qn <= n14_q;
-      end if;
+    if rising_edge(clk_50mhz) then
+      n3_q  <= n1_debounce_signal;
+      n3_qn <= not (n1_debounce_signal);
     end if;
   end process;
 
+  -- sub-component instantiations
+  u_0_c8970 : debounce_button port map (
+    button_signal => sw_in,
+    clk_50mhz => clk_50mhz,
+    clk_1khz => clk_1khz,
+    debounce_signal => n1_debounce_signal
+  );
+
   -- output drivers
-  toggle_output <= n4_q;
+  toggle_output <= n2_q;
 
 end Behavioral;

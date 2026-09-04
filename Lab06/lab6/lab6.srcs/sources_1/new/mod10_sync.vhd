@@ -34,7 +34,7 @@ begin
   n3_o <= last_output and n1_q;
   n6_o <= n3_o and n2_q;
   n11_o <= n6_o and n5_q;
-  n17_o <= n10_q and n5_qn and n2_q and n1_qn;
+  n17_o <= n10_q and n5_qn and n2_qn and n1_q;
 
   -- sequential logic (flip-flops)
   process(clk, n18_q)

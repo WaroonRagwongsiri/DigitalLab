@@ -31,7 +31,7 @@ begin
   -- combinational logic
   n3_o <= last_output and n1_q;
   n6_o <= n3_o and n2_q;
-  n12_o <= n5_q and n2_qn and n1_q;
+  n12_o <= n5_q and n2_qn and n1_qn;
 
   -- sequential logic (flip-flops)
   process(clk, n13_q)
