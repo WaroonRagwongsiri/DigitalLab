@@ -1,6 +1,3 @@
--- ============================================================
--- Entity: counter00_99_bcd
--- ============================================================
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -41,8 +38,8 @@ begin
     limit_reach => n1_limit_reach
   );
   u_msb : counter0_9 port map (
-    last_output => STD_LOGIC'('1'),
-    clk => n1_limit_reach,
+    last_output => n1_limit_reach,
+    clk => clk_20hz,
     reset => reset,
     current_bcd => n2_current_bcd,
     limit_reach => n2_limit_reach
