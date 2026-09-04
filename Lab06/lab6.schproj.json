@@ -2,7 +2,7 @@
   "version": 1,
   "project": {
     "name": "lab6",
-    "topId": "sch7261",
+    "topId": "sch8433",
     "schematics": {
       "sch1564": {
         "id": "sch1564",
@@ -19985,7 +19985,7 @@
             "id": "c8437",
             "type": "IN",
             "x": 429,
-            "y": 605,
+            "y": 638,
             "params": {
               "name": "reset",
               "width": 1
@@ -20097,7 +20097,7 @@
             "x": 1485,
             "y": 506,
             "params": {
-              "inputs": 4
+              "inputs": 5
             },
             "label": ""
           },
@@ -20114,7 +20114,7 @@
             "id": "c8480",
             "type": "DFF",
             "x": 1749,
-            "y": 605,
+            "y": 638,
             "params": {
               "edge": "rising",
               "reset": false,
@@ -20314,8 +20314,8 @@
           {
             "id": "c8562",
             "type": "OUT",
-            "x": 1639,
-            "y": 495,
+            "x": 1672,
+            "y": 517,
             "params": {
               "name": "limit_reach",
               "width": 1
@@ -20326,7 +20326,7 @@
             "id": "c8568",
             "type": "OR",
             "x": 1606,
-            "y": 583,
+            "y": 616,
             "params": {
               "inputs": 2
             },
@@ -20336,8 +20336,10 @@
             "id": "c9875",
             "type": "JUNCTION",
             "x": 1600,
-            "y": 555,
-            "params": {}
+            "y": 566,
+            "params": {
+              "fixed": true
+            }
           }
         ],
         "wires": [
@@ -21026,8 +21028,8 @@
             "name": "",
             "pts": [
               {
-                "x": 583,
-                "y": 660
+                "x": 594,
+                "y": 693
               }
             ]
           },
@@ -21114,6 +21116,19 @@
             "to": {
               "cid": "c8562",
               "pid": "i"
+            },
+            "name": "",
+            "mx": 1595
+          },
+          {
+            "id": "w9987",
+            "from": {
+              "cid": "c8442",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c8469",
+              "pid": "i4"
             },
             "name": ""
           }
@@ -28824,17 +28839,17 @@
       "sch7527",
       "sch7708",
       "sch7863",
+      "sch8398",
       "sch9319",
       "sch8629",
       "sch7588",
       "sch8609",
-      "sch8398",
       "sch8433",
       "sch9023",
       "sch9424"
     ]
   },
-  "activeId": "sch6861",
+  "activeId": "sch8433",
   "openTabs": [
     "sch8433",
     "sch8398",

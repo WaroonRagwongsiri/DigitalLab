@@ -36,7 +36,7 @@ begin
   n2_o <= last_output and n1_q;
   n5_o <= n2_o and n4_q;
   n8_o <= n5_o and n7_q;
-  n11_o <= n10_q and n7_qn and n4_qn and n1_q;
+  n11_o <= n10_q and n7_qn and n4_qn and n1_q and last_output;
   n20_o <= n10_q;
   n23_o <= n7_q;
   n27_o <= n4_q;
