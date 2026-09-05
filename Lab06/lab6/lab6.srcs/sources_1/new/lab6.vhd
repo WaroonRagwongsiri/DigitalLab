@@ -295,6 +295,7 @@ architecture Behavioral of lab6 is
       current_bcd_d1 : in  STD_LOGIC_VECTOR(3 downto 0);
       current_bcd_d0 : in  STD_LOGIC_VECTOR(3 downto 0);
       clk_1khz : in  STD_LOGIC;
+      clk50mhz : in  STD_LOGIC;
       segment_d3 : out STD_LOGIC;
       segment_d2 : out STD_LOGIC;
       segment_d1 : out STD_LOGIC;
@@ -338,6 +339,7 @@ begin
     current_bcd_d1 => n2_current_bcd_d1,
     current_bcd_d0 => n2_current_bcd_d0,
     clk_1khz => n3_clk_mod50k,
+    clk50mhz => clk50mhz,
     segment_d3 => n5_segment_d3,
     segment_d2 => n5_segment_d2,
     segment_d1 => n5_segment_d1,
@@ -355,8 +357,8 @@ begin
   e <= n1_e;
   f <= n1_f;
   g <= n1_g;
-  d0 <= n5_d0;
-  d1 <= n5_d1;
+  d0 <= n5_d1;
+  d1 <= n5_d0;
   d2 <= STD_LOGIC'('0');
   d3 <= STD_LOGIC'('0');
 
@@ -710,6 +712,7 @@ architecture Behavioral of main_counter is
   component counter00_99_bcd
     Port (
       clk_20hz : in  STD_LOGIC;
+      clk_50mhz : in  STD_LOGIC;
       reset : in  STD_LOGIC;
       bcd_d1 : out STD_LOGIC_VECTOR(3 downto 0);
       bcd_d0 : out STD_LOGIC_VECTOR(3 downto 0)
@@ -730,6 +733,7 @@ architecture Behavioral of main_counter is
     );
   end component;
   signal n1_eq : STD_LOGIC;
+  signal n5_reset_gated : STD_LOGIC;
   signal n2_bcd_d1 : STD_LOGIC_VECTOR(3 downto 0);
   signal n2_bcd_d0 : STD_LOGIC_VECTOR(3 downto 0);
   signal n3_out8bit : STD_LOGIC_VECTOR(7 downto 0);
@@ -738,11 +742,19 @@ begin
 
   -- combinational logic
   n1_eq <= '1' when target_bcd = n4_n_8bit_out else '0';
+  -- n1_eq goes high a couple of clk_50mhz cycles after the counter reaches
+  -- target (n_8bit_1_clk_delay's registered compare), well inside the same
+  -- clk_20hz tick - gating it with clk_20hz (same convention as
+  -- counter0_9's own last_output-gated limit_reach) defers the actual
+  -- reset to the next tick boundary, so target is held for a full tick
+  -- instead of being cleared almost immediately.
+  n5_reset_gated <= n1_eq and clk_20hz;
 
   -- sub-component instantiations
   u_0_c8599 : counter00_99_bcd port map (
     clk_20hz => clk_20hz,
-    reset => n1_eq,
+    clk_50mhz => clk_50mhz,
+    reset => n5_reset_gated,
     bcd_d1 => n2_bcd_d1,
     bcd_d0 => n2_bcd_d0
   );
@@ -776,6 +788,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity counter00_99_bcd is
   Port (
     clk_20hz : in  STD_LOGIC;
+    clk_50mhz : in  STD_LOGIC;
     reset : in  STD_LOGIC;
     bcd_d1 : out STD_LOGIC_VECTOR(3 downto 0);
     bcd_d0 : out STD_LOGIC_VECTOR(3 downto 0)
@@ -798,16 +811,22 @@ architecture Behavioral of counter00_99_bcd is
 begin
 
   -- sub-component instantiations
+  -- clk_20hz is a one-clk_50mhz-cycle-wide tick pulse (same convention as
+  -- last_output throughout the divider chain), so it is used here as a
+  -- synchronous count-enable sampled on the stable clk_50mhz - not as an
+  -- actual clock net. Using it directly as counter0_9's clk (as before)
+  -- clocked the counter off a combinationally-derived, glitch-susceptible
+  -- signal instead of the buffered master clock.
   u_lsb : counter0_9 port map (
-    last_output => STD_LOGIC'('1'),
-    clk => clk_20hz,
+    last_output => clk_20hz,
+    clk => clk_50mhz,
     reset => reset,
     current_bcd => n1_current_bcd,
     limit_reach => n1_limit_reach
   );
   u_msb : counter0_9 port map (
     last_output => n1_limit_reach,
-    clk => clk_20hz,
+    clk => clk_50mhz,
     reset => reset,
     current_bcd => n2_current_bcd,
     limit_reach => n2_limit_reach
@@ -1319,6 +1338,7 @@ entity n_2_digit_bcd_7seg_decoder is
     current_bcd_d1 : in  STD_LOGIC_VECTOR(3 downto 0);
     current_bcd_d0 : in  STD_LOGIC_VECTOR(3 downto 0);
     clk_1khz : in  STD_LOGIC;
+    clk50mhz : in  STD_LOGIC;
     segment_d3 : out STD_LOGIC;
     segment_d2 : out STD_LOGIC;
     segment_d1 : out STD_LOGIC;
@@ -1335,14 +1355,18 @@ architecture Behavioral of n_2_digit_bcd_7seg_decoder is
 begin
 
   -- combinational logic
-  n1_y <= n5_y when n22_q = '0' else
-             n6_y when n22_q = '1' else '0';
-  n2_y <= n7_y when n22_q = '0' else
-             n8_y when n22_q = '1' else '0';
-  n3_y <= n9_y when n22_q = '0' else
-             n10_y when n22_q = '1' else '0';
-  n4_y <= n11_y when n22_q = '0' else
-             n12_y when n22_q = '1' else '0';
+  -- d0 <= n22_qn (active when n22_q='0') is pin H4, marked #LSB in the XDC -
+  -- the ones-digit slot - so the n22_q='0' case must route current_bcd_d0
+  -- (n6_y/n8_y/n10_y/n12_y), not current_bcd_d1. The original mapping had
+  -- this backwards, transposing the tens/ones digits on the display.
+  n1_y <= n6_y when n22_q = '0' else
+             n5_y when n22_q = '1' else '0';
+  n2_y <= n8_y when n22_q = '0' else
+             n7_y when n22_q = '1' else '0';
+  n3_y <= n10_y when n22_q = '0' else
+             n9_y when n22_q = '1' else '0';
+  n4_y <= n12_y when n22_q = '0' else
+             n11_y when n22_q = '1' else '0';
   n5_y <= current_bcd_d1(3);
   n6_y <= current_bcd_d0(3);
   n7_y <= current_bcd_d1(2);
@@ -1353,9 +1377,15 @@ begin
   n12_y <= current_bcd_d0(0);
 
   -- sequential logic (flip-flops)
-  process(clk_1khz)
+  -- clk_1khz is a one-clk50mhz-cycle-wide tick pulse (same convention as
+  -- last_output throughout the divider chain), same as clk_20hz feeding
+  -- counter0_9 - sampled here as a synchronous enable on the stable
+  -- clk50mhz rather than used as an actual clock net. Clocking directly
+  -- off clk_1khz (as before) let the divider chain's real same-edge
+  -- combinational races inject spurious extra toggles on n22_q.
+  process(clk50mhz)
   begin
-    if rising_edge(clk_1khz) then
+    if rising_edge(clk50mhz) then
       if (clk_1khz='1') then n22_q <= not n22_q; n22_qn <= not n22_qn; end if;
     end if;
   end process;
