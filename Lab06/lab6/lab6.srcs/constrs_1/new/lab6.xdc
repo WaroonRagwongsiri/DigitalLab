@@ -4,7 +4,7 @@
 # ## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
 
 # # Clock signal
-set_property -dict { PACKAGE_PIN H11    IOSTANDARD LVCMOS33 } [get_ports { clk50mhz }];
+set_property -dict { PACKAGE_PIN H11    IOSTANDARD LVCMOS33 } [get_ports { clk_50mhz }];
 
 # # Switches
 set_property -dict { PACKAGE_PIN K11    IOSTANDARD LVCMOS33 } [get_ports { sw_target_bcd[0] }];#LSB
