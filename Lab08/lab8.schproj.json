@@ -12252,7 +12252,7 @@
             "x": 187,
             "y": 66,
             "params": {
-              "name": "last_output",
+              "name": "trigger",
               "width": 1
             },
             "label": ""
@@ -12827,7 +12827,7 @@
             "x": 968,
             "y": 715,
             "params": {
-              "name": "last_output",
+              "name": "trigger",
               "width": 1
             },
             "label": ""
@@ -12890,7 +12890,7 @@
             },
             "to": {
               "cid": "c10682",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -12902,7 +12902,7 @@
             },
             "to": {
               "cid": "c10681",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -13121,7 +13121,7 @@
             },
             "to": {
               "cid": "c6957",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": "",
             "pts": [
@@ -13139,7 +13139,7 @@
             },
             "to": {
               "cid": "c6958",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": "",
             "pts": [
@@ -13271,7 +13271,7 @@
             },
             "to": {
               "cid": "c6959",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -13283,7 +13283,7 @@
             },
             "to": {
               "cid": "c6960",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -13295,7 +13295,7 @@
             },
             "to": {
               "cid": "c6961",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -13307,7 +13307,7 @@
             },
             "to": {
               "cid": "c6962",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": "",
             "pts": [
@@ -13337,7 +13337,7 @@
             },
             "to": {
               "cid": "c6963",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -13397,7 +13397,7 @@
             },
             "to": {
               "cid": "c7002",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -14184,7 +14184,7 @@
             },
             "to": {
               "cid": "c7433",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": "",
             "pts": [
@@ -14202,7 +14202,7 @@
             },
             "to": {
               "cid": "c7442",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -14214,7 +14214,7 @@
             },
             "to": {
               "cid": "c7443",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": "",
             "pts": [
@@ -14244,7 +14244,7 @@
             },
             "to": {
               "cid": "c7444",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -14256,7 +14256,7 @@
             },
             "to": {
               "cid": "c7437",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -14268,7 +14268,7 @@
             },
             "to": {
               "cid": "c7438",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -14280,7 +14280,7 @@
             },
             "to": {
               "cid": "c7439",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -14604,7 +14604,7 @@
             },
             "to": {
               "cid": "c7495",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -14730,7 +14730,7 @@
             },
             "to": {
               "cid": "c7496",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -14742,7 +14742,7 @@
             },
             "to": {
               "cid": "c7497",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -14754,7 +14754,7 @@
             },
             "to": {
               "cid": "c7498",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -19407,7 +19407,7 @@
             },
             "to": {
               "cid": "c8581",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": "",
             "pts": [
@@ -19429,7 +19429,7 @@
             },
             "to": {
               "cid": "c8578",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -19494,7 +19494,7 @@
             "x": 385,
             "y": 363,
             "params": {
-              "name": "last_output",
+              "name": "trigger",
               "width": 1
             },
             "label": ""
@@ -25726,7 +25726,7 @@
             },
             "to": {
               "cid": "c9232",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -25762,7 +25762,7 @@
             },
             "to": {
               "cid": "c9233",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -25774,7 +25774,7 @@
             },
             "to": {
               "cid": "c9234",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -25816,7 +25816,7 @@
             },
             "to": {
               "cid": "c9235",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -25858,7 +25858,7 @@
             },
             "to": {
               "cid": "c9236",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -27964,7 +27964,7 @@
             "x": 165,
             "y": 110,
             "params": {
-              "name": "last_output",
+              "name": "trigger",
               "width": 1
             },
             "label": ""
@@ -28112,7 +28112,7 @@
           {
             "id": "c10828",
             "type": "IN",
-            "x": -22,
+            "x": -165,
             "y": 440,
             "params": {
               "name": "clk",
@@ -30985,13 +30985,6 @@
             "params": {}
           },
           {
-            "id": "c13451",
-            "type": "JUNCTION",
-            "x": 71,
-            "y": 456,
-            "params": {}
-          },
-          {
             "id": "c13455",
             "type": "JUNCTION",
             "x": 302,
@@ -32364,6 +32357,21 @@
             "y": 44,
             "params": {},
             "label": "Chain_Data"
+          },
+          {
+            "id": "c14544",
+            "type": "SCH:sch6955",
+            "x": -66,
+            "y": 286,
+            "params": {},
+            "label": ""
+          },
+          {
+            "id": "c14547",
+            "type": "JUNCTION",
+            "x": -72,
+            "y": 456,
+            "params": {}
           }
         ],
         "wires": [
@@ -35425,42 +35433,6 @@
             "to": {
               "cid": "c12783",
               "pid": "y"
-            },
-            "name": ""
-          },
-          {
-            "id": "w13452",
-            "from": {
-              "cid": "c10828",
-              "pid": "o"
-            },
-            "to": {
-              "cid": "c13451",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w13453",
-            "from": {
-              "cid": "c13451",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c11139",
-              "pid": "clk"
-            },
-            "name": ""
-          },
-          {
-            "id": "w13456",
-            "from": {
-              "cid": "c13451",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c13455",
-              "pid": "j"
             },
             "name": ""
           },
@@ -39954,6 +39926,54 @@
               "pid": "i"
             },
             "name": ""
+          },
+          {
+            "id": "w14546",
+            "from": {
+              "cid": "c14544",
+              "pid": "clk_mod50m"
+            },
+            "to": {
+              "cid": "c11139",
+              "pid": "clk"
+            },
+            "name": ""
+          },
+          {
+            "id": "w14548",
+            "from": {
+              "cid": "c10828",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c14547",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w14549",
+            "from": {
+              "cid": "c14547",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c13455",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w14550",
+            "from": {
+              "cid": "c14547",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14544",
+              "pid": "clk"
+            },
+            "name": ""
           }
         ],
         "locked": false
@@ -40169,14 +40189,6 @@
             "params": {}
           },
           {
-            "id": "c14330",
-            "type": "SCH:sch14293",
-            "x": 220,
-            "y": 396,
-            "params": {},
-            "label": ""
-          },
-          {
             "id": "c14333",
             "type": "JUNCTION",
             "x": 786,
@@ -40226,6 +40238,14 @@
             "x": 786,
             "y": 137,
             "params": {}
+          },
+          {
+            "id": "c14607",
+            "type": "SCH:sch14551",
+            "x": 220,
+            "y": 407,
+            "params": {},
+            "label": ""
           }
         ],
         "wires": [
@@ -40571,48 +40591,6 @@
             "name": ""
           },
           {
-            "id": "w14336",
-            "from": {
-              "cid": "c14333",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c14330",
-              "pid": "trigger"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 209,
-                "y": 385
-              }
-            ]
-          },
-          {
-            "id": "w14338",
-            "from": {
-              "cid": "c14330",
-              "pid": "mod32_out"
-            },
-            "to": {
-              "cid": "c10997",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w14339",
-            "from": {
-              "cid": "c10969",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c14330",
-              "pid": "clk"
-            },
-            "name": ""
-          },
-          {
             "id": "w14341",
             "from": {
               "cid": "c10836",
@@ -40755,6 +40733,48 @@
               "pid": "a"
             },
             "name": ""
+          },
+          {
+            "id": "w14608",
+            "from": {
+              "cid": "c14607",
+              "pid": "mod100k_out"
+            },
+            "to": {
+              "cid": "c10997",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w14609",
+            "from": {
+              "cid": "c10969",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14607",
+              "pid": "clk"
+            },
+            "name": ""
+          },
+          {
+            "id": "w14610",
+            "from": {
+              "cid": "c14333",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14607",
+              "pid": "trigger"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 209,
+                "y": 396
+              }
+            ]
           }
         ],
         "locked": false
@@ -43516,7 +43536,7 @@
             },
             "to": {
               "cid": "c14297",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -43528,7 +43548,7 @@
             },
             "to": {
               "cid": "c14298",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -43540,7 +43560,7 @@
             },
             "to": {
               "cid": "c14299",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -43582,7 +43602,7 @@
             },
             "to": {
               "cid": "c14300",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -43624,7 +43644,7 @@
             },
             "to": {
               "cid": "c14301",
-              "pid": "last_output"
+              "pid": "trigger"
             },
             "name": ""
           },
@@ -43690,6 +43710,381 @@
           }
         ],
         "locked": false
+      },
+      "sch14551": {
+        "id": "sch14551",
+        "name": "mod100k_sync",
+        "components": [
+          {
+            "id": "c14555",
+            "type": "SCH:sch6861",
+            "x": 352,
+            "y": 132,
+            "params": {},
+            "label": ""
+          },
+          {
+            "id": "c14558",
+            "type": "SCH:sch6861",
+            "x": 506,
+            "y": 132,
+            "params": {},
+            "label": ""
+          },
+          {
+            "id": "c14559",
+            "type": "SCH:sch6861",
+            "x": 660,
+            "y": 132,
+            "params": {},
+            "label": ""
+          },
+          {
+            "id": "c14560",
+            "type": "SCH:sch6861",
+            "x": 814,
+            "y": 132,
+            "params": {},
+            "label": ""
+          },
+          {
+            "id": "c14561",
+            "type": "SCH:sch6861",
+            "x": 968,
+            "y": 132,
+            "params": {},
+            "label": ""
+          },
+          {
+            "id": "c14562",
+            "type": "SCH:sch6861",
+            "x": 1122,
+            "y": 132,
+            "params": {},
+            "label": ""
+          },
+          {
+            "id": "c14567",
+            "type": "JUNCTION",
+            "x": 346,
+            "y": 214,
+            "params": {
+              "fixed": true
+            }
+          },
+          {
+            "id": "c14571",
+            "type": "JUNCTION",
+            "x": 500,
+            "y": 214,
+            "params": {}
+          },
+          {
+            "id": "c14575",
+            "type": "JUNCTION",
+            "x": 654,
+            "y": 214,
+            "params": {
+              "fixed": true
+            }
+          },
+          {
+            "id": "c14579",
+            "type": "JUNCTION",
+            "x": 808,
+            "y": 214,
+            "params": {}
+          },
+          {
+            "id": "c14583",
+            "type": "JUNCTION",
+            "x": 962,
+            "y": 214,
+            "params": {}
+          },
+          {
+            "id": "c14587",
+            "type": "OUT",
+            "x": 1276,
+            "y": 132,
+            "params": {
+              "name": "mod100k_out",
+              "width": 1
+            },
+            "label": ""
+          },
+          {
+            "id": "c14595",
+            "type": "IN",
+            "x": 242,
+            "y": 132,
+            "params": {
+              "name": "trigger",
+              "width": 1
+            },
+            "label": ""
+          },
+          {
+            "id": "c14597",
+            "type": "IN",
+            "x": 253,
+            "y": 198,
+            "params": {
+              "name": "clk",
+              "width": 1
+            },
+            "label": ""
+          }
+        ],
+        "wires": [
+          {
+            "id": "w14569",
+            "from": {
+              "cid": "c14567",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14555",
+              "pid": "clk"
+            },
+            "name": ""
+          },
+          {
+            "id": "w14572",
+            "from": {
+              "cid": "c14567",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14571",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w14573",
+            "from": {
+              "cid": "c14571",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14558",
+              "pid": "clk"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 506,
+                "y": 220
+              }
+            ]
+          },
+          {
+            "id": "w14576",
+            "from": {
+              "cid": "c14571",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14575",
+              "pid": "j"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 660,
+                "y": 220
+              }
+            ]
+          },
+          {
+            "id": "w14577",
+            "from": {
+              "cid": "c14575",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14559",
+              "pid": "clk"
+            },
+            "name": ""
+          },
+          {
+            "id": "w14580",
+            "from": {
+              "cid": "c14575",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14579",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w14581",
+            "from": {
+              "cid": "c14579",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14560",
+              "pid": "clk"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 814,
+                "y": 220
+              }
+            ]
+          },
+          {
+            "id": "w14584",
+            "from": {
+              "cid": "c14579",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14583",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w14585",
+            "from": {
+              "cid": "c14583",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14561",
+              "pid": "clk"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 968,
+                "y": 220
+              }
+            ]
+          },
+          {
+            "id": "w14586",
+            "from": {
+              "cid": "c14583",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14562",
+              "pid": "clk"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 1122,
+                "y": 220
+              }
+            ]
+          },
+          {
+            "id": "w14588",
+            "from": {
+              "cid": "c14562",
+              "pid": "mod10_out"
+            },
+            "to": {
+              "cid": "c14587",
+              "pid": "i"
+            },
+            "name": ""
+          },
+          {
+            "id": "w14589",
+            "from": {
+              "cid": "c14555",
+              "pid": "mod10_out"
+            },
+            "to": {
+              "cid": "c14558",
+              "pid": "trigger"
+            },
+            "name": ""
+          },
+          {
+            "id": "w14590",
+            "from": {
+              "cid": "c14558",
+              "pid": "mod10_out"
+            },
+            "to": {
+              "cid": "c14559",
+              "pid": "trigger"
+            },
+            "name": ""
+          },
+          {
+            "id": "w14591",
+            "from": {
+              "cid": "c14559",
+              "pid": "mod10_out"
+            },
+            "to": {
+              "cid": "c14560",
+              "pid": "trigger"
+            },
+            "name": ""
+          },
+          {
+            "id": "w14592",
+            "from": {
+              "cid": "c14560",
+              "pid": "mod10_out"
+            },
+            "to": {
+              "cid": "c14561",
+              "pid": "trigger"
+            },
+            "name": ""
+          },
+          {
+            "id": "w14593",
+            "from": {
+              "cid": "c14561",
+              "pid": "mod10_out"
+            },
+            "to": {
+              "cid": "c14562",
+              "pid": "trigger"
+            },
+            "name": ""
+          },
+          {
+            "id": "w14596",
+            "from": {
+              "cid": "c14595",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c14555",
+              "pid": "trigger"
+            },
+            "name": ""
+          },
+          {
+            "id": "w14598",
+            "from": {
+              "cid": "c14597",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c14567",
+              "pid": "j"
+            },
+            "name": ""
+          }
+        ],
+        "locked": false
       }
     },
     "customs": {},
@@ -43705,6 +44100,7 @@
       "sch7494",
       "sch7432",
       "sch9231",
+      "sch14551",
       "sch6955",
       "sch4821",
       "sch3902",
@@ -43734,7 +44130,7 @@
       "sch13197"
     ]
   },
-  "activeId": "sch10826",
+  "activeId": "sch8629",
   "openTabs": [
     "sch1564",
     "sch6782",
@@ -43766,6 +44162,11 @@
     "sch13037",
     "sch13197",
     "sch14293",
-    "sch3726"
+    "sch3726",
+    "sch14551",
+    "sch9231",
+    "sch4821",
+    "sch3905",
+    "sch6089"
   ]
 }
