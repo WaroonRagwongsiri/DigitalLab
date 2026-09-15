@@ -50,10 +50,10 @@ set_property -dict {PACKAGE_PIN J11 IOSTANDARD LVCMOS33 PULLDOWN true} [get_port
 set_property -dict {PACKAGE_PIN J12 IOSTANDARD LVCMOS33 PULLDOWN true} [get_ports {pb[4]}]; #Button-center
 
 #7 segment display
-set_property -dict { PACKAGE_PIN H4    IOSTANDARD LVCMOS33 } [get_ports {digit[0]}]; #LSB
+set_property -dict { PACKAGE_PIN H4    IOSTANDARD LVCMOS33 } [get_ports {digit[0]}]; #LSB (Rightmost)
 set_property -dict { PACKAGE_PIN H3    IOSTANDARD LVCMOS33 } [get_ports {digit[1]}];
 set_property -dict { PACKAGE_PIN H2    IOSTANDARD LVCMOS33 } [get_ports {digit[2]}];
-set_property -dict { PACKAGE_PIN H1    IOSTANDARD LVCMOS33 } [get_ports {digit[3]}]; #MSB
+set_property -dict { PACKAGE_PIN H1    IOSTANDARD LVCMOS33 } [get_ports {digit[3]}]; #MSB (Leftmost)
 
 set_property -dict { PACKAGE_PIN L3    IOSTANDARD LVCMOS33 } [get_ports {Seven_Segment[7]}];#A
 set_property -dict { PACKAGE_PIN P4    IOSTANDARD LVCMOS33 } [get_ports {Seven_Segment[6]}];#B
