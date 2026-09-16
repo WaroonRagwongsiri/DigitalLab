@@ -45,8 +45,16 @@ architecture Behavioral of mcp3208_spi is
   signal rx_shift  : STD_LOGIC_VECTOR(11 downto 0) := (others => '0');
 
   signal dout_sync1, dout_sync2 : STD_LOGIC := '0';  -- 2-FF synchronizer for the external DOUT input
+  signal start_d : STD_LOGIC := '0';  -- previous `start`, for rising-edge detect (start is a slow square wave, not a 1-cycle pulse)
 
 begin
+
+  process(clk)
+  begin
+    if rising_edge(clk) then
+      start_d <= start;
+    end if;
+  end process;
 
   -- synchronize the external asynchronous DOUT input
   process(clk)
@@ -67,7 +75,7 @@ begin
           data_valid <= '0';
           div_cnt    <= 0;
           bit_index  <= 0;
-          if start = '1' then
+          if start = '1' and start_d = '0' then
             state <= S_XFER;
             CS    <= '0';
           end if;

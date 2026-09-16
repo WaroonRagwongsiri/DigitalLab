@@ -53,7 +53,7 @@ begin
     U_DIV : entity work.mod50k_sync
         port map (
             clk        => clk,
-            clk_mod50k => clk_1khz
+            mod50k_out => clk_1khz
         );
 
     -- 1 kHz -> ~10 Hz ADC sample / display-refresh trigger
