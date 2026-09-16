@@ -4261,7 +4261,7 @@
             "x": 979,
             "y": 33,
             "params": {
-              "name": "clk_mod5",
+              "name": "mod5_out",
               "width": 1
             },
             "label": ""
@@ -5327,7 +5327,7 @@
             "id": "w4088",
             "from": {
               "cid": "c4085",
-              "pid": "clk_mod5"
+              "pid": "mod5_out"
             },
             "to": {
               "cid": "c4087",
@@ -5339,7 +5339,7 @@
             "id": "w4090",
             "from": {
               "cid": "c4087",
-              "pid": "clk_mod10"
+              "pid": "mod10_out"
             },
             "to": {
               "cid": "c4089",
@@ -5351,7 +5351,7 @@
             "id": "w4092",
             "from": {
               "cid": "c4089",
-              "pid": "clk_mod10"
+              "pid": "mod10_out"
             },
             "to": {
               "cid": "c4091",
@@ -5364,7 +5364,7 @@
             "id": "w4094",
             "from": {
               "cid": "c4091",
-              "pid": "clk_mod10"
+              "pid": "mod10_out"
             },
             "to": {
               "cid": "c4093",
@@ -5460,7 +5460,7 @@
             "id": "w5124",
             "from": {
               "cid": "c4093",
-              "pid": "clk_mod10"
+              "pid": "mod10_out"
             },
             "to": {
               "cid": "c5025",
@@ -6450,7 +6450,7 @@
             "x": 1661,
             "y": 88,
             "params": {
-              "name": "clk_mod10",
+              "name": "mod10_out",
               "width": 1
             },
             "label": ""
@@ -10799,7 +10799,7 @@
             "id": "w6111",
             "from": {
               "cid": "c6109",
-              "pid": "clk_mod50m"
+              "pid": "mod50m_out"
             },
             "to": {
               "cid": "c5633",
@@ -11719,7 +11719,7 @@
             "x": 1144,
             "y": 110,
             "params": {
-              "name": "clk_mod50m",
+              "name": "mod50m_out",
               "width": 1
             },
             "label": ""
@@ -11742,7 +11742,7 @@
             "id": "w6100",
             "from": {
               "cid": "c6091",
-              "pid": "clk_mod5"
+              "pid": "mod5_out"
             },
             "to": {
               "cid": "c6094",
@@ -11754,7 +11754,7 @@
             "id": "w6101",
             "from": {
               "cid": "c6094",
-              "pid": "clk_mod10"
+              "pid": "mod10_out"
             },
             "to": {
               "cid": "c6095",
@@ -11766,7 +11766,7 @@
             "id": "w6102",
             "from": {
               "cid": "c6095",
-              "pid": "clk_mod10"
+              "pid": "mod10_out"
             },
             "to": {
               "cid": "c6096",
@@ -11778,7 +11778,7 @@
             "id": "w6103",
             "from": {
               "cid": "c6096",
-              "pid": "clk_mod10"
+              "pid": "mod10_out"
             },
             "to": {
               "cid": "c6097",
@@ -11791,7 +11791,7 @@
             "id": "w6104",
             "from": {
               "cid": "c6097",
-              "pid": "clk_mod10"
+              "pid": "mod10_out"
             },
             "to": {
               "cid": "c6093",
@@ -11803,7 +11803,7 @@
             "id": "w6105",
             "from": {
               "cid": "c6093",
-              "pid": "clk_mod10"
+              "pid": "mod10_out"
             },
             "to": {
               "cid": "c6098",
@@ -11815,7 +11815,7 @@
             "id": "w6106",
             "from": {
               "cid": "c6098",
-              "pid": "clk_mod10"
+              "pid": "mod10_out"
             },
             "to": {
               "cid": "c6092",
@@ -11827,7 +11827,7 @@
             "id": "w6108",
             "from": {
               "cid": "c6092",
-              "pid": "clk_mod10"
+              "pid": "mod10_out"
             },
             "to": {
               "cid": "c6107",
@@ -12232,7 +12232,7 @@
             "id": "w7042",
             "from": {
               "cid": "c7040",
-              "pid": "clk_mod50m"
+              "pid": "mod50m_out"
             },
             "to": {
               "cid": "c6233",
@@ -13091,7 +13091,7 @@
             "x": 836,
             "y": 418,
             "params": {
-              "name": "clk_mod50m",
+              "name": "mod50m_out",
               "width": 1
             },
             "label": ""
@@ -13972,7 +13972,7 @@
             "id": "w9423",
             "from": {
               "cid": "c9312",
-              "pid": "clk_mod50k"
+              "pid": "mod50k_out"
             },
             "to": {
               "cid": "c9404",
@@ -14169,7 +14169,7 @@
             "x": 1166,
             "y": 308,
             "params": {
-              "name": "clk_mod25m",
+              "name": "mod25m_out",
               "width": 1
             },
             "label": ""
@@ -14589,7 +14589,7 @@
             "x": 836,
             "y": 242,
             "params": {
-              "name": "clk_mod5k",
+              "name": "mod5k_out",
               "width": 1
             },
             "label": ""
@@ -15009,7 +15009,7 @@
             "id": "w7779",
             "from": {
               "cid": "c7685",
-              "pid": "clk_mod25m"
+              "pid": "mod25m_out"
             },
             "to": {
               "cid": "c7777",
@@ -15122,7 +15122,7 @@
             "id": "w9264",
             "from": {
               "cid": "c9263",
-              "pid": "clk_mod50k"
+              "pid": "mod50k_out"
             },
             "to": {
               "cid": "c7683",
@@ -25711,7 +25711,7 @@
             "x": 1034,
             "y": 198,
             "params": {
-              "name": "clk_mod50k",
+              "name": "mod50k_out",
               "width": 1
             },
             "label": ""
@@ -39931,7 +39931,7 @@
             "id": "w14546",
             "from": {
               "cid": "c14544",
-              "pid": "clk_mod50m"
+              "pid": "mod50m_out"
             },
             "to": {
               "cid": "c11139",
@@ -46447,7 +46447,7 @@
       "sch14805"
     ]
   },
-  "activeId": "sch14611",
+  "activeId": "sch7432",
   "openTabs": [
     "sch1564",
     "sch6782",
