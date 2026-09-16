@@ -126,7 +126,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity mod5_sync is
   Port (
-    last_output : in  STD_LOGIC;
+    trigger : in  STD_LOGIC;
     clk : in  STD_LOGIC;
     mod5_out : out STD_LOGIC
   );
@@ -143,12 +143,12 @@ architecture Behavioral of mod5_sync is
 begin
 
   -- combinational logic
-  n4_o <= last_output and n3_qn;
-  n5_o <= last_output and n1_q;
+  n4_o <= trigger and n3_qn;
+  n5_o <= trigger and n1_q;
   n7_o <= n2_q and n1_q;
   n9_o <= n3_q or n7_o;
-  n10_o <= last_output and n9_o;
-  n12_o <= last_output and n3_q;
+  n10_o <= trigger and n9_o;
+  n12_o <= trigger and n3_q;
 
   -- sequential logic (flip-flops)
   process(clk)
@@ -187,7 +187,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity mod10_sync is
   Port (
-    last_output : in  STD_LOGIC;
+    trigger : in  STD_LOGIC;
     clk : in  STD_LOGIC;
     mod10_out : out STD_LOGIC
   );
@@ -196,14 +196,14 @@ end mod10_sync;
 architecture Behavioral of mod10_sync is
   component mod5_sync
     Port (
-      last_output : in  STD_LOGIC;
+      trigger : in  STD_LOGIC;
       clk : in  STD_LOGIC;
       mod5_out : out STD_LOGIC
     );
   end component;
   component mod2_sync
     Port (
-      last_output : in  STD_LOGIC;
+      trigger : in  STD_LOGIC;
       clk : in  STD_LOGIC;
       mod2_out : out STD_LOGIC
     );
@@ -213,12 +213,12 @@ begin
 
   -- sub-component instantiations
   u_0_c10681 : mod5_sync port map (
-    last_output => n2_mod2_out,
+    trigger => n2_mod2_out,
     clk => clk,
     mod5_out => n1_mod5_out
   );
   u_1_c10682 : mod2_sync port map (
-    last_output => last_output,
+    trigger => trigger,
     clk => clk,
     mod2_out => n2_mod2_out
   );
@@ -287,7 +287,7 @@ architecture Behavioral of lab6 is
   component mod50k_sync
     Port (
       clk : in  STD_LOGIC;
-      clk_mod50k : out STD_LOGIC
+      mod50k_out : out STD_LOGIC
     );
   end component;
   component n_2_digit_bcd_7seg_decoder
@@ -304,7 +304,7 @@ architecture Behavioral of lab6 is
       d1 : out STD_LOGIC
     );
   end component;
-  signal n1_a, n1_b, n1_c, n1_d, n1_e, n1_f, n1_g, n2_led_status, n3_clk_mod50k, n5_segment_d3, n5_segment_d2, n5_segment_d1, n5_segment_d0, n5_d0, n5_d1 : STD_LOGIC;
+  signal n1_a, n1_b, n1_c, n1_d, n1_e, n1_f, n1_g, n2_led_status, n3_mod50k_out, n5_segment_d3, n5_segment_d2, n5_segment_d1, n5_segment_d0, n5_d0, n5_d1 : STD_LOGIC;
   signal n2_current_bcd_d1 : STD_LOGIC_VECTOR(3 downto 0);
   signal n2_current_bcd_d0 : STD_LOGIC_VECTOR(3 downto 0);
 begin
@@ -333,12 +333,12 @@ begin
   );
   u_2_c9312 : mod50k_sync port map (
     clk => clk_50mhz,
-    clk_mod50k => n3_clk_mod50k
+    mod50k_out => n3_mod50k_out
   );
   u_3_c9404 : n_2_digit_bcd_7seg_decoder port map (
     current_bcd_d1 => n2_current_bcd_d1,
     current_bcd_d0 => n2_current_bcd_d0,
-    clk_1khz => n3_clk_mod50k,
+    clk_1khz => n3_mod50k_out,
     clk50_mhz => clk_50mhz,
     segment_d3 => n5_segment_d3,
     segment_d2 => n5_segment_d2,
@@ -377,21 +377,21 @@ use IEEE.NUMERIC_STD.ALL;
 entity mod2_5m_sync is
   Port (
     clk : in  STD_LOGIC;
-    clk_mod25m : out STD_LOGIC
+    mod25m_out : out STD_LOGIC
   );
 end mod2_5m_sync;
 
 architecture Behavioral of mod2_5m_sync is
   component mod5_sync
     Port (
-      last_output : in  STD_LOGIC;
+      trigger : in  STD_LOGIC;
       clk : in  STD_LOGIC;
       mod5_out : out STD_LOGIC
     );
   end component;
   component mod10_sync
     Port (
-      last_output : in  STD_LOGIC;
+      trigger : in  STD_LOGIC;
       clk : in  STD_LOGIC;
       mod10_out : out STD_LOGIC
     );
@@ -401,43 +401,43 @@ begin
 
   -- sub-component instantiations
   u_0_c7433 : mod5_sync port map (
-    last_output => STD_LOGIC'('1'),
+    trigger => STD_LOGIC'('1'),
     clk => clk,
     mod5_out => n1_mod5_out
   );
   u_1_c7437 : mod10_sync port map (
-    last_output => n7_mod10_out,
+    trigger => n7_mod10_out,
     clk => clk,
     mod10_out => n2_mod10_out
   );
   u_2_c7438 : mod10_sync port map (
-    last_output => n2_mod10_out,
+    trigger => n2_mod10_out,
     clk => clk,
     mod10_out => n3_mod10_out
   );
   u_3_c7439 : mod10_sync port map (
-    last_output => n3_mod10_out,
+    trigger => n3_mod10_out,
     clk => clk,
     mod10_out => n4_mod10_out
   );
   u_4_c7442 : mod5_sync port map (
-    last_output => n1_mod5_out,
+    trigger => n1_mod5_out,
     clk => clk,
     mod5_out => n5_mod5_out
   );
   u_5_c7443 : mod10_sync port map (
-    last_output => n5_mod5_out,
+    trigger => n5_mod5_out,
     clk => clk,
     mod10_out => n6_mod10_out
   );
   u_6_c7444 : mod10_sync port map (
-    last_output => n6_mod10_out,
+    trigger => n6_mod10_out,
     clk => clk,
     mod10_out => n7_mod10_out
   );
 
   -- output drivers
-  clk_mod25m <= n4_mod10_out;
+  mod25m_out <= n4_mod10_out;
 
 end Behavioral;
 
@@ -474,7 +474,7 @@ architecture Behavioral of main_controller is
   component mod2_5m_sync
     Port (
       clk : in  STD_LOGIC;
-      clk_mod25m : out STD_LOGIC
+      mod25m_out : out STD_LOGIC
     );
   end component;
   component start_stop_controller
@@ -498,7 +498,7 @@ architecture Behavioral of main_controller is
   component mod50k_sync
     Port (
       clk : in  STD_LOGIC;
-      clk_mod50k : out STD_LOGIC
+      mod50k_out : out STD_LOGIC
     );
   end component;
   component concat4bit_8bit
@@ -515,7 +515,7 @@ architecture Behavioral of main_controller is
       n_8bit_out : out STD_LOGIC_VECTOR(7 downto 0)
     );
   end component;
-  signal n1_toggle_output, n2_clk_mod25m, n3_start_flag, n3_error_flag, n5_o, n8_clk_mod50k : STD_LOGIC;
+  signal n1_toggle_output, n2_mod25m_out, n3_start_flag, n3_error_flag, n5_o, n8_mod50k_out : STD_LOGIC;
   signal n6_current_d1 : STD_LOGIC_VECTOR(3 downto 0);
   signal n6_current_d0 : STD_LOGIC_VECTOR(3 downto 0);
   signal n11_out8bit : STD_LOGIC_VECTOR(7 downto 0);
@@ -523,18 +523,18 @@ architecture Behavioral of main_controller is
 begin
 
   -- combinational logic
-  n5_o <= n3_start_flag and n2_clk_mod25m;
+  n5_o <= n3_start_flag and n2_mod25m_out;
 
   -- sub-component instantiations
   u_0_c7683 : debounce_toggle port map (
     sw_in => btn_start_stop,
     clk_50mhz => clk50mhz,
-    clk_1khz => n8_clk_mod50k,
+    clk_1khz => n8_mod50k_out,
     toggle_output => n1_toggle_output
   );
   u_1_c7685 : mod2_5m_sync port map (
     clk => clk50mhz,
-    clk_mod25m => n2_clk_mod25m
+    mod25m_out => n2_mod25m_out
   );
   u_2_c7732 : start_stop_controller port map (
     target_bcd => target_bcd,
@@ -552,7 +552,7 @@ begin
   );
   u_4_c9263 : mod50k_sync port map (
     clk => clk50mhz,
-    clk_mod50k => n8_clk_mod50k
+    mod50k_out => n8_mod50k_out
   );
   u_5_c9279 : concat4bit_8bit port map (
     lhs => n6_current_d1,
@@ -600,28 +600,16 @@ architecture Behavioral of debounce_toggle is
       debounce_signal : out STD_LOGIC
     );
   end component;
-  signal n1_debounce_signal, n6_o : STD_LOGIC;
+  signal n1_debounce_signal : STD_LOGIC;
   signal n2_q : STD_LOGIC := '0';
   signal n2_qn : STD_LOGIC := '1';
-  signal n3_q : STD_LOGIC := '0';
-  signal n3_qn : STD_LOGIC := '1';
 begin
-
-  -- combinational logic
-  n6_o <= n1_debounce_signal and n3_qn;
 
   -- sequential logic (flip-flops)
   process(clk_50mhz)
   begin
     if rising_edge(clk_50mhz) then
-      if (n6_o='1') then n2_q <= not n2_q; n2_qn <= not n2_qn; end if;
-    end if;
-  end process;
-  process(clk_50mhz)
-  begin
-    if rising_edge(clk_50mhz) then
-      n3_q  <= n1_debounce_signal;
-      n3_qn <= not (n1_debounce_signal);
+      if (n1_debounce_signal='1') then n2_q <= not n2_q; n2_qn <= not n2_qn; end if;
     end if;
   end process;
 
@@ -791,7 +779,7 @@ end counter00_99_bcd;
 architecture Behavioral of counter00_99_bcd is
   component counter0_9
     Port (
-      last_output : in  STD_LOGIC;
+      trigger : in  STD_LOGIC;
       clk : in  STD_LOGIC;
       reset : in  STD_LOGIC;
       current_bcd : out STD_LOGIC_VECTOR(3 downto 0);
@@ -805,14 +793,14 @@ begin
 
   -- sub-component instantiations
   u_lsb : counter0_9 port map (
-    last_output => clk_20hz,
+    trigger => clk_20hz,
     clk => clk_50mhz,
     reset => reset,
     current_bcd => n1_current_bcd,
     limit_reach => n1_limit_reach
   );
   u_msb : counter0_9 port map (
-    last_output => n1_limit_reach,
+    trigger => n1_limit_reach,
     clk => clk_50mhz,
     reset => reset,
     current_bcd => n2_current_bcd,
@@ -837,7 +825,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity counter0_9 is
   Port (
-    last_output : in  STD_LOGIC;
+    trigger : in  STD_LOGIC;
     clk : in  STD_LOGIC;
     reset : in  STD_LOGIC;
     current_bcd : out STD_LOGIC_VECTOR(3 downto 0);
@@ -860,10 +848,10 @@ architecture Behavioral of counter0_9 is
 begin
 
   -- combinational logic
-  n2_o <= last_output and n1_q;
+  n2_o <= trigger and n1_q;
   n5_o <= n2_o and n4_q;
   n8_o <= n5_o and n7_q;
-  n11_o <= n10_q and n7_qn and n4_qn and n1_q and last_output;
+  n11_o <= n10_q and n7_qn and n4_qn and n1_q and trigger;
   n20_o <= n10_q;
   n23_o <= n7_q;
   n27_o <= n4_q;
@@ -877,7 +865,7 @@ begin
       n1_q <= '0';
       n1_qn <= '1';
     elsif rising_edge(clk) then
-      if (last_output='1') then n1_q <= not n1_q; n1_qn <= not n1_qn; end if;
+      if (trigger='1') then n1_q <= not n1_q; n1_qn <= not n1_qn; end if;
     end if;
   end process;
   process(clk, n13_q)
@@ -954,7 +942,7 @@ architecture Behavioral of debounce_button is
       current : out STD_LOGIC_VECTOR(7 downto 0)
     );
   end component;
-  signal n4_limit_reached, n6_o, n7_o, n8_o, n9_o, n10_o, n11_o, n12_o, n13_o : STD_LOGIC;
+  signal n4_limit_reached, n6_o, n7_o, n8_o, n9_o, n10_o, n11_o, n12_o, n13_o, n39_o : STD_LOGIC;
   signal n4_current : STD_LOGIC_VECTOR(7 downto 0);
   signal sch_sch8629_target_bus : STD_LOGIC_VECTOR(7 downto 0);
   signal n1_q : STD_LOGIC := '0';
@@ -963,6 +951,8 @@ architecture Behavioral of debounce_button is
   signal n2_qn : STD_LOGIC := '1';
   signal n3_q : STD_LOGIC := '0';
   signal n3_qn : STD_LOGIC := '1';
+  signal n38_q : STD_LOGIC := '0';
+  signal n38_qn : STD_LOGIC := '1';
 begin
 
   -- combinational logic
@@ -974,6 +964,7 @@ begin
   n11_o <= STD_LOGIC'('0');
   n12_o <= STD_LOGIC'('1');
   n13_o <= STD_LOGIC'('0');
+  n39_o <= n3_q and n38_qn;
 
   -- sequential logic (flip-flops)
   process(clk_50mhz)
@@ -1002,6 +993,13 @@ begin
       end if;
     end if;
   end process;
+  process(clk_50mhz)
+  begin
+    if rising_edge(clk_50mhz) then
+      n38_q  <= n3_q;
+      n38_qn <= not (n3_q);
+    end if;
+  end process;
 
   -- sub-component instantiations
   u_0_c8869 : n_8_bit_sync_counter_with_target port map (
@@ -1014,7 +1012,7 @@ begin
   );
 
   -- output drivers
-  debounce_signal <= n3_q;
+  debounce_signal <= n39_o;
   sch_sch8629_target_bus(7) <= n6_o;
   sch_sch8629_target_bus(6) <= n7_o;
   sch_sch8629_target_bus(5) <= n8_o;
@@ -1256,21 +1254,21 @@ use IEEE.NUMERIC_STD.ALL;
 entity mod50k_sync is
   Port (
     clk : in  STD_LOGIC;
-    clk_mod50k : out STD_LOGIC
+    mod50k_out : out STD_LOGIC
   );
 end mod50k_sync;
 
 architecture Behavioral of mod50k_sync is
   component mod5_sync
     Port (
-      last_output : in  STD_LOGIC;
+      trigger : in  STD_LOGIC;
       clk : in  STD_LOGIC;
       mod5_out : out STD_LOGIC
     );
   end component;
   component mod10_sync
     Port (
-      last_output : in  STD_LOGIC;
+      trigger : in  STD_LOGIC;
       clk : in  STD_LOGIC;
       mod10_out : out STD_LOGIC
     );
@@ -1280,33 +1278,33 @@ begin
 
   -- sub-component instantiations
   u_0_c9232 : mod5_sync port map (
-    last_output => STD_LOGIC'('1'),
+    trigger => STD_LOGIC'('1'),
     clk => clk,
     mod5_out => n1_mod5_out
   );
   u_1_c9233 : mod10_sync port map (
-    last_output => n1_mod5_out,
+    trigger => n1_mod5_out,
     clk => clk,
     mod10_out => n2_mod10_out
   );
   u_2_c9234 : mod10_sync port map (
-    last_output => n2_mod10_out,
+    trigger => n2_mod10_out,
     clk => clk,
     mod10_out => n3_mod10_out
   );
   u_3_c9235 : mod10_sync port map (
-    last_output => n3_mod10_out,
+    trigger => n3_mod10_out,
     clk => clk,
     mod10_out => n4_mod10_out
   );
   u_4_c9236 : mod10_sync port map (
-    last_output => n4_mod10_out,
+    trigger => n4_mod10_out,
     clk => clk,
     mod10_out => n5_mod10_out
   );
 
   -- output drivers
-  clk_mod50k <= n5_mod10_out;
+  mod50k_out <= n5_mod10_out;
 
 end Behavioral;
 
@@ -1507,7 +1505,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity mod2_sync is
   Port (
-    last_output : in  STD_LOGIC;
+    trigger : in  STD_LOGIC;
     clk : in  STD_LOGIC;
     mod2_out : out STD_LOGIC
   );
@@ -1520,13 +1518,13 @@ architecture Behavioral of mod2_sync is
 begin
 
   -- combinational logic
-  n2_o <= last_output and n1_q;
+  n2_o <= trigger and n1_q;
 
   -- sequential logic (flip-flops)
   process(clk)
   begin
     if rising_edge(clk) then
-      if (last_output='1') then n1_q <= not n1_q; n1_qn <= not n1_qn; end if;
+      if (trigger='1') then n1_q <= not n1_q; n1_qn <= not n1_qn; end if;
     end if;
   end process;
 
