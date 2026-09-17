@@ -2,7 +2,7 @@
   "version": 1,
   "project": {
     "name": "lab9",
-    "topId": "sch14925",
+    "topId": "sch7261",
     "schematics": {
       "sch1564": {
         "id": "sch1564",
@@ -13717,23 +13717,23 @@
             "id": "c7269",
             "type": "IN",
             "x": 77,
-            "y": 286,
+            "y": 330,
             "params": {
               "name": "sw_target_bcd",
               "width": 8
             },
-            "label": "stop_input"
+            "label": ""
           },
           {
             "id": "c7270",
             "type": "IN",
             "x": 99,
-            "y": 374,
+            "y": 352,
             "params": {
               "name": "btn_start_stop",
               "width": 1
             },
-            "label": "start_stop_toggle"
+            "label": ""
           },
           {
             "id": "c7282",
@@ -14184,18 +14184,6 @@
             ]
           },
           {
-            "id": "w9413",
-            "from": {
-              "cid": "c8259",
-              "pid": "current_bcd_d1"
-            },
-            "to": {
-              "cid": "c9404",
-              "pid": "current_bcd_d1"
-            },
-            "name": ""
-          },
-          {
             "id": "w9423",
             "from": {
               "cid": "c9312",
@@ -14267,14 +14255,50 @@
             ]
           },
           {
-            "id": "w16646",
+            "id": "w16813",
             "from": {
               "cid": "c8259",
-              "pid": "current_bcd_d0"
+              "pid": "current_d1"
+            },
+            "to": {
+              "cid": "c9404",
+              "pid": "current_bcd_d1"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16814",
+            "from": {
+              "cid": "c8259",
+              "pid": "current_d0"
             },
             "to": {
               "cid": "c9404",
               "pid": "current_bcd_d0"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16815",
+            "from": {
+              "cid": "c8259",
+              "pid": "current_d1"
+            },
+            "to": {
+              "cid": "c9404",
+              "pid": "current_d1"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16816",
+            "from": {
+              "cid": "c8259",
+              "pid": "current_d0"
+            },
+            "to": {
+              "cid": "c9404",
+              "pid": "current_d0"
             },
             "name": ""
           }
@@ -14375,7 +14399,7 @@
             "x": 1166,
             "y": 308,
             "params": {
-              "name": "mod25m_out",
+              "name": "mod2_5m_out",
               "width": 1
             },
             "label": ""
@@ -15165,18 +15189,6 @@
         "name": "main_controller",
         "components": [
           {
-            "id": "c7666",
-            "type": "IN",
-            "x": -242,
-            "y": 462,
-            "params": {
-              "name": "clk50mhz",
-              "width": 1,
-              "clocked": false
-            },
-            "label": ""
-          },
-          {
             "id": "c7667",
             "type": "IN",
             "x": 44,
@@ -15184,17 +15196,6 @@
             "params": {
               "name": "target_bcd",
               "width": 8
-            },
-            "label": ""
-          },
-          {
-            "id": "c7668",
-            "type": "IN",
-            "x": -88,
-            "y": 341,
-            "params": {
-              "name": "btn_start_stop",
-              "width": 1
             },
             "label": ""
           },
@@ -15221,15 +15222,6 @@
             "y": 352,
             "params": {},
             "label": ""
-          },
-          {
-            "id": "c7768",
-            "type": "JUNCTION",
-            "x": -94,
-            "y": 522,
-            "params": {
-              "fixed": true
-            }
           },
           {
             "id": "c7777",
@@ -15260,7 +15252,7 @@
             "id": "c9263",
             "type": "SCH:sch9231",
             "x": -66,
-            "y": 418,
+            "y": 396,
             "params": {},
             "label": ""
           },
@@ -15292,7 +15284,7 @@
             "x": 726,
             "y": 242,
             "params": {
-              "name": "current_bcd_d1",
+              "name": "current_d1",
               "width": 4
             },
             "label": ""
@@ -15303,7 +15295,7 @@
             "x": 726,
             "y": 286,
             "params": {
-              "name": "current_bcd_d0",
+              "name": "current_d0",
               "width": 4
             },
             "label": ""
@@ -15347,21 +15339,32 @@
             "x": 522,
             "y": 599,
             "params": {}
+          },
+          {
+            "id": "c16802",
+            "type": "IN",
+            "x": -77,
+            "y": 352,
+            "params": {
+              "name": "btn_start_stop",
+              "width": 1
+            },
+            "label": ""
+          },
+          {
+            "id": "c16804",
+            "type": "IN",
+            "x": -242,
+            "y": 462,
+            "params": {
+              "name": "clk50mhz",
+              "width": 1,
+              "clocked": false
+            },
+            "label": ""
           }
         ],
         "wires": [
-          {
-            "id": "w7703",
-            "from": {
-              "cid": "c7668",
-              "pid": "o"
-            },
-            "to": {
-              "cid": "c7683",
-              "pid": "sw_in"
-            },
-            "name": ""
-          },
           {
             "id": "w7772",
             "from": {
@@ -15373,64 +15376,6 @@
               "pid": "toggle_output"
             },
             "name": ""
-          },
-          {
-            "id": "w7778",
-            "from": {
-              "cid": "c7768",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c7685",
-              "pid": "clk"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 55,
-                "y": 517
-              }
-            ]
-          },
-          {
-            "id": "w7779",
-            "from": {
-              "cid": "c7685",
-              "pid": "mod25m_out"
-            },
-            "to": {
-              "cid": "c7777",
-              "pid": "i1"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 429,
-                "y": 517
-              }
-            ]
-          },
-          {
-            "id": "w7857",
-            "from": {
-              "cid": "c7768",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c7732",
-              "pid": "clk"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 209,
-                "y": 484
-              },
-              {
-                "x": 209,
-                "y": 418
-              }
-            ]
           },
           {
             "id": "w7858",
@@ -15518,18 +15463,6 @@
             "name": ""
           },
           {
-            "id": "w9272",
-            "from": {
-              "cid": "c9270",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c7768",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
             "id": "w9273",
             "from": {
               "cid": "c9270",
@@ -15542,18 +15475,6 @@
             "name": ""
           },
           {
-            "id": "w9275",
-            "from": {
-              "cid": "c7666",
-              "pid": "o"
-            },
-            "to": {
-              "cid": "c9274",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
             "id": "w9276",
             "from": {
               "cid": "c9274",
@@ -15562,18 +15483,6 @@
             "to": {
               "cid": "c9270",
               "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9277",
-            "from": {
-              "cid": "c9274",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c7683",
-              "pid": "clk_50mhz"
             },
             "name": ""
           },
@@ -15743,6 +15652,107 @@
               "pid": "clk_50mhz"
             },
             "name": ""
+          },
+          {
+            "id": "w16803",
+            "from": {
+              "cid": "c16802",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c7683",
+              "pid": "sw_in"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16805",
+            "from": {
+              "cid": "c16804",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c9274",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16810",
+            "from": {
+              "cid": "c9270",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c7683",
+              "pid": "clk_50mhz"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 77,
+                "y": 484
+              }
+            ]
+          },
+          {
+            "id": "w16811",
+            "from": {
+              "cid": "c7685",
+              "pid": "mod2_5m_out"
+            },
+            "to": {
+              "cid": "c7777",
+              "pid": "i1"
+            },
+            "name": "",
+            "mx": 396
+          },
+          {
+            "id": "w16812",
+            "from": {
+              "cid": "c9270",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c7685",
+              "pid": "clk"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": -88,
+                "y": 528
+              },
+              {
+                "x": 55,
+                "y": 517
+              }
+            ]
+          },
+          {
+            "id": "w16817",
+            "from": {
+              "cid": "c9285",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c9279",
+              "pid": "msb"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16818",
+            "from": {
+              "cid": "c9289",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c9279",
+              "pid": "lsb"
+            },
+            "name": ""
           }
         ],
         "locked": false
@@ -15755,7 +15765,7 @@
             "id": "c7569",
             "type": "IN",
             "x": 242,
-            "y": 55,
+            "y": 66,
             "params": {
               "name": "sw_in",
               "width": 1
@@ -15765,21 +15775,10 @@
           {
             "id": "c7579",
             "type": "OUT",
-            "x": 957,
+            "x": 704,
             "y": 66,
             "params": {
               "name": "toggle_output",
-              "width": 1
-            },
-            "label": ""
-          },
-          {
-            "id": "c7692",
-            "type": "IN",
-            "x": 220,
-            "y": 88,
-            "params": {
-              "name": "clk_50mhz",
               "width": 1
             },
             "label": ""
@@ -15793,20 +15792,9 @@
             "label": ""
           },
           {
-            "id": "c8973",
-            "type": "IN",
-            "x": 220,
-            "y": 121,
-            "params": {
-              "name": "clk_1khz",
-              "width": 1
-            },
-            "label": ""
-          },
-          {
             "id": "c8977",
             "type": "TFF",
-            "x": 847,
+            "x": 583,
             "y": 66,
             "params": {
               "edge": "rising",
@@ -15816,9 +15804,31 @@
             "label": ""
           },
           {
-            "id": "c9820",
+            "id": "c16806",
+            "type": "IN",
+            "x": 220,
+            "y": 110,
+            "params": {
+              "name": "clk_1khz",
+              "width": 1
+            },
+            "label": ""
+          },
+          {
+            "id": "c16807",
+            "type": "IN",
+            "x": 220,
+            "y": 88,
+            "params": {
+              "name": "clk_50mhz",
+              "width": 1
+            },
+            "label": ""
+          },
+          {
+            "id": "c16823",
             "type": "JUNCTION",
-            "x": 346,
+            "x": 379,
             "y": 104,
             "params": {}
           }
@@ -15837,19 +15847,6 @@
             "name": ""
           },
           {
-            "id": "w8976",
-            "from": {
-              "cid": "c8973",
-              "pid": "o"
-            },
-            "to": {
-              "cid": "c8970",
-              "pid": "clk_1khz"
-            },
-            "name": "",
-            "mx": 374
-          },
-          {
             "id": "w8984",
             "from": {
               "cid": "c8977",
@@ -15862,56 +15859,6 @@
             "name": ""
           },
           {
-            "id": "w9821",
-            "from": {
-              "cid": "c7692",
-              "pid": "o"
-            },
-            "to": {
-              "cid": "c9820",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9822",
-            "from": {
-              "cid": "c9820",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8970",
-              "pid": "clk_50mhz"
-            },
-            "name": ""
-          },
-          {
-            "id": "w15208",
-            "from": {
-              "cid": "c9820",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8977",
-              "pid": "clk"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 352,
-                "y": 165
-              },
-              {
-                "x": 594,
-                "y": 165
-              },
-              {
-                "x": 847,
-                "y": 165
-              }
-            ]
-          },
-          {
             "id": "w15209",
             "from": {
               "cid": "c8970",
@@ -15922,6 +15869,60 @@
               "pid": "t"
             },
             "name": ""
+          },
+          {
+            "id": "w16809",
+            "from": {
+              "cid": "c16806",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c8970",
+              "pid": "clk_1khz"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16824",
+            "from": {
+              "cid": "c16807",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c16823",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16825",
+            "from": {
+              "cid": "c16823",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c8970",
+              "pid": "clk_50mhz"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16826",
+            "from": {
+              "cid": "c16823",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c8977",
+              "pid": "clk"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 583,
+                "y": 176
+              }
+            ]
           }
         ],
         "locked": false
@@ -17405,6 +17406,30 @@
             "to": {
               "cid": "c8599",
               "pid": "reset"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16819",
+            "from": {
+              "cid": "c9856",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c9045",
+              "pid": "msb"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16820",
+            "from": {
+              "cid": "c9861",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c9045",
+              "pid": "lsb"
             },
             "name": ""
           }
@@ -19535,7 +19560,7 @@
             "id": "c8400",
             "type": "IN",
             "x": 363,
-            "y": 286,
+            "y": 319,
             "params": {
               "name": "clk_20hz",
               "width": 1
@@ -19917,8 +19942,8 @@
           {
             "id": "c8480",
             "type": "DFF",
-            "x": 1749,
-            "y": 638,
+            "x": 1694,
+            "y": 627,
             "params": {
               "edge": "rising",
               "reset": false,
@@ -19930,22 +19955,28 @@
             "id": "c8487",
             "type": "JUNCTION",
             "x": 1336,
-            "y": 731,
-            "params": {}
+            "y": 720,
+            "params": {
+              "fixed": true
+            }
           },
           {
             "id": "c8491",
             "type": "JUNCTION",
             "x": 1094,
-            "y": 731,
-            "params": {}
+            "y": 720,
+            "params": {
+              "fixed": true
+            }
           },
           {
             "id": "c8495",
             "type": "JUNCTION",
             "x": 852,
-            "y": 731,
-            "params": {}
+            "y": 720,
+            "params": {
+              "fixed": true
+            }
           },
           {
             "id": "c8500",
@@ -20436,7 +20467,7 @@
             "pts": [
               {
                 "x": 616,
-                "y": 737
+                "y": 726
               }
             ]
           },
@@ -20833,7 +20864,7 @@
             "pts": [
               {
                 "x": 594,
-                "y": 693
+                "y": 682
               }
             ]
           },
@@ -20848,32 +20879,6 @@
               "pid": "i1"
             },
             "name": ""
-          },
-          {
-            "id": "w8577",
-            "from": {
-              "cid": "c8480",
-              "pid": "q"
-            },
-            "to": {
-              "cid": "c8487",
-              "pid": "j"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 1870,
-                "y": 627
-              },
-              {
-                "x": 1870,
-                "y": 737
-              },
-              {
-                "x": 1771,
-                "y": 737
-              }
-            ]
           },
           {
             "id": "w9874",
@@ -20935,6 +20940,28 @@
               "pid": "i4"
             },
             "name": ""
+          },
+          {
+            "id": "w16888",
+            "from": {
+              "cid": "c8480",
+              "pid": "q"
+            },
+            "to": {
+              "cid": "c8487",
+              "pid": "j"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 1804,
+                "y": 649
+              },
+              {
+                "x": 1804,
+                "y": 726
+              }
+            ]
           }
         ],
         "locked": false
@@ -20946,8 +20973,8 @@
           {
             "id": "c8610",
             "type": "IN",
-            "x": 374,
-            "y": 77,
+            "x": 440,
+            "y": 143,
             "params": {
               "name": "button_signal",
               "width": 1
@@ -20957,7 +20984,7 @@
           {
             "id": "c8611",
             "type": "IN",
-            "x": 396,
+            "x": 451,
             "y": 231,
             "params": {
               "name": "clk_50mhz",
@@ -20968,7 +20995,7 @@
           {
             "id": "c8612",
             "type": "IN",
-            "x": 396,
+            "x": 451,
             "y": 209,
             "params": {
               "name": "clk_1khz",
@@ -20979,8 +21006,8 @@
           {
             "id": "c8613",
             "type": "DFF",
-            "x": 528,
-            "y": 77,
+            "x": 572,
+            "y": 143,
             "params": {
               "edge": "rising",
               "reset": false,
@@ -20991,8 +21018,8 @@
           {
             "id": "c8614",
             "type": "DFF",
-            "x": 660,
-            "y": 77,
+            "x": 682,
+            "y": 143,
             "params": {
               "edge": "rising",
               "reset": false,
@@ -21003,7 +21030,7 @@
           {
             "id": "c8619",
             "type": "JKFF",
-            "x": 1144,
+            "x": 968,
             "y": 209,
             "params": {
               "edge": "rising",
@@ -21015,7 +21042,7 @@
           {
             "id": "c8625",
             "type": "OUT",
-            "x": 1474,
+            "x": 1298,
             "y": 176,
             "params": {
               "name": "debounce_signal",
@@ -21031,30 +21058,18 @@
             "params": {}
           },
           {
-            "id": "c9300",
-            "type": "JUNCTION",
-            "x": 522,
-            "y": 247,
-            "params": {}
-          },
-          {
-            "id": "c9304",
-            "type": "JUNCTION",
-            "x": 654,
-            "y": 247,
-            "params": {}
-          },
-          {
             "id": "c9308",
             "type": "JUNCTION",
-            "x": 731,
+            "x": 753,
             "y": 247,
-            "params": {}
+            "params": {
+              "fixed": true
+            }
           },
           {
             "id": "c9688",
             "type": "GND",
-            "x": 1089,
+            "x": 935,
             "y": 253,
             "params": {},
             "label": ""
@@ -21062,8 +21077,8 @@
           {
             "id": "c15195",
             "type": "DFF",
-            "x": 1276,
-            "y": 187,
+            "x": 1111,
+            "y": 209,
             "params": {
               "edge": "rising",
               "reset": false,
@@ -21074,7 +21089,7 @@
           {
             "id": "c15196",
             "type": "AND",
-            "x": 1386,
+            "x": 1210,
             "y": 165,
             "params": {
               "inputs": 2
@@ -21084,24 +21099,42 @@
           {
             "id": "c15199",
             "type": "JUNCTION",
-            "x": 1248,
-            "y": 203,
-            "params": {}
-          },
-          {
-            "id": "c15203",
-            "type": "JUNCTION",
-            "x": 1138,
-            "y": 379,
-            "params": {}
+            "x": 1083,
+            "y": 225,
+            "params": {
+              "fixed": true
+            }
           },
           {
             "id": "c16763",
             "type": "SCH:sch16649",
-            "x": 880,
+            "x": 814,
             "y": 209,
             "params": {},
             "label": ""
+          },
+          {
+            "id": "c16874",
+            "type": "JUNCTION",
+            "x": 962,
+            "y": 379,
+            "params": {
+              "fixed": true
+            }
+          },
+          {
+            "id": "c16880",
+            "type": "JUNCTION",
+            "x": 676,
+            "y": 247,
+            "params": {}
+          },
+          {
+            "id": "c16884",
+            "type": "JUNCTION",
+            "x": 566,
+            "y": 247,
+            "params": {}
           }
         ],
         "wires": [
@@ -21164,98 +21197,8 @@
                 "y": 330
               },
               {
-                "x": 1166,
+                "x": 990,
                 "y": 330
-              }
-            ]
-          },
-          {
-            "id": "w9301",
-            "from": {
-              "cid": "c8611",
-              "pid": "o"
-            },
-            "to": {
-              "cid": "c9300",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9302",
-            "from": {
-              "cid": "c9300",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8613",
-              "pid": "clk"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 528,
-                "y": 253
-              }
-            ]
-          },
-          {
-            "id": "w9305",
-            "from": {
-              "cid": "c9300",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c9304",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9306",
-            "from": {
-              "cid": "c9304",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8614",
-              "pid": "clk"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 660,
-                "y": 253
-              }
-            ]
-          },
-          {
-            "id": "w9309",
-            "from": {
-              "cid": "c9304",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c9308",
-              "pid": "j"
-            },
-            "name": ""
-          },
-          {
-            "id": "w9689",
-            "from": {
-              "cid": "c9688",
-              "pid": "o"
-            },
-            "to": {
-              "cid": "c8619",
-              "pid": "k"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 1100,
-                "y": 275
               }
             ]
           },
@@ -21306,55 +21249,6 @@
               "pid": "i0"
             },
             "name": ""
-          },
-          {
-            "id": "w15204",
-            "from": {
-              "cid": "c9308",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c15203",
-              "pid": "j"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 737,
-                "y": 385
-              }
-            ]
-          },
-          {
-            "id": "w15205",
-            "from": {
-              "cid": "c15203",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c8619",
-              "pid": "clk"
-            },
-            "name": "",
-            "pts": [
-              {
-                "x": 1144,
-                "y": 385
-              }
-            ]
-          },
-          {
-            "id": "w15206",
-            "from": {
-              "cid": "c15203",
-              "pid": "j"
-            },
-            "to": {
-              "cid": "c15195",
-              "pid": "clk"
-            },
-            "name": "",
-            "mx": 1298
           },
           {
             "id": "w15207",
@@ -21413,6 +21307,130 @@
             "to": {
               "cid": "c16763",
               "pid": "trigger"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16872",
+            "from": {
+              "cid": "c9688",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c8619",
+              "pid": "k"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16875",
+            "from": {
+              "cid": "c9308",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c16874",
+              "pid": "j"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 737,
+                "y": 385
+              }
+            ]
+          },
+          {
+            "id": "w16876",
+            "from": {
+              "cid": "c16874",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c15195",
+              "pid": "clk"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 1089,
+                "y": 385
+              },
+              {
+                "x": 1089,
+                "y": 264
+              }
+            ]
+          },
+          {
+            "id": "w16877",
+            "from": {
+              "cid": "c16874",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c8619",
+              "pid": "clk"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16882",
+            "from": {
+              "cid": "c16880",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c9308",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16883",
+            "from": {
+              "cid": "c16880",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c8614",
+              "pid": "clk"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16885",
+            "from": {
+              "cid": "c8611",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c16884",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16886",
+            "from": {
+              "cid": "c16884",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c16880",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16887",
+            "from": {
+              "cid": "c16884",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c8613",
+              "pid": "clk"
             },
             "name": ""
           }
@@ -24426,7 +24444,7 @@
       },
       "sch9023": {
         "id": "sch9023",
-        "name": "concat4bit_8bit",
+        "name": "concat4bit",
         "components": [
           {
             "id": "c9024",
@@ -24434,7 +24452,7 @@
             "x": 363,
             "y": -44,
             "params": {
-              "name": "lhs",
+              "name": "msb",
               "width": 4
             },
             "label": ""
@@ -24445,7 +24463,7 @@
             "x": 363,
             "y": 198,
             "params": {
-              "name": "rhs",
+              "name": "lsb",
               "width": 4
             },
             "label": ""
@@ -25538,7 +25556,7 @@
             "x": 319,
             "y": 132,
             "params": {
-              "name": "current_bcd_d1",
+              "name": "current_d1",
               "width": 4
             },
             "label": ""
@@ -25549,7 +25567,7 @@
             "x": 319,
             "y": 187,
             "params": {
-              "name": "current_bcd_d0",
+              "name": "current_d0",
               "width": 4
             },
             "label": ""
@@ -43136,6 +43154,45 @@
               "width": 1
             },
             "label": ""
+          },
+          {
+            "id": "c16784",
+            "type": "IN",
+            "x": 286,
+            "y": 242,
+            "params": {
+              "name": "reset",
+              "width": 1
+            },
+            "label": ""
+          },
+          {
+            "id": "c16786",
+            "type": "JUNCTION",
+            "x": 379,
+            "y": 258,
+            "params": {}
+          },
+          {
+            "id": "c16790",
+            "type": "JUNCTION",
+            "x": 522,
+            "y": 258,
+            "params": {}
+          },
+          {
+            "id": "c16794",
+            "type": "JUNCTION",
+            "x": 665,
+            "y": 258,
+            "params": {}
+          },
+          {
+            "id": "c16798",
+            "type": "JUNCTION",
+            "x": 808,
+            "y": 258,
+            "params": {}
           }
         ],
         "wires": [
@@ -43342,6 +43399,138 @@
               "pid": "i"
             },
             "name": ""
+          },
+          {
+            "id": "w16787",
+            "from": {
+              "cid": "c16784",
+              "pid": "o"
+            },
+            "to": {
+              "cid": "c16786",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16788",
+            "from": {
+              "cid": "c16786",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14297",
+              "pid": "reset"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16791",
+            "from": {
+              "cid": "c16786",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c16790",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16792",
+            "from": {
+              "cid": "c16790",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14298",
+              "pid": "reset"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 528,
+                "y": 264
+              }
+            ]
+          },
+          {
+            "id": "w16795",
+            "from": {
+              "cid": "c16790",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c16794",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16796",
+            "from": {
+              "cid": "c16794",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14299",
+              "pid": "reset"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 671,
+                "y": 264
+              }
+            ]
+          },
+          {
+            "id": "w16799",
+            "from": {
+              "cid": "c16794",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c16798",
+              "pid": "j"
+            },
+            "name": ""
+          },
+          {
+            "id": "w16800",
+            "from": {
+              "cid": "c16798",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14300",
+              "pid": "reset"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 814,
+                "y": 264
+              }
+            ]
+          },
+          {
+            "id": "w16801",
+            "from": {
+              "cid": "c16798",
+              "pid": "j"
+            },
+            "to": {
+              "cid": "c14301",
+              "pid": "reset"
+            },
+            "name": "",
+            "pts": [
+              {
+                "x": 957,
+                "y": 264
+              }
+            ]
           }
         ],
         "locked": false
@@ -57038,9 +57227,9 @@
       "sch14293",
       "sch16649",
       "sch7494",
-      "sch7432",
       "sch9231",
       "sch14551",
+      "sch7432",
       "sch6955",
       "sch4821",
       "sch3902",
@@ -57080,7 +57269,7 @@
       "sch16483"
     ]
   },
-  "activeId": "sch14925",
+  "activeId": "sch8433",
   "openTabs": [
     "sch1564",
     "sch6782",
@@ -57131,6 +57320,7 @@
     "sch15848",
     "sch16329",
     "sch16483",
-    "sch16649"
+    "sch16649",
+    "sch9023"
   ]
 }
