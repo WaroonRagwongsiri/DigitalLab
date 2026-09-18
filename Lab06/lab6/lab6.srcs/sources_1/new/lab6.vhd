@@ -291,11 +291,11 @@ architecture Behavioral of lab6 is
   end component;
   component main_controller
     Port (
-      clk50mhz : in  STD_LOGIC;
       target_bcd : in  STD_LOGIC_VECTOR(7 downto 0);
       btn_start_stop : in  STD_LOGIC;
-      current_bcd_d1 : out STD_LOGIC_VECTOR(3 downto 0);
-      current_bcd_d0 : out STD_LOGIC_VECTOR(3 downto 0);
+      clk50mhz : in  STD_LOGIC;
+      current_d1 : out STD_LOGIC_VECTOR(3 downto 0);
+      current_d0 : out STD_LOGIC_VECTOR(3 downto 0);
       led_status : out STD_LOGIC
     );
   end component;
@@ -307,8 +307,8 @@ architecture Behavioral of lab6 is
   end component;
   component n_2_digit_bcd_7seg_decoder
     Port (
-      current_bcd_d1 : in  STD_LOGIC_VECTOR(3 downto 0);
-      current_bcd_d0 : in  STD_LOGIC_VECTOR(3 downto 0);
+      current_d1 : in  STD_LOGIC_VECTOR(3 downto 0);
+      current_d0 : in  STD_LOGIC_VECTOR(3 downto 0);
       clk_1khz : in  STD_LOGIC;
       clk50_mhz : in  STD_LOGIC;
       segment_d3 : out STD_LOGIC;
@@ -320,8 +320,8 @@ architecture Behavioral of lab6 is
     );
   end component;
   signal n1_a, n1_b, n1_c, n1_d, n1_e, n1_f, n1_g, n2_led_status, n3_mod50k_out, n5_segment_d3, n5_segment_d2, n5_segment_d1, n5_segment_d0, n5_d0, n5_d1 : STD_LOGIC;
-  signal n2_current_bcd_d1 : STD_LOGIC_VECTOR(3 downto 0);
-  signal n2_current_bcd_d0 : STD_LOGIC_VECTOR(3 downto 0);
+  signal n2_current_d1 : STD_LOGIC_VECTOR(3 downto 0);
+  signal n2_current_d0 : STD_LOGIC_VECTOR(3 downto 0);
 begin
 
   -- sub-component instantiations
@@ -339,11 +339,11 @@ begin
     g => n1_g
   );
   u_1_c8259 : main_controller port map (
-    clk50mhz => clk_50mhz,
     target_bcd => sw_target_bcd,
     btn_start_stop => btn_start_stop,
-    current_bcd_d1 => n2_current_bcd_d1,
-    current_bcd_d0 => n2_current_bcd_d0,
+    clk50mhz => clk_50mhz,
+    current_d1 => n2_current_d1,
+    current_d0 => n2_current_d0,
     led_status => n2_led_status
   );
   u_2_c9312 : mod50k_sync port map (
@@ -351,8 +351,8 @@ begin
     mod50k_out => n3_mod50k_out
   );
   u_3_c9404 : n_2_digit_bcd_7seg_decoder port map (
-    current_bcd_d1 => n2_current_bcd_d1,
-    current_bcd_d0 => n2_current_bcd_d0,
+    current_d1 => n2_current_d1,
+    current_d0 => n2_current_d0,
     clk_1khz => n3_mod50k_out,
     clk50_mhz => clk_50mhz,
     segment_d3 => n5_segment_d3,
@@ -392,7 +392,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity mod2_5m_sync is
   Port (
     clk : in  STD_LOGIC;
-    mod25m_out : out STD_LOGIC
+    mod2_5m_out : out STD_LOGIC
   );
 end mod2_5m_sync;
 
@@ -461,7 +461,7 @@ begin
   );
 
   -- output drivers
-  mod25m_out <= n4_mod10_out;
+  mod2_5m_out <= n4_mod10_out;
 
 end Behavioral;
 
@@ -477,11 +477,11 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity main_controller is
   Port (
-    clk50mhz : in  STD_LOGIC;
     target_bcd : in  STD_LOGIC_VECTOR(7 downto 0);
     btn_start_stop : in  STD_LOGIC;
-    current_bcd_d1 : out STD_LOGIC_VECTOR(3 downto 0);
-    current_bcd_d0 : out STD_LOGIC_VECTOR(3 downto 0);
+    clk50mhz : in  STD_LOGIC;
+    current_d1 : out STD_LOGIC_VECTOR(3 downto 0);
+    current_d0 : out STD_LOGIC_VECTOR(3 downto 0);
     led_status : out STD_LOGIC
   );
 end main_controller;
@@ -490,15 +490,15 @@ architecture Behavioral of main_controller is
   component debounce_toggle
     Port (
       sw_in : in  STD_LOGIC;
-      clk_50mhz : in  STD_LOGIC;
       clk_1khz : in  STD_LOGIC;
+      clk_50mhz : in  STD_LOGIC;
       toggle_output : out STD_LOGIC
     );
   end component;
   component mod2_5m_sync
     Port (
       clk : in  STD_LOGIC;
-      mod25m_out : out STD_LOGIC
+      mod2_5m_out : out STD_LOGIC
     );
   end component;
   component start_stop_controller
@@ -525,10 +525,10 @@ architecture Behavioral of main_controller is
       mod50k_out : out STD_LOGIC
     );
   end component;
-  component concat4bit_8bit
+  component concat4bit
     Port (
-      lhs : in  STD_LOGIC_VECTOR(3 downto 0);
-      rhs : in  STD_LOGIC_VECTOR(3 downto 0);
+      msb : in  STD_LOGIC_VECTOR(3 downto 0);
+      lsb : in  STD_LOGIC_VECTOR(3 downto 0);
       out8bit : out STD_LOGIC_VECTOR(7 downto 0)
     );
   end component;
@@ -539,59 +539,59 @@ architecture Behavioral of main_controller is
       n_8bit_out : out STD_LOGIC_VECTOR(7 downto 0)
     );
   end component;
-  signal n1_toggle_output, n2_mod25m_out, n3_start_flag, n3_error_flag, n5_o, n8_mod50k_out : STD_LOGIC;
-  signal n6_current_d1 : STD_LOGIC_VECTOR(3 downto 0);
-  signal n6_current_d0 : STD_LOGIC_VECTOR(3 downto 0);
-  signal n11_out8bit : STD_LOGIC_VECTOR(7 downto 0);
-  signal n14_n_8bit_out : STD_LOGIC_VECTOR(7 downto 0);
+  signal n1_toggle_output, n2_mod2_5m_out, n3_start_flag, n3_error_flag, n4_o, n7_mod50k_out : STD_LOGIC;
+  signal n5_current_d1 : STD_LOGIC_VECTOR(3 downto 0);
+  signal n5_current_d0 : STD_LOGIC_VECTOR(3 downto 0);
+  signal n10_out8bit : STD_LOGIC_VECTOR(7 downto 0);
+  signal n13_n_8bit_out : STD_LOGIC_VECTOR(7 downto 0);
 begin
 
   -- combinational logic
-  n5_o <= n3_start_flag and n2_mod25m_out;
+  n4_o <= n3_start_flag and n2_mod2_5m_out;
 
   -- sub-component instantiations
   u_0_c7683 : debounce_toggle port map (
     sw_in => btn_start_stop,
+    clk_1khz => n7_mod50k_out,
     clk_50mhz => clk50mhz,
-    clk_1khz => n8_mod50k_out,
     toggle_output => n1_toggle_output
   );
   u_1_c7685 : mod2_5m_sync port map (
     clk => clk50mhz,
-    mod25m_out => n2_mod25m_out
+    mod2_5m_out => n2_mod2_5m_out
   );
   u_2_c7732 : start_stop_controller port map (
     target_bcd => target_bcd,
     toggle_output => n1_toggle_output,
-    current_bcd => n14_n_8bit_out,
+    current_bcd => n13_n_8bit_out,
     start_flag => n3_start_flag,
     error_flag => n3_error_flag
   );
   u_3_c8251 : main_counter port map (
     target_bcd => target_bcd,
-    clk_20hz => n5_o,
+    clk_20hz => n4_o,
     clk_50mhz => clk50mhz,
-    current_d1 => n6_current_d1,
-    current_d0 => n6_current_d0
+    current_d1 => n5_current_d1,
+    current_d0 => n5_current_d0
   );
   u_4_c9263 : mod50k_sync port map (
     clk => clk50mhz,
-    mod50k_out => n8_mod50k_out
+    mod50k_out => n7_mod50k_out
   );
-  u_5_c9279 : concat4bit_8bit port map (
-    lhs => n6_current_d1,
-    rhs => n6_current_d0,
-    out8bit => n11_out8bit
+  u_5_c9279 : concat4bit port map (
+    msb => n5_current_d1,
+    lsb => n5_current_d0,
+    out8bit => n10_out8bit
   );
   u_6_c9531 : n_8bit_1_clk_delay port map (
-    n_8bit_in => n11_out8bit,
+    n_8bit_in => n10_out8bit,
     clk => clk50mhz,
-    n_8bit_out => n14_n_8bit_out
+    n_8bit_out => n13_n_8bit_out
   );
 
   -- output drivers
-  current_bcd_d1 <= n6_current_d1;
-  current_bcd_d0 <= n6_current_d0;
+  current_d1 <= n5_current_d1;
+  current_d0 <= n5_current_d0;
   led_status <= n3_error_flag;
 
 end Behavioral;
@@ -609,8 +609,8 @@ use IEEE.NUMERIC_STD.ALL;
 entity debounce_toggle is
   Port (
     sw_in : in  STD_LOGIC;
-    clk_50mhz : in  STD_LOGIC;
     clk_1khz : in  STD_LOGIC;
+    clk_50mhz : in  STD_LOGIC;
     toggle_output : out STD_LOGIC
   );
 end debounce_toggle;
@@ -730,10 +730,10 @@ architecture Behavioral of main_counter is
       bcd_d0 : out STD_LOGIC_VECTOR(3 downto 0)
     );
   end component;
-  component concat4bit_8bit
+  component concat4bit
     Port (
-      lhs : in  STD_LOGIC_VECTOR(3 downto 0);
-      rhs : in  STD_LOGIC_VECTOR(3 downto 0);
+      msb : in  STD_LOGIC_VECTOR(3 downto 0);
+      lsb : in  STD_LOGIC_VECTOR(3 downto 0);
       out8bit : out STD_LOGIC_VECTOR(7 downto 0)
     );
   end component;
@@ -763,9 +763,9 @@ begin
     bcd_d1 => n2_bcd_d1,
     bcd_d0 => n2_bcd_d0
   );
-  u_1_c9045 : concat4bit_8bit port map (
-    lhs => n2_bcd_d1,
-    rhs => n2_bcd_d0,
+  u_1_c9045 : concat4bit port map (
+    msb => n2_bcd_d1,
+    lsb => n2_bcd_d0,
     out8bit => n3_out8bit
   );
   u_2_c9565 : n_8bit_1_clk_delay port map (
@@ -858,81 +858,86 @@ entity counter0_9 is
 end counter0_9;
 
 architecture Behavioral of counter0_9 is
-  signal n2_o, n5_o, n8_o, n11_o, n20_o, n23_o, n27_o, n31_o, n34_o : STD_LOGIC;
-  signal n1_q : STD_LOGIC := '0';
-  signal n1_qn : STD_LOGIC := '1';
-  signal n4_q : STD_LOGIC := '0';
-  signal n4_qn : STD_LOGIC := '1';
-  signal n7_q : STD_LOGIC := '0';
-  signal n7_qn : STD_LOGIC := '1';
+  signal n1_o, n3_o, n5_o, n7_o, n13_o, n14_o, n19_o, n23_o, n24_o, n42_o, n46_o : STD_LOGIC;
+  signal n9_q : STD_LOGIC := '0';
+  signal n9_qn : STD_LOGIC := '1';
   signal n10_q : STD_LOGIC := '0';
   signal n10_qn : STD_LOGIC := '1';
-  signal n13_q : STD_LOGIC := '0';
-  signal n13_qn : STD_LOGIC := '1';
+  signal n11_q : STD_LOGIC := '0';
+  signal n11_qn : STD_LOGIC := '1';
+  signal n12_q : STD_LOGIC := '0';
+  signal n12_qn : STD_LOGIC := '1';
 begin
 
   -- combinational logic
-  n2_o <= trigger and n1_q;
-  n5_o <= n2_o and n4_q;
-  n8_o <= n5_o and n7_q;
-  n11_o <= n10_q and n7_qn and n4_qn and n1_q and trigger;
-  n20_o <= n10_q;
-  n23_o <= n7_q;
-  n27_o <= n4_q;
-  n31_o <= n1_q;
-  n34_o <= n11_o or reset;
+  n1_o <= n12_q;
+  n3_o <= n10_q;
+  n5_o <= n11_q;
+  n7_o <= n9_q;
+  n13_o <= trigger and n9_q and n12_qn;
+  n14_o <= trigger and n9_q;
+  n19_o <= trigger and n9_q and n10_q;
+  n23_o <= trigger and n9_q;
+  n24_o <= trigger and n9_q and n10_q and n11_q;
+  n42_o <= n12_q and n11_qn and n10_qn and n9_q;
+  n46_o <= n42_o and trigger;
 
   -- sequential logic (flip-flops)
-  process(clk, n13_q)
+  process(clk, reset)
   begin
-    if n13_q = '1' then
-      n1_q <= '0';
-      n1_qn <= '1';
+    if reset = '1' then
+      n9_q <= '0';
+      n9_qn <= '1';
     elsif rising_edge(clk) then
-      if (trigger='1') then n1_q <= not n1_q; n1_qn <= not n1_qn; end if;
+      if    (trigger='0' and trigger='1') then n9_q <= '0'; n9_qn <= '1';
+      elsif (trigger='1' and trigger='0') then n9_q <= '1'; n9_qn <= '0';
+      elsif (trigger='1' and trigger='1') then n9_q <= not n9_q; n9_qn <= n9_q;
+      end if;
     end if;
   end process;
-  process(clk, n13_q)
+  process(clk, reset)
   begin
-    if n13_q = '1' then
-      n4_q <= '0';
-      n4_qn <= '1';
-    elsif rising_edge(clk) then
-      if (n2_o='1') then n4_q <= not n4_q; n4_qn <= not n4_qn; end if;
-    end if;
-  end process;
-  process(clk, n13_q)
-  begin
-    if n13_q = '1' then
-      n7_q <= '0';
-      n7_qn <= '1';
-    elsif rising_edge(clk) then
-      if (n5_o='1') then n7_q <= not n7_q; n7_qn <= not n7_qn; end if;
-    end if;
-  end process;
-  process(clk, n13_q)
-  begin
-    if n13_q = '1' then
+    if reset = '1' then
       n10_q <= '0';
       n10_qn <= '1';
     elsif rising_edge(clk) then
-      if (n8_o='1') then n10_q <= not n10_q; n10_qn <= not n10_qn; end if;
+      if    (n13_o='0' and n14_o='1') then n10_q <= '0'; n10_qn <= '1';
+      elsif (n13_o='1' and n14_o='0') then n10_q <= '1'; n10_qn <= '0';
+      elsif (n13_o='1' and n14_o='1') then n10_q <= not n10_q; n10_qn <= n10_q;
+      end if;
     end if;
   end process;
-  process(clk)
+  process(clk, reset)
   begin
-    if rising_edge(clk) then
-      n13_q  <= n34_o;
-      n13_qn <= not (n34_o);
+    if reset = '1' then
+      n11_q <= '0';
+      n11_qn <= '1';
+    elsif rising_edge(clk) then
+      if    (n19_o='0' and n19_o='1') then n11_q <= '0'; n11_qn <= '1';
+      elsif (n19_o='1' and n19_o='0') then n11_q <= '1'; n11_qn <= '0';
+      elsif (n19_o='1' and n19_o='1') then n11_q <= not n11_q; n11_qn <= n11_q;
+      end if;
+    end if;
+  end process;
+  process(clk, reset)
+  begin
+    if reset = '1' then
+      n12_q <= '0';
+      n12_qn <= '1';
+    elsif rising_edge(clk) then
+      if    (n24_o='0' and n23_o='1') then n12_q <= '0'; n12_qn <= '1';
+      elsif (n24_o='1' and n23_o='0') then n12_q <= '1'; n12_qn <= '0';
+      elsif (n24_o='1' and n23_o='1') then n12_q <= not n12_q; n12_qn <= n12_q;
+      end if;
     end if;
   end process;
 
   -- output drivers
-  limit_reach <= n11_o;
-  current_bcd(3) <= n20_o;
-  current_bcd(2) <= n23_o;
-  current_bcd(1) <= n27_o;
-  current_bcd(0) <= n31_o;
+  limit_reach <= n46_o;
+  current_bcd(3) <= n1_o;
+  current_bcd(1) <= n3_o;
+  current_bcd(2) <= n5_o;
+  current_bcd(0) <= n7_o;
 
 end Behavioral;
 
@@ -964,19 +969,19 @@ architecture Behavioral of debounce_button is
       mod50_out : out STD_LOGIC
     );
   end component;
-  signal n9_o, n12_mod50_out : STD_LOGIC;
+  signal n7_o, n9_mod50_out : STD_LOGIC;
   signal n1_q : STD_LOGIC := '0';
   signal n1_qn : STD_LOGIC := '1';
   signal n2_q : STD_LOGIC := '0';
   signal n2_qn : STD_LOGIC := '1';
   signal n3_q : STD_LOGIC := '0';
   signal n3_qn : STD_LOGIC := '1';
-  signal n8_q : STD_LOGIC := '0';
-  signal n8_qn : STD_LOGIC := '1';
+  signal n6_q : STD_LOGIC := '0';
+  signal n6_qn : STD_LOGIC := '1';
 begin
 
   -- combinational logic
-  n9_o <= n3_q and n8_qn;
+  n7_o <= n3_q and n6_qn;
 
   -- sequential logic (flip-flops)
   process(clk_50mhz)
@@ -999,17 +1004,17 @@ begin
       n3_q <= '0';
       n3_qn <= '1';
     elsif rising_edge(clk_50mhz) then
-      if    (n12_mod50_out='0' and STD_LOGIC'('0')='1') then n3_q <= '0'; n3_qn <= '1';
-      elsif (n12_mod50_out='1' and STD_LOGIC'('0')='0') then n3_q <= '1'; n3_qn <= '0';
-      elsif (n12_mod50_out='1' and STD_LOGIC'('0')='1') then n3_q <= not n3_q; n3_qn <= n3_q;
+      if    (n9_mod50_out='0' and STD_LOGIC'('0')='1') then n3_q <= '0'; n3_qn <= '1';
+      elsif (n9_mod50_out='1' and STD_LOGIC'('0')='0') then n3_q <= '1'; n3_qn <= '0';
+      elsif (n9_mod50_out='1' and STD_LOGIC'('0')='1') then n3_q <= not n3_q; n3_qn <= n3_q;
       end if;
     end if;
   end process;
   process(clk_50mhz)
   begin
     if rising_edge(clk_50mhz) then
-      n8_q  <= n3_q;
-      n8_qn <= not (n3_q);
+      n6_q  <= n3_q;
+      n6_qn <= not (n3_q);
     end if;
   end process;
 
@@ -1018,45 +1023,45 @@ begin
     trigger => clk_1khz,
     clk => clk_50mhz,
     reset => n2_qn,
-    mod50_out => n12_mod50_out
+    mod50_out => n9_mod50_out
   );
 
   -- output drivers
-  debounce_signal <= n9_o;
+  debounce_signal <= n7_o;
 
 end Behavioral;
 
 -- ============================================================
--- Entity: concat4bit_8bit
+-- Entity: concat4bit
 -- ============================================================
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 -- Generated by Schematic Studio  (target: Xilinx Spartan-7 / Vivado)
--- Schematic: concat4bit_8bit
+-- Schematic: concat4bit
 
-entity concat4bit_8bit is
+entity concat4bit is
   Port (
-    lhs : in  STD_LOGIC_VECTOR(3 downto 0);
-    rhs : in  STD_LOGIC_VECTOR(3 downto 0);
+    msb : in  STD_LOGIC_VECTOR(3 downto 0);
+    lsb : in  STD_LOGIC_VECTOR(3 downto 0);
     out8bit : out STD_LOGIC_VECTOR(7 downto 0)
   );
-end concat4bit_8bit;
+end concat4bit;
 
-architecture Behavioral of concat4bit_8bit is
+architecture Behavioral of concat4bit is
   signal n1_y, n2_y, n3_y, n4_y, n5_y, n6_y, n7_y, n8_y : STD_LOGIC;
 begin
 
   -- combinational logic
-  n1_y <= lhs(3);
-  n2_y <= lhs(2);
-  n3_y <= lhs(1);
-  n4_y <= lhs(0);
-  n5_y <= rhs(3);
-  n6_y <= rhs(2);
-  n7_y <= rhs(1);
-  n8_y <= rhs(0);
+  n1_y <= msb(3);
+  n2_y <= msb(2);
+  n3_y <= msb(1);
+  n4_y <= msb(0);
+  n5_y <= lsb(3);
+  n6_y <= lsb(2);
+  n7_y <= lsb(1);
+  n8_y <= lsb(0);
 
   -- output drivers
   out8bit(7) <= n1_y;
@@ -1156,8 +1161,8 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity n_2_digit_bcd_7seg_decoder is
   Port (
-    current_bcd_d1 : in  STD_LOGIC_VECTOR(3 downto 0);
-    current_bcd_d0 : in  STD_LOGIC_VECTOR(3 downto 0);
+    current_d1 : in  STD_LOGIC_VECTOR(3 downto 0);
+    current_d0 : in  STD_LOGIC_VECTOR(3 downto 0);
     clk_1khz : in  STD_LOGIC;
     clk50_mhz : in  STD_LOGIC;
     segment_d3 : out STD_LOGIC;
@@ -1184,14 +1189,14 @@ begin
              n10_y when n22_q = '1' else '0';
   n4_y <= n11_y when n22_q = '0' else
              n12_y when n22_q = '1' else '0';
-  n5_y <= current_bcd_d1(3);
-  n6_y <= current_bcd_d0(3);
-  n7_y <= current_bcd_d1(2);
-  n8_y <= current_bcd_d0(2);
-  n9_y <= current_bcd_d1(1);
-  n10_y <= current_bcd_d0(1);
-  n11_y <= current_bcd_d1(0);
-  n12_y <= current_bcd_d0(0);
+  n5_y <= current_d1(3);
+  n6_y <= current_d0(3);
+  n7_y <= current_d1(2);
+  n8_y <= current_d0(2);
+  n9_y <= current_d1(1);
+  n10_y <= current_d0(1);
+  n11_y <= current_d1(0);
+  n12_y <= current_d0(0);
 
   -- sequential logic (flip-flops)
   process(clk50_mhz)
