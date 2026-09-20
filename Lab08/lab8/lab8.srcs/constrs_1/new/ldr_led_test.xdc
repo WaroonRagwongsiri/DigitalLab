@@ -20,12 +20,10 @@ set_property -dict {PACKAGE_PIN K4 IOSTANDARD LVCMOS33} [get_ports {led[11]}]
 
 set_property -dict {PACKAGE_PIN D1 IOSTANDARD LVCMOS33} [get_ports SCK]
 set_property -dict {PACKAGE_PIN F4 IOSTANDARD LVCMOS33} [get_ports CS]
-# EXPERIMENT: DIN/DOUT pins swapped vs. the vendor spartan7.xdc ("SPI ADC"
-# section) to test whether MOSI/MISO are actually reversed on the real
-# board relative to that documentation. Revert to G4/C1 if this doesn't
-# change anything.
-set_property -dict {PACKAGE_PIN C1 IOSTANDARD LVCMOS33} [get_ports DIN]
-set_property -dict {PACKAGE_PIN G4 IOSTANDARD LVCMOS33} [get_ports DOUT]
+# Reverted to the documented mapping (matches lab8_3.xdc and the
+# manufacturer's pin table) so channel is the only variable under test.
+set_property -dict {PACKAGE_PIN G4 IOSTANDARD LVCMOS33} [get_ports DIN]
+set_property -dict {PACKAGE_PIN C1 IOSTANDARD LVCMOS33} [get_ports DOUT]
 
 create_debug_core u_ila_0 ila
 set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]

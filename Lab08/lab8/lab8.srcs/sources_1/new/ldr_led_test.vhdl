@@ -16,6 +16,9 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity ldr_led_test is
+    Generic (
+        ADC_CHANNEL : integer range 0 to 7 := 6  -- MCP3208 channel to sample (6 = onboard LDR)
+    );
     Port (
         clk  : in  STD_LOGIC;
         led  : out STD_LOGIC_VECTOR(11 downto 0);
@@ -59,6 +62,7 @@ begin
         );
 
     U_ADC : entity work.mcp3208_spi
+        generic map ( CHANNEL => ADC_CHANNEL )
         port map (
             clk        => clk,
             start      => sample_trigger,

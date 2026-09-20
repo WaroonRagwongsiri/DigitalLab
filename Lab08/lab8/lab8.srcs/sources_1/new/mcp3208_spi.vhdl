@@ -19,8 +19,12 @@
 -- ============================================================
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 entity mcp3208_spi is
+  Generic (
+    CHANNEL : integer range 0 to 7 := 6  -- MCP3208 single-ended channel (6 = onboard LDR)
+  );
   Port (
     clk        : in  STD_LOGIC;
     start      : in  STD_LOGIC;
@@ -36,7 +40,8 @@ end mcp3208_spi;
 architecture Behavioral of mcp3208_spi is
 
   constant PRESCALE : integer := 50;  -- clk cycles per SCK half-period (~500kHz SCK @ 50MHz clk)
-  constant CMD       : STD_LOGIC_VECTOR(4 downto 0) := "11110"; -- Start,SGL/DIFF,D2,D1,D0 -> channel 6
+  constant CMD       : STD_LOGIC_VECTOR(4 downto 0) :=
+      "11" & STD_LOGIC_VECTOR(to_unsigned(CHANNEL, 3)); -- Start,SGL/DIFF,D2,D1,D0 -> channel CHANNEL
 
   type state_t is (S_IDLE, S_XFER, S_DONE);
   signal state     : state_t := S_IDLE;

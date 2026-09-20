@@ -20,6 +20,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity lab8_3 is
+    Generic (
+        ADC_CHANNEL : integer range 0 to 7 := 6  -- MCP3208 channel to sample (6 = onboard LDR)
+    );
     Port (
         clk           : in  STD_LOGIC;
         digit         : out STD_LOGIC_VECTOR(3 downto 0);
@@ -64,8 +67,9 @@ begin
             mod100_out => sample_trigger
         );
 
-    -- SPI master for the MCP3208, channel 6 (LDR)
+    -- SPI master for the MCP3208, channel selected by ADC_CHANNEL generic (default 6 = LDR)
     U_ADC : entity work.mcp3208_spi
+        generic map ( CHANNEL => ADC_CHANNEL )
         port map (
             clk        => clk,
             start      => sample_trigger,
