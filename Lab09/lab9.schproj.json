@@ -2,7 +2,7 @@
   "version": 1,
   "project": {
     "name": "lab9",
-    "topId": "sch7261",
+    "topId": "sch14925",
     "schematics": {
       "sch1564": {
         "id": "sch1564",
@@ -12329,7 +12329,7 @@
           {
             "id": "c6783",
             "type": "IN",
-            "x": 187,
+            "x": 209,
             "y": 66,
             "params": {
               "name": "trigger",
@@ -12340,7 +12340,7 @@
           {
             "id": "c6784",
             "type": "IN",
-            "x": 209,
+            "x": 220,
             "y": 220,
             "params": {
               "name": "clk",
@@ -12510,7 +12510,7 @@
           {
             "id": "c16665",
             "type": "IN",
-            "x": 198,
+            "x": 220,
             "y": 308,
             "params": {
               "name": "reset",
@@ -57594,7 +57594,7 @@
       "sch16483"
     ]
   },
-  "activeId": "sch7261",
+  "activeId": "sch14611",
   "openTabs": [
     "sch1564",
     "sch6782",
