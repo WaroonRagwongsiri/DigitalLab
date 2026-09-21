@@ -2,17 +2,12 @@
 -- Entity: lab8_3
 -- Multiplexes the 4-digit common-anode 7-segment display to show
 -- the live LDR reading (MCP3208 channel 6) read over SPI.
--- Clocking chain: clk (50MHz) -> mod50k_sync -> clk_1khz enable pulse
---                 -> hex_7seg_decoder, clocked by the real clk with
---                    clk_1khz as a synchronous enable (single clock
---                    domain -- no generated/gated clock).
---                 clk_1khz -> mod100_sync -> sample_trigger (~10 Hz)
---                 -> mcp3208_spi (channel 6) -> adc_value/adc_valid
---                 -> bin2bcd12 (combinational) -> BCD digits, latched
---                    into bcd3..bcd0 on adc_valid so hex_7seg_decoder's
---                    combinational digit mux never sees a value torn
---                    mid-refresh-sweep by an in-flight bin2bcd12 update.
--- Reuses the existing hex_7seg BCD -> 7-segment decoder.
+-- Single clock domain (like เสือ/main.vhd): clk (50MHz) -> MOD_50 ->
+-- clk_1mhz (~500kHz) drives both the ADC and the 7-segment digit mux,
+-- so no clock-domain-crossing synchronizer is needed. BCD digits feed
+-- the digit mux combinationally (same accepted "torn digit" trade-off
+-- main.vhd's LCD path has -- self-corrects on the next scan pass).
+-- Reuses the existing hex_7seg_decoder/hex_7seg BCD -> 7-segment path.
 -- Target: AMD Spartan-7, clk = 50 MHz.
 -- ============================================================
 library IEEE;
@@ -36,49 +31,59 @@ end lab8_3;
 
 architecture Behavioral of lab8_3 is
 
-    signal clk_1khz  : STD_LOGIC;                       -- 1 kHz enable pulse
-    signal cur_bcd   : STD_LOGIC_VECTOR(3 downto 0);     -- data_out from hex_7seg_decoder
+    signal clk_1mhz  : STD_LOGIC;                       -- shared clock for the ADC and digit mux
 
-    signal sample_trigger : STD_LOGIC;                  -- ~10 Hz ADC sample/display-refresh pulse
-    signal adc_value       : STD_LOGIC_VECTOR(11 downto 0);
-    signal adc_valid       : STD_LOGIC;
+    signal start_adc    : STD_LOGIC := '1';
+    signal is_adc_busy  : STD_LOGIC;
+    signal adc_value     : STD_LOGIC_VECTOR(11 downto 0);
 
     signal bcd_thousands, bcd_hundreds, bcd_tens, bcd_ones : STD_LOGIC_VECTOR(3 downto 0);
 
-    -- Digit values displayed, latched atomically from the ADC reading
-    signal bcd0, bcd1, bcd2, bcd3 : STD_LOGIC_VECTOR(3 downto 0) := "0000";
-
+    signal cur_bcd : STD_LOGIC_VECTOR(3 downto 0);     -- data_out from hex_7seg_decoder
     signal seg_a, seg_b, seg_c, seg_d, seg_e, seg_f, seg_g : STD_LOGIC;
+
+    -- ~500kHz clk_1mhz / 500 -> 1kHz single-cycle trigger pulse for the digit mux
+    signal trig_counter : integer range 0 to 499 := 0;
+    signal trigger_1khz : STD_LOGIC := '0';
 
 begin
 
-    -- 50 MHz -> 1 kHz enable pulse
-    U_DIV : entity work.mod50k_sync
+    -- 50 MHz -> ~500 kHz shared clock for the ADC and digit-mux
+    U_DIV : entity work.MOD_50
         port map (
-            clk        => clk,
-            mod50k_out => clk_1khz
+            CLK     => clk,
+            RST     => '0',
+            CLK_OUT => clk_1mhz
         );
 
-    -- 1 kHz -> ~10 Hz ADC sample / display-refresh trigger
-    U_DIV100 : entity work.mod100_sync
-        port map (
-            trigger    => clk_1khz,
-            clk        => clk,
-            mod100_out => sample_trigger
-        );
+    -- Free-run the ADC: re-assert start_adc as soon as the previous conversion's busy flag deasserts
+    process(clk_1mhz)
+    begin
+        if rising_edge(clk_1mhz) then
+            if start_adc = '1' then
+                if is_adc_busy = '1' then
+                    start_adc <= '0';
+                end if;
+            elsif is_adc_busy = '0' then
+                start_adc <= '1';
+            end if;
+        end if;
+    end process;
 
-    -- SPI master for the MCP3208, channel selected by ADC_CHANNEL generic (default 6 = LDR)
-    U_ADC : entity work.mcp3208_spi
-        generic map ( CHANNEL => ADC_CHANNEL )
+    -- SPI/FSM ADC core, channel selected by ADC_CHANNEL generic (default 6 = LDR)
+    U_ADC : entity work.ADC_MCP3208
         port map (
-            clk        => clk,
-            start      => sample_trigger,
-            SCK        => SCK,
-            CS         => CS,
-            DIN        => DIN,
-            DOUT       => DOUT,
-            data_out   => adc_value,
-            data_valid => adc_valid
+            RST            => '0',
+            START          => start_adc,
+            SGL_MODE       => '1',
+            CHANNEL_SELECT => std_logic_vector(to_unsigned(ADC_CHANNEL, 3)),
+            DATA_OUT       => adc_value,
+            IS_BUSY        => is_adc_busy,
+            ADC_CLK        => SCK,
+            ADC_CS         => CS,
+            ADC_MOSI       => DIN,
+            ADC_MISO       => DOUT,
+            CLK_1MHz       => clk_1mhz
         );
 
     -- Combinational binary -> 4-digit BCD conversion of the latest ADC reading
@@ -91,36 +96,36 @@ begin
             bcd_ones      => bcd_ones
         );
 
-    -- Latch all 4 BCD digits atomically once per ADC sample
-    process(clk)
+    -- 1 kHz single-cycle trigger pulse, derived from clk_1mhz (no longer
+    -- needs the real 50MHz clk)
+    process(clk_1mhz)
     begin
-        if rising_edge(clk) then
-            if adc_valid = '1' then
-                bcd3 <= bcd_thousands;
-                bcd2 <= bcd_hundreds;
-                bcd1 <= bcd_tens;
-                bcd0 <= bcd_ones;
+        if rising_edge(clk_1mhz) then
+            if trig_counter = 499 then
+                trig_counter <= 0;
+                trigger_1khz <= '1';
+            else
+                trig_counter <= trig_counter + 1;
+                trigger_1khz <= '0';
             end if;
         end if;
     end process;
 
-    -- Real clk drives every flip-flop; clk_1khz is just an enable.
-    -- Cycles 00->01->10->11, muxing out the active digit's data and
-    -- its active-high enable line (board's DIGIT[3:0] select is
-    -- active-high per the datasheet -- selected digit gets '1').
+    -- Digit-select counter, clocked by clk_1mhz, advances one digit per
+    -- 1kHz trigger pulse
     U_SEL : entity work.hex_7seg_decoder
         port map (
-            clk_50mhz   => clk,
-            clk_trigger => clk_1khz,
-            d3_data     => bcd3,
-            d2_data     => bcd2,
-            d1_data     => bcd1,
-            d0_data     => bcd0,
-            data_out    => cur_bcd,
-            d3          => digit(3),
-            d2          => digit(2),
-            d1          => digit(1),
-            d0          => digit(0)
+            clk      => clk_1mhz,
+            trigger  => trigger_1khz,
+            d3_data  => bcd_thousands,
+            d2_data  => bcd_hundreds,
+            d1_data  => bcd_tens,
+            d0_data  => bcd_ones,
+            data_out => cur_bcd,
+            d3       => digit(3),
+            d2       => digit(2),
+            d1       => digit(1),
+            d0       => digit(0)
         );
 
     -- Reuse the existing BCD -> 7-segment decoder

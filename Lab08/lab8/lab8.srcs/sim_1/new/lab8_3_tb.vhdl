@@ -35,7 +35,9 @@ architecture sim of lab8_3_tb is
   end component;
 
   constant CLK_PERIOD   : time    := 20 ns;  -- 50 MHz
-  constant SWEEP_CYCLES : natural := 4 * 50000;  -- one full 4-digit refresh
+  -- Digit mux is clocked by clk_1mhz, advancing one digit per 1kHz trigger
+  -- pulse (1ms = 50000 clk cycles/digit, 200000 clk cycles per full sweep).
+  constant SWEEP_CYCLES : natural := 4 * 50000;
   constant MIN_DWELL_CYCLES : natural := 5000;   -- 10% of the expected ~50,000-cycle dwell
 
   signal clk           : STD_LOGIC := '0';
@@ -134,17 +136,30 @@ begin
     wait;
   end process;
 
-  -- Behavioral MCP3208 slave model
+  -- Behavioral MCP3208 slave model. Per the MCP3208 datasheet, the ADC
+  -- ignores any leading '0's on DIN after CS falls and only starts
+  -- counting bits once it sees the Start Bit ('1') -- so a master is free
+  -- to shift out extra idle/dummy '0' cycles right after CS falls (as
+  -- ADC_MCP3208 does, one dummy cycle during its START_UP state) without
+  -- breaking framing. Model that start-bit search explicitly instead of
+  -- assuming the first bit sampled after CS falls is always the start bit.
   slave : process
     variable bit_cnt      : integer;
     variable cmd_captured : STD_LOGIC_VECTOR(4 downto 0);
     variable next_period  : integer;
   begin
-    loop
+    main_loop : loop
       wait until CS = '0';
-      bit_cnt      := 0;
-      cmd_captured := (others => '0');
-      DOUT         <= '0';
+      DOUT <= '0';
+
+      find_start : loop
+        wait until rising_edge(SCK) or CS = '1';
+        exit main_loop when CS = '1';
+        exit find_start when DIN = '1';
+      end loop;
+
+      bit_cnt      := 1;
+      cmd_captured := "0000" & '1';
 
       while CS = '0' loop
         wait until rising_edge(SCK) or CS = '1';
@@ -168,7 +183,7 @@ begin
         report "SLAVE: bad command captured: " & to_string(cmd_captured) &
                " (expected 11110)" severity error;
       end if;
-    end loop;
+    end loop main_loop;
   end process;
 
   monitor : process
@@ -246,8 +261,14 @@ begin
 
     -- Phase 1: multi-digit value 1234
     test_value <= STD_LOGIC_VECTOR(to_unsigned(1234, 12));
-    report "Phase 1: waiting for first ADC conversion (test_value=1234)..." severity note;
-    wait until rising_edge(CS);           -- first SPI transaction just finished
+    report "Phase 1: waiting for a full ADC conversion with test_value=1234..." severity note;
+    -- ADC_MCP3208 free-runs continuously, so a conversion may already be
+    -- in flight (using the OLD test_value) at the moment test_value changes.
+    -- Wait for CS to fall (a conversion starts, guaranteed to see the new
+    -- test_value throughout) before waiting for that same conversion's CS
+    -- rising edge, so we don't observe a stale in-flight conversion's result.
+    wait until falling_edge(CS);          -- a conversion using the new value starts
+    wait until rising_edge(CS);           -- that same conversion just finished
     wait for 10 * CLK_PERIOD;             -- margin for data_valid + display-latch propagation
     expected_value   <= 1234;
     checking_enabled <= true;
@@ -257,7 +278,8 @@ begin
 
     -- Phase 2: single-digit value 6 (exercises leading zeros: "0006")
     test_value <= STD_LOGIC_VECTOR(to_unsigned(6, 12));
-    report "Phase 2: waiting for second ADC conversion (test_value=6)..." severity note;
+    report "Phase 2: waiting for a full ADC conversion with test_value=6..." severity note;
+    wait until falling_edge(CS);
     wait until rising_edge(CS);
     wait for 10 * CLK_PERIOD;
     expected_value   <= 6;

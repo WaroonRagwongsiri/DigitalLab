@@ -90,8 +90,8 @@ set_property -dict { PACKAGE_PIN J2    IOSTANDARD LVCMOS33 } [get_ports {Seven_S
 # SPI ADC
 set_property -dict { PACKAGE_PIN D1 IOSTANDARD LVCMOS33 } [get_ports {SCK}];
 set_property -dict { PACKAGE_PIN F4 IOSTANDARD LVCMOS33 } [get_ports {CS}];
-set_property -dict { PACKAGE_PIN G4 IOSTANDARD LVCMOS33 } [get_ports {DIN}];
-set_property -dict { PACKAGE_PIN C1 IOSTANDARD LVCMOS33 } [get_ports {DOUT}];
+set_property -dict { PACKAGE_PIN C1 IOSTANDARD LVCMOS33 } [get_ports {DIN}];
+set_property -dict { PACKAGE_PIN G4 IOSTANDARD LVCMOS33 } [get_ports {DOUT}];
 
 # # SPI DAC
 # set_property -dict { PACKAGE_PIN F1 IOSTANDARD LVCMOS33 } [get_ports {SCK}];
