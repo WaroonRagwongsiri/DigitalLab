@@ -25,92 +25,131 @@ entity hex_7seg is
 end hex_7seg;
 
 architecture Behavioral of hex_7seg is
-  signal n1_o, n2_o, n3_o, n4_o, n5_o, n6_o, n7_o, n8_o, n9_o, n10_o, n11_o, n12_o, n13_o, n14_o, n15_o, n16_o, n17_o, n18_o, n19_o, n20_o, n21_o, n22_o, n23_o, n24_o, n25_o, n26_o, n27_o, n28_o, n29_o, n30_o, n31_o, n32_o, n33_o, n34_o, n35_o, n36_o, n37_o, n38_o, n39_o, n40_o, n41_o, n42_o, n43_o, n44_o, n45_o, n46_o, n47_o, n48_o, n49_o, n50_o, n51_o, n52_o, n53_o, n54_o, n55_o, n56_o, n57_o, n58_o, n59_o, n60_o, n61_o, n62_o, n63_o, n64_o, n65_o, n66_o, n67_o, n68_o, n69_o, n70_o, n71_o, n72_o, n73_o : STD_LOGIC;
+  component segment_a
+    Port (
+      d0 : in  STD_LOGIC;
+      d1 : in  STD_LOGIC;
+      d2 : in  STD_LOGIC;
+      d3 : in  STD_LOGIC;
+      a : out STD_LOGIC
+    );
+  end component;
+  component segment_b
+    Port (
+      d0 : in  STD_LOGIC;
+      d1 : in  STD_LOGIC;
+      d2 : in  STD_LOGIC;
+      d3 : in  STD_LOGIC;
+      b : out STD_LOGIC
+    );
+  end component;
+  component segment_c
+    Port (
+      d0 : in  STD_LOGIC;
+      d1 : in  STD_LOGIC;
+      d2 : in  STD_LOGIC;
+      d3 : in  STD_LOGIC;
+      c : out STD_LOGIC
+    );
+  end component;
+  component segment_d
+    Port (
+      d0 : in  STD_LOGIC;
+      d1 : in  STD_LOGIC;
+      d2 : in  STD_LOGIC;
+      d3 : in  STD_LOGIC;
+      d : out STD_LOGIC
+    );
+  end component;
+  component segment_f
+    Port (
+      d0 : in  STD_LOGIC;
+      d1 : in  STD_LOGIC;
+      d2 : in  STD_LOGIC;
+      d3 : in  STD_LOGIC;
+      f : out STD_LOGIC
+    );
+  end component;
+  component segment_g
+    Port (
+      d0 : in  STD_LOGIC;
+      d1 : in  STD_LOGIC;
+      d2 : in  STD_LOGIC;
+      d3 : in  STD_LOGIC;
+      g : out STD_LOGIC
+    );
+  end component;
+  component segment_e
+    Port (
+      d0 : in  STD_LOGIC;
+      d1 : in  STD_LOGIC;
+      d2 : in  STD_LOGIC;
+      d3 : in  STD_LOGIC;
+      e : out STD_LOGIC
+    );
+  end component;
+  signal n1_a, n2_b, n3_c, n4_d, n5_f, n6_g, n7_e : STD_LOGIC;
 begin
 
-  -- combinational logic
-  n1_o <= in1_msb and in2 and n40_o and in4_lsb;
-  n2_o <= in1_msb and n39_o and in3 and in4_lsb;
-  n3_o <= n36_o and in2 and n37_o and n38_o;
-  n4_o <= n33_o and n34_o and n35_o and in4_lsb;
-  n5_o <= n4_o or n3_o or n2_o or n1_o;
-  n6_o <= in2 and in3 and n44_o;
-  n7_o <= in1_msb and in3 and in4_lsb;
-  n8_o <= in1_msb and in2 and n43_o;
-  n9_o <= n41_o and in2 and n42_o and in4_lsb;
-  n10_o <= n9_o or n8_o or n7_o or n6_o;
-  n11_o <= in1_msb and in2 and n48_o;
-  n12_o <= in1_msb and in2 and in3;
-  n13_o <= n45_o and n46_o and in3 and n47_o;
-  n14_o <= n13_o or n12_o or n11_o;
-  n15_o <= in2 and in3 and in4_lsb;
-  n16_o <= in1_msb and n55_o and in3 and n56_o;
-  n17_o <= n52_o and in2 and n53_o and n54_o;
-  n18_o <= n49_o and n50_o and n51_o and in4_lsb;
-  n19_o <= n18_o or n17_o or n16_o or n15_o;
-  n20_o <= n60_o and n61_o and in4_lsb;
-  n21_o <= n59_o and in4_lsb;
-  n22_o <= n57_o and in2 and n58_o;
-  n23_o <= n22_o or n21_o or n20_o;
-  n24_o <= in1_msb and in2 and n67_o and in4_lsb;
-  n25_o <= n66_o and in3 and in4_lsb;
-  n26_o <= n64_o and n65_o and in4_lsb;
-  n27_o <= n62_o and n63_o and in3;
-  n28_o <= n27_o or n26_o or n25_o or n24_o;
-  n29_o <= in1_msb and in2 and n72_o and n73_o;
-  n30_o <= n71_o and in2 and in3 and in4_lsb;
-  n31_o <= n68_o and n69_o and n70_o;
-  n32_o <= n31_o or n30_o or n29_o;
-  n33_o <= not in1_msb;
-  n34_o <= not in2;
-  n35_o <= not in3;
-  n36_o <= not in1_msb;
-  n37_o <= not in3;
-  n38_o <= not in4_lsb;
-  n39_o <= not in2;
-  n40_o <= not in3;
-  n41_o <= not in1_msb;
-  n42_o <= not in3;
-  n43_o <= not in4_lsb;
-  n44_o <= not in4_lsb;
-  n45_o <= not in1_msb;
-  n46_o <= not in2;
-  n47_o <= not in4_lsb;
-  n48_o <= not in4_lsb;
-  n49_o <= not in1_msb;
-  n50_o <= not in2;
-  n51_o <= not in3;
-  n52_o <= not in1_msb;
-  n53_o <= not in3;
-  n54_o <= not in4_lsb;
-  n55_o <= not in2;
-  n56_o <= not in4_lsb;
-  n57_o <= not in1_msb;
-  n58_o <= not in3;
-  n59_o <= not in1_msb;
-  n60_o <= not in2;
-  n61_o <= not in3;
-  n62_o <= not in1_msb;
-  n63_o <= not in2;
-  n64_o <= not in1_msb;
-  n65_o <= not in2;
-  n66_o <= not in1_msb;
-  n67_o <= not in3;
-  n68_o <= not in1_msb;
-  n69_o <= not in2;
-  n70_o <= not in3;
-  n71_o <= not in1_msb;
-  n72_o <= not in3;
-  n73_o <= not in4_lsb;
+  -- sub-component instantiations
+  u_0_c21776 : segment_a port map (
+    d0 => in1_msb,
+    d1 => in2,
+    d2 => in3,
+    d3 => in4_lsb,
+    a => n1_a
+  );
+  u_1_c21777 : segment_b port map (
+    d0 => in1_msb,
+    d1 => in2,
+    d2 => in3,
+    d3 => in4_lsb,
+    b => n2_b
+  );
+  u_2_c21778 : segment_c port map (
+    d0 => in1_msb,
+    d1 => in2,
+    d2 => in3,
+    d3 => in4_lsb,
+    c => n3_c
+  );
+  u_3_c21779 : segment_d port map (
+    d0 => in1_msb,
+    d1 => in2,
+    d2 => in3,
+    d3 => in4_lsb,
+    d => n4_d
+  );
+  u_4_c21780 : segment_f port map (
+    d0 => in1_msb,
+    d1 => in2,
+    d2 => in3,
+    d3 => in4_lsb,
+    f => n5_f
+  );
+  u_5_c21781 : segment_g port map (
+    d0 => in1_msb,
+    d1 => in2,
+    d2 => in3,
+    d3 => in4_lsb,
+    g => n6_g
+  );
+  u_6_c21782 : segment_e port map (
+    d0 => in1_msb,
+    d1 => in2,
+    d2 => in3,
+    d3 => in4_lsb,
+    e => n7_e
+  );
 
   -- output drivers
-  a <= n5_o;
-  b <= n10_o;
-  c <= n14_o;
-  d <= n19_o;
-  e <= n23_o;
-  f <= n28_o;
-  g <= n32_o;
+  a <= n1_a;
+  b <= n2_b;
+  c <= n3_c;
+  d <= n4_d;
+  e <= n7_e;
+  f <= n5_f;
+  g <= n6_g;
 
 end Behavioral;
 
@@ -308,9 +347,7 @@ end mod5_sync;
 architecture Behavioral of mod5_sync is
   signal n4_o, n5_o, n7_o, n9_o, n10_o, n12_o : STD_LOGIC;
   signal n1_q : STD_LOGIC := '0';
-  signal n1_qn : STD_LOGIC := '1';
   signal n2_q : STD_LOGIC := '0';
-  signal n2_qn : STD_LOGIC := '1';
   signal n3_q : STD_LOGIC := '0';
   signal n3_qn : STD_LOGIC := '1';
 begin
@@ -328,18 +365,16 @@ begin
   begin
     if reset = '1' then
       n1_q <= '0';
-      n1_qn <= '1';
     elsif rising_edge(clk) then
-      if (n4_o='1') then n1_q <= not n1_q; n1_qn <= not n1_qn; end if;
+      if (n4_o = '1') then n1_q <= not n1_q; end if;
     end if;
   end process;
   process(clk, reset)
   begin
     if reset = '1' then
       n2_q <= '0';
-      n2_qn <= '1';
     elsif rising_edge(clk) then
-      if (n5_o='1') then n2_q <= not n2_q; n2_qn <= not n2_qn; end if;
+      if (n5_o = '1') then n2_q <= not n2_q; end if;
     end if;
   end process;
   process(clk, reset)
@@ -348,7 +383,7 @@ begin
       n3_q <= '0';
       n3_qn <= '1';
     elsif rising_edge(clk) then
-      if (n10_o='1') then n3_q <= not n3_q; n3_qn <= not n3_qn; end if;
+      if (n10_o = '1') then n3_q <= not n3_q; n3_qn <= n3_q; end if;
     end if;
   end process;
 
@@ -445,11 +480,9 @@ architecture Behavioral of debounce_button is
   end component;
   signal n7_o, n9_mod50_out : STD_LOGIC;
   signal n1_q : STD_LOGIC := '0';
-  signal n1_qn : STD_LOGIC := '1';
   signal n2_q : STD_LOGIC := '0';
   signal n2_qn : STD_LOGIC := '1';
   signal n3_q : STD_LOGIC := '0';
-  signal n3_qn : STD_LOGIC := '1';
   signal n6_q : STD_LOGIC := '0';
   signal n6_qn : STD_LOGIC := '1';
 begin
@@ -462,7 +495,6 @@ begin
   begin
     if rising_edge(clk_50mhz) then
       n1_q  <= button_signal;
-      n1_qn <= not (button_signal);
     end if;
   end process;
   process(clk_50mhz)
@@ -476,11 +508,10 @@ begin
   begin
     if n2_qn = '1' then
       n3_q <= '0';
-      n3_qn <= '1';
     elsif rising_edge(clk_50mhz) then
-      if    (n9_mod50_out='0' and STD_LOGIC'('0')='1') then n3_q <= '0'; n3_qn <= '1';
-      elsif (n9_mod50_out='1' and STD_LOGIC'('0')='0') then n3_q <= '1'; n3_qn <= '0';
-      elsif (n9_mod50_out='1' and STD_LOGIC'('0')='1') then n3_q <= not n3_q; n3_qn <= n3_q;
+      if    (n9_mod50_out = '0' and STD_LOGIC'('0') = '1') then n3_q <= '0';
+      elsif (n9_mod50_out = '1' and STD_LOGIC'('0') = '0') then n3_q <= '1';
+      elsif (n9_mod50_out = '1' and STD_LOGIC'('0') = '1') then n3_q <= not n3_q;
       end if;
     end if;
   end process;
@@ -601,7 +632,6 @@ end mod2_sync;
 architecture Behavioral of mod2_sync is
   signal n2_o : STD_LOGIC;
   signal n1_q : STD_LOGIC := '0';
-  signal n1_qn : STD_LOGIC := '1';
 begin
 
   -- combinational logic
@@ -612,9 +642,8 @@ begin
   begin
     if reset = '1' then
       n1_q <= '0';
-      n1_qn <= '1';
     elsif rising_edge(clk) then
-      if (trigger='1') then n1_q <= not n1_q; n1_qn <= not n1_qn; end if;
+      if (trigger = '1') then n1_q <= not n1_q; end if;
     end if;
   end process;
 
@@ -785,9 +814,7 @@ architecture Behavioral of hex_7seg_multiplexer is
   signal n15_out_data : STD_LOGIC_VECTOR(3 downto 0);
   signal n16_out_data : STD_LOGIC_VECTOR(3 downto 0);
   signal n1_q : STD_LOGIC := '0';
-  signal n1_qn : STD_LOGIC := '1';
   signal n2_q : STD_LOGIC := '0';
-  signal n2_qn : STD_LOGIC := '1';
 begin
 
   -- combinational logic
@@ -805,18 +832,18 @@ begin
   process(clk)
   begin
     if rising_edge(clk) then
-      if    (n4_o='0' and n4_o='1') then n1_q <= '0'; n1_qn <= '1';
-      elsif (n4_o='1' and n4_o='0') then n1_q <= '1'; n1_qn <= '0';
-      elsif (n4_o='1' and n4_o='1') then n1_q <= not n1_q; n1_qn <= n1_q;
+      if    (n4_o = '0' and n4_o = '1') then n1_q <= '0';
+      elsif (n4_o = '1' and n4_o = '0') then n1_q <= '1';
+      elsif (n4_o = '1' and n4_o = '1') then n1_q <= not n1_q;
       end if;
     end if;
   end process;
   process(clk)
   begin
     if rising_edge(clk) then
-      if    (trigger='0' and trigger='1') then n2_q <= '0'; n2_qn <= '1';
-      elsif (trigger='1' and trigger='0') then n2_q <= '1'; n2_qn <= '0';
-      elsif (trigger='1' and trigger='1') then n2_q <= not n2_q; n2_qn <= n2_q;
+      if    (trigger = '0' and trigger = '1') then n2_q <= '0';
+      elsif (trigger = '1' and trigger = '0') then n2_q <= '1';
+      elsif (trigger = '1' and trigger = '1') then n2_q <= not n2_q;
       end if;
     end if;
   end process;
@@ -1466,26 +1493,26 @@ architecture Behavioral of lab10 is
       stored : out STD_LOGIC_VECTOR(2 downto 0)
     );
   end component;
-  signal n1_debounce_signal, n2_debounce_signal, n3_mod50k_out, n6_d3, n6_d2, n6_d1, n6_d0, n7_a, n7_b, n7_c, n7_d, n7_e, n7_f, n7_g, n8_y, n9_y, n10_y, n11_y, n17_y, n18_y, n19_y : STD_LOGIC;
-  signal n6_data_out : STD_LOGIC_VECTOR(3 downto 0);
+  signal n1_debounce_signal, n2_debounce_signal, n3_mod50k_out, n5_d3, n5_d2, n5_d1, n5_d0, n6_a, n6_b, n6_c, n6_d, n6_e, n6_f, n6_g, n7_y, n8_y, n9_y, n10_y, n16_y, n17_y, n18_y : STD_LOGIC;
+  signal n5_data_out : STD_LOGIC_VECTOR(3 downto 0);
+  signal n11_msb : STD_LOGIC_VECTOR(3 downto 0);
+  signal n11_lsb : STD_LOGIC_VECTOR(3 downto 0);
   signal n12_msb : STD_LOGIC_VECTOR(3 downto 0);
   signal n12_lsb : STD_LOGIC_VECTOR(3 downto 0);
-  signal n13_msb : STD_LOGIC_VECTOR(3 downto 0);
-  signal n13_lsb : STD_LOGIC_VECTOR(3 downto 0);
-  signal n25_product : STD_LOGIC_VECTOR(7 downto 0);
-  signal n25_flag : STD_LOGIC_VECTOR(2 downto 0);
-  signal n27_stored : STD_LOGIC_VECTOR(7 downto 0);
-  signal n29_stored : STD_LOGIC_VECTOR(2 downto 0);
+  signal n24_product : STD_LOGIC_VECTOR(7 downto 0);
+  signal n24_flag : STD_LOGIC_VECTOR(2 downto 0);
+  signal n26_stored : STD_LOGIC_VECTOR(7 downto 0);
+  signal n28_stored : STD_LOGIC_VECTOR(2 downto 0);
 begin
 
   -- combinational logic
-  n8_y <= n6_data_out(3);
-  n9_y <= n6_data_out(2);
-  n10_y <= n6_data_out(1);
-  n11_y <= n6_data_out(0);
-  n17_y <= n29_stored(2);
-  n18_y <= n29_stored(1);
-  n19_y <= n29_stored(0);
+  n7_y <= n5_data_out(3);
+  n8_y <= n5_data_out(2);
+  n9_y <= n5_data_out(1);
+  n10_y <= n5_data_out(0);
+  n16_y <= n28_stored(2);
+  n17_y <= n28_stored(1);
+  n18_y <= n28_stored(0);
 
   -- sub-component instantiations
   u_0_c18624 : debounce_button port map (
@@ -1505,78 +1532,78 @@ begin
     mod50k_out => n3_mod50k_out
   );
   u_3_c18653 : hex_7seg_multiplexer port map (
-    d3_data => n12_msb,
-    d2_data => n12_lsb,
-    d1_data => n13_msb,
-    d0_data => n13_lsb,
+    d3_data => n11_msb,
+    d2_data => n11_lsb,
+    d1_data => n12_msb,
+    d0_data => n12_lsb,
     trigger => n3_mod50k_out,
     clk => clk,
-    data_out => n6_data_out,
-    d3 => n6_d3,
-    d2 => n6_d2,
-    d1 => n6_d1,
-    d0 => n6_d0
+    data_out => n5_data_out,
+    d3 => n5_d3,
+    d2 => n5_d2,
+    d1 => n5_d1,
+    d0 => n5_d0
   );
   u_4_c18654 : hex_7seg port map (
-    in1_msb => n8_y,
-    in2 => n9_y,
-    in3 => n10_y,
-    in4_lsb => n11_y,
-    a => n7_a,
-    b => n7_b,
-    c => n7_c,
-    d => n7_d,
-    e => n7_e,
-    f => n7_f,
-    g => n7_g
+    in1_msb => n7_y,
+    in2 => n8_y,
+    in3 => n9_y,
+    in4_lsb => n10_y,
+    a => n6_a,
+    b => n6_b,
+    c => n6_c,
+    d => n6_d,
+    e => n6_e,
+    f => n6_f,
+    g => n6_g
   );
   u_5_c18789 : splitter8_4bit port map (
     in0 => data,
+    msb => n11_msb,
+    lsb => n11_lsb
+  );
+  u_6_c18790 : splitter8_4bit port map (
+    in0 => n26_stored,
     msb => n12_msb,
     lsb => n12_lsb
   );
-  u_6_c18790 : splitter8_4bit port map (
-    in0 => n27_stored,
-    msb => n13_msb,
-    lsb => n13_lsb
-  );
   u_7_c19942 : alu port map (
-    lhs => n27_stored,
+    lhs => n26_stored,
     rhs => data,
     sel => operator,
-    product => n25_product,
-    flag => n25_flag
+    product => n24_product,
+    flag => n24_flag
   );
   u_8_c20590 : register_8bit port map (
-    set_in => n25_product,
+    set_in => n24_product,
     set => n1_debounce_signal,
     clk => clk,
     reset => n2_debounce_signal,
-    stored => n27_stored
+    stored => n26_stored
   );
   u_9_c21223 : register_3bit port map (
-    set_in => n25_flag,
+    set_in => n24_flag,
     set => n1_debounce_signal,
     clk => clk,
     reset => n2_debounce_signal,
-    stored => n29_stored
+    stored => n28_stored
   );
 
   -- output drivers
-  a <= n7_a;
-  b <= n7_b;
-  c <= n7_c;
-  d <= n7_d;
-  e <= n7_e;
-  f <= n7_f;
-  g <= n7_g;
-  d3 <= n6_d3;
-  d2 <= n6_d2;
-  d1 <= n6_d1;
-  d0 <= n6_d0;
-  carry_led <= n17_y;
-  overflow_led <= n18_y;
-  zero_led <= n19_y;
+  a <= n6_a;
+  b <= n6_b;
+  c <= n6_c;
+  d <= n6_d;
+  e <= n6_e;
+  f <= n6_f;
+  g <= n6_g;
+  d3 <= n5_d3;
+  d2 <= n5_d2;
+  d1 <= n5_d1;
+  d0 <= n5_d0;
+  carry_led <= n16_y;
+  overflow_led <= n17_y;
+  zero_led <= n18_y;
 
 end Behavioral;
 
@@ -2312,21 +2339,13 @@ end register_8bit;
 architecture Behavioral of register_8bit is
   signal n24_o, n25_o, n26_o, n34_o, n35_o, n36_o, n37_o, n38_o, n39_o, n40_o, n41_o, n42_o, n43_o, n44_o, n45_o, n46_o, n47_o, n48_o, n49_o, n50_o, n51_o, n52_o, n53_o, n54_o, n70_y, n72_y, n74_y, n76_y, n78_y, n80_y, n82_y, n84_y : STD_LOGIC;
   signal n1_q : STD_LOGIC := '0';
-  signal n1_qn : STD_LOGIC := '1';
   signal n2_q : STD_LOGIC := '0';
-  signal n2_qn : STD_LOGIC := '1';
   signal n3_q : STD_LOGIC := '0';
-  signal n3_qn : STD_LOGIC := '1';
   signal n4_q : STD_LOGIC := '0';
-  signal n4_qn : STD_LOGIC := '1';
   signal n5_q : STD_LOGIC := '0';
-  signal n5_qn : STD_LOGIC := '1';
   signal n6_q : STD_LOGIC := '0';
-  signal n6_qn : STD_LOGIC := '1';
   signal n7_q : STD_LOGIC := '0';
-  signal n7_qn : STD_LOGIC := '1';
   signal n8_q : STD_LOGIC := '0';
-  signal n8_qn : STD_LOGIC := '1';
 begin
 
   -- combinational logic
@@ -2368,11 +2387,10 @@ begin
   begin
     if reset = '1' then
       n1_q <= '0';
-      n1_qn <= '1';
     elsif rising_edge(clk) then
-      if    (n34_o='0' and n35_o='1') then n1_q <= '0'; n1_qn <= '1';
-      elsif (n34_o='1' and n35_o='0') then n1_q <= '1'; n1_qn <= '0';
-      elsif (n34_o='1' and n35_o='1') then n1_q <= not n1_q; n1_qn <= n1_q;
+      if    (n34_o = '0' and n35_o = '1') then n1_q <= '0';
+      elsif (n34_o = '1' and n35_o = '0') then n1_q <= '1';
+      elsif (n34_o = '1' and n35_o = '1') then n1_q <= not n1_q;
       end if;
     end if;
   end process;
@@ -2380,11 +2398,10 @@ begin
   begin
     if reset = '1' then
       n2_q <= '0';
-      n2_qn <= '1';
     elsif rising_edge(clk) then
-      if    (n24_o='0' and n25_o='1') then n2_q <= '0'; n2_qn <= '1';
-      elsif (n24_o='1' and n25_o='0') then n2_q <= '1'; n2_qn <= '0';
-      elsif (n24_o='1' and n25_o='1') then n2_q <= not n2_q; n2_qn <= n2_q;
+      if    (n24_o = '0' and n25_o = '1') then n2_q <= '0';
+      elsif (n24_o = '1' and n25_o = '0') then n2_q <= '1';
+      elsif (n24_o = '1' and n25_o = '1') then n2_q <= not n2_q;
       end if;
     end if;
   end process;
@@ -2392,11 +2409,10 @@ begin
   begin
     if reset = '1' then
       n3_q <= '0';
-      n3_qn <= '1';
     elsif rising_edge(clk) then
-      if    (n37_o='0' and n38_o='1') then n3_q <= '0'; n3_qn <= '1';
-      elsif (n37_o='1' and n38_o='0') then n3_q <= '1'; n3_qn <= '0';
-      elsif (n37_o='1' and n38_o='1') then n3_q <= not n3_q; n3_qn <= n3_q;
+      if    (n37_o = '0' and n38_o = '1') then n3_q <= '0';
+      elsif (n37_o = '1' and n38_o = '0') then n3_q <= '1';
+      elsif (n37_o = '1' and n38_o = '1') then n3_q <= not n3_q;
       end if;
     end if;
   end process;
@@ -2404,11 +2420,10 @@ begin
   begin
     if reset = '1' then
       n4_q <= '0';
-      n4_qn <= '1';
     elsif rising_edge(clk) then
-      if    (n40_o='0' and n41_o='1') then n4_q <= '0'; n4_qn <= '1';
-      elsif (n40_o='1' and n41_o='0') then n4_q <= '1'; n4_qn <= '0';
-      elsif (n40_o='1' and n41_o='1') then n4_q <= not n4_q; n4_qn <= n4_q;
+      if    (n40_o = '0' and n41_o = '1') then n4_q <= '0';
+      elsif (n40_o = '1' and n41_o = '0') then n4_q <= '1';
+      elsif (n40_o = '1' and n41_o = '1') then n4_q <= not n4_q;
       end if;
     end if;
   end process;
@@ -2416,11 +2431,10 @@ begin
   begin
     if reset = '1' then
       n5_q <= '0';
-      n5_qn <= '1';
     elsif rising_edge(clk) then
-      if    (n43_o='0' and n44_o='1') then n5_q <= '0'; n5_qn <= '1';
-      elsif (n43_o='1' and n44_o='0') then n5_q <= '1'; n5_qn <= '0';
-      elsif (n43_o='1' and n44_o='1') then n5_q <= not n5_q; n5_qn <= n5_q;
+      if    (n43_o = '0' and n44_o = '1') then n5_q <= '0';
+      elsif (n43_o = '1' and n44_o = '0') then n5_q <= '1';
+      elsif (n43_o = '1' and n44_o = '1') then n5_q <= not n5_q;
       end if;
     end if;
   end process;
@@ -2428,11 +2442,10 @@ begin
   begin
     if reset = '1' then
       n6_q <= '0';
-      n6_qn <= '1';
     elsif rising_edge(clk) then
-      if    (n46_o='0' and n47_o='1') then n6_q <= '0'; n6_qn <= '1';
-      elsif (n46_o='1' and n47_o='0') then n6_q <= '1'; n6_qn <= '0';
-      elsif (n46_o='1' and n47_o='1') then n6_q <= not n6_q; n6_qn <= n6_q;
+      if    (n46_o = '0' and n47_o = '1') then n6_q <= '0';
+      elsif (n46_o = '1' and n47_o = '0') then n6_q <= '1';
+      elsif (n46_o = '1' and n47_o = '1') then n6_q <= not n6_q;
       end if;
     end if;
   end process;
@@ -2440,11 +2453,10 @@ begin
   begin
     if reset = '1' then
       n7_q <= '0';
-      n7_qn <= '1';
     elsif rising_edge(clk) then
-      if    (n49_o='0' and n50_o='1') then n7_q <= '0'; n7_qn <= '1';
-      elsif (n49_o='1' and n50_o='0') then n7_q <= '1'; n7_qn <= '0';
-      elsif (n49_o='1' and n50_o='1') then n7_q <= not n7_q; n7_qn <= n7_q;
+      if    (n49_o = '0' and n50_o = '1') then n7_q <= '0';
+      elsif (n49_o = '1' and n50_o = '0') then n7_q <= '1';
+      elsif (n49_o = '1' and n50_o = '1') then n7_q <= not n7_q;
       end if;
     end if;
   end process;
@@ -2452,11 +2464,10 @@ begin
   begin
     if reset = '1' then
       n8_q <= '0';
-      n8_qn <= '1';
     elsif rising_edge(clk) then
-      if    (n52_o='0' and n53_o='1') then n8_q <= '0'; n8_qn <= '1';
-      elsif (n52_o='1' and n53_o='0') then n8_q <= '1'; n8_qn <= '0';
-      elsif (n52_o='1' and n53_o='1') then n8_q <= not n8_q; n8_qn <= n8_q;
+      if    (n52_o = '0' and n53_o = '1') then n8_q <= '0';
+      elsif (n52_o = '1' and n53_o = '0') then n8_q <= '1';
+      elsif (n52_o = '1' and n53_o = '1') then n8_q <= not n8_q;
       end if;
     end if;
   end process;
@@ -2496,11 +2507,8 @@ end register_3bit;
 architecture Behavioral of register_3bit is
   signal n9_o, n10_o, n11_o, n14_o, n15_o, n16_o, n17_o, n18_o, n19_o, n20_y, n22_y, n24_y : STD_LOGIC;
   signal n1_q : STD_LOGIC := '0';
-  signal n1_qn : STD_LOGIC := '1';
   signal n2_q : STD_LOGIC := '0';
-  signal n2_qn : STD_LOGIC := '1';
   signal n3_q : STD_LOGIC := '0';
-  signal n3_qn : STD_LOGIC := '1';
 begin
 
   -- combinational logic
@@ -2522,11 +2530,10 @@ begin
   begin
     if reset = '1' then
       n1_q <= '0';
-      n1_qn <= '1';
     elsif rising_edge(clk) then
-      if    (n14_o='0' and n15_o='1') then n1_q <= '0'; n1_qn <= '1';
-      elsif (n14_o='1' and n15_o='0') then n1_q <= '1'; n1_qn <= '0';
-      elsif (n14_o='1' and n15_o='1') then n1_q <= not n1_q; n1_qn <= n1_q;
+      if    (n14_o = '0' and n15_o = '1') then n1_q <= '0';
+      elsif (n14_o = '1' and n15_o = '0') then n1_q <= '1';
+      elsif (n14_o = '1' and n15_o = '1') then n1_q <= not n1_q;
       end if;
     end if;
   end process;
@@ -2534,11 +2541,10 @@ begin
   begin
     if reset = '1' then
       n2_q <= '0';
-      n2_qn <= '1';
     elsif rising_edge(clk) then
-      if    (n9_o='0' and n10_o='1') then n2_q <= '0'; n2_qn <= '1';
-      elsif (n9_o='1' and n10_o='0') then n2_q <= '1'; n2_qn <= '0';
-      elsif (n9_o='1' and n10_o='1') then n2_q <= not n2_q; n2_qn <= n2_q;
+      if    (n9_o = '0' and n10_o = '1') then n2_q <= '0';
+      elsif (n9_o = '1' and n10_o = '0') then n2_q <= '1';
+      elsif (n9_o = '1' and n10_o = '1') then n2_q <= not n2_q;
       end if;
     end if;
   end process;
@@ -2546,11 +2552,10 @@ begin
   begin
     if reset = '1' then
       n3_q <= '0';
-      n3_qn <= '1';
     elsif rising_edge(clk) then
-      if    (n17_o='0' and n18_o='1') then n3_q <= '0'; n3_qn <= '1';
-      elsif (n17_o='1' and n18_o='0') then n3_q <= '1'; n3_qn <= '0';
-      elsif (n17_o='1' and n18_o='1') then n3_q <= not n3_q; n3_qn <= n3_q;
+      if    (n17_o = '0' and n18_o = '1') then n3_q <= '0';
+      elsif (n17_o = '1' and n18_o = '0') then n3_q <= '1';
+      elsif (n17_o = '1' and n18_o = '1') then n3_q <= not n3_q;
       end if;
     end if;
   end process;
@@ -2559,5 +2564,278 @@ begin
   stored(2) <= n1_q;
   stored(1) <= n2_q;
   stored(0) <= n3_q;
+
+end Behavioral;
+
+-- ============================================================
+-- Entity: segment_a
+-- ============================================================
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+-- Generated by Schematic Studio  (target: Xilinx Spartan-7 / Vivado)
+-- Schematic: segment_a
+
+entity segment_a is
+  Port (
+    d0 : in  STD_LOGIC;
+    d1 : in  STD_LOGIC;
+    d2 : in  STD_LOGIC;
+    d3 : in  STD_LOGIC;
+    a : out STD_LOGIC
+  );
+end segment_a;
+
+architecture Behavioral of segment_a is
+  signal n1_o, n2_o, n3_o, n4_o, n5_o, n6_o, n7_o, n10_o, n14_o : STD_LOGIC;
+begin
+
+  -- combinational logic
+  n1_o <= not d3;
+  n2_o <= not d2;
+  n3_o <= not d1;
+  n4_o <= not d0;
+  n5_o <= d0 and n3_o and n2_o and n1_o;
+  n6_o <= n4_o and n3_o and d2 and n1_o;
+  n7_o <= d0 and n3_o and d2 and d3;
+  n10_o <= d0 and d1 and n2_o and d3;
+  n14_o <= n5_o or n6_o or n7_o or n10_o;
+
+  -- output drivers
+  a <= n14_o;
+
+end Behavioral;
+
+-- ============================================================
+-- Entity: segment_b
+-- ============================================================
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+-- Generated by Schematic Studio  (target: Xilinx Spartan-7 / Vivado)
+-- Schematic: segment_b
+
+entity segment_b is
+  Port (
+    d0 : in  STD_LOGIC;
+    d1 : in  STD_LOGIC;
+    d2 : in  STD_LOGIC;
+    d3 : in  STD_LOGIC;
+    b : out STD_LOGIC
+  );
+end segment_b;
+
+architecture Behavioral of segment_b is
+  signal n1_o, n2_o, n3_o, n4_o, n5_o, n6_o, n7_o, n8_o : STD_LOGIC;
+begin
+
+  -- combinational logic
+  n1_o <= not d3;
+  n2_o <= not d1;
+  n3_o <= not d0;
+  n4_o <= d0 and d1 and d3;
+  n5_o <= n3_o and d1 and d2;
+  n6_o <= n3_o and d2 and d3;
+  n7_o <= d0 and n2_o and d2 and n1_o;
+  n8_o <= n4_o or n5_o or n6_o or n7_o;
+
+  -- output drivers
+  b <= n8_o;
+
+end Behavioral;
+
+-- ============================================================
+-- Entity: segment_c
+-- ============================================================
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+-- Generated by Schematic Studio  (target: Xilinx Spartan-7 / Vivado)
+-- Schematic: segment_c
+
+entity segment_c is
+  Port (
+    d0 : in  STD_LOGIC;
+    d1 : in  STD_LOGIC;
+    d2 : in  STD_LOGIC;
+    d3 : in  STD_LOGIC;
+    c : out STD_LOGIC
+  );
+end segment_c;
+
+architecture Behavioral of segment_c is
+  signal n1_o, n2_o, n3_o, n4_o, n5_o, n6_o, n7_o : STD_LOGIC;
+begin
+
+  -- combinational logic
+  n1_o <= not d3;
+  n2_o <= not d0;
+  n3_o <= n2_o and d2 and d3;
+  n4_o <= d1 and d2 and d3;
+  n5_o <= n2_o and d1 and n7_o and n1_o;
+  n6_o <= n3_o or n4_o or n5_o;
+  n7_o <= not d2;
+
+  -- output drivers
+  c <= n6_o;
+
+end Behavioral;
+
+-- ============================================================
+-- Entity: segment_d
+-- ============================================================
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+-- Generated by Schematic Studio  (target: Xilinx Spartan-7 / Vivado)
+-- Schematic: segment_d
+
+entity segment_d is
+  Port (
+    d0 : in  STD_LOGIC;
+    d1 : in  STD_LOGIC;
+    d2 : in  STD_LOGIC;
+    d3 : in  STD_LOGIC;
+    d : out STD_LOGIC
+  );
+end segment_d;
+
+architecture Behavioral of segment_d is
+  signal n1_o, n2_o, n3_o, n4_o, n5_o, n6_o, n7_o, n8_o, n9_o : STD_LOGIC;
+begin
+
+  -- combinational logic
+  n1_o <= not d3;
+  n2_o <= not d1;
+  n3_o <= not d0;
+  n4_o <= d0 and d1 and d2;
+  n5_o <= n3_o and n2_o and d2 and n1_o;
+  n6_o <= d0 and n2_o and n9_o and n1_o;
+  n7_o <= n3_o and d1 and n9_o and d3;
+  n8_o <= n4_o or n5_o or n6_o or n7_o;
+  n9_o <= not d2;
+
+  -- output drivers
+  d <= n8_o;
+
+end Behavioral;
+
+-- ============================================================
+-- Entity: segment_e
+-- ============================================================
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+-- Generated by Schematic Studio  (target: Xilinx Spartan-7 / Vivado)
+-- Schematic: segment_e
+
+entity segment_e is
+  Port (
+    d0 : in  STD_LOGIC;
+    d1 : in  STD_LOGIC;
+    d2 : in  STD_LOGIC;
+    d3 : in  STD_LOGIC;
+    e : out STD_LOGIC
+  );
+end segment_e;
+
+architecture Behavioral of segment_e is
+  signal n1_o, n2_o, n3_o, n4_o, n5_o, n6_o, n7_o : STD_LOGIC;
+begin
+
+  -- combinational logic
+  n1_o <= not d3;
+  n2_o <= d0 and n1_o;
+  n3_o <= n7_o and d2 and n1_o;
+  n4_o <= d0 and n7_o and n6_o;
+  n5_o <= n2_o or n3_o or n4_o;
+  n6_o <= not d2;
+  n7_o <= not d1;
+
+  -- output drivers
+  e <= n5_o;
+
+end Behavioral;
+
+-- ============================================================
+-- Entity: segment_f
+-- ============================================================
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+-- Generated by Schematic Studio  (target: Xilinx Spartan-7 / Vivado)
+-- Schematic: segment_f
+
+entity segment_f is
+  Port (
+    d0 : in  STD_LOGIC;
+    d1 : in  STD_LOGIC;
+    d2 : in  STD_LOGIC;
+    d3 : in  STD_LOGIC;
+    f : out STD_LOGIC
+  );
+end segment_f;
+
+architecture Behavioral of segment_f is
+  signal n1_o, n2_o, n3_o, n4_o, n5_o, n6_o, n7_o, n8_o : STD_LOGIC;
+begin
+
+  -- combinational logic
+  n1_o <= not d3;
+  n2_o <= not d1;
+  n3_o <= d0 and n8_o and n1_o;
+  n4_o <= d1 and n8_o and n1_o;
+  n5_o <= d0 and d1 and n1_o;
+  n6_o <= d0 and n2_o and d2 and d3;
+  n7_o <= n3_o or n4_o or n5_o or n6_o;
+  n8_o <= not d2;
+
+  -- output drivers
+  f <= n7_o;
+
+end Behavioral;
+
+-- ============================================================
+-- Entity: segment_g
+-- ============================================================
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+-- Generated by Schematic Studio  (target: Xilinx Spartan-7 / Vivado)
+-- Schematic: segment_g
+
+entity segment_g is
+  Port (
+    d0 : in  STD_LOGIC;
+    d1 : in  STD_LOGIC;
+    d2 : in  STD_LOGIC;
+    d3 : in  STD_LOGIC;
+    g : out STD_LOGIC
+  );
+end segment_g;
+
+architecture Behavioral of segment_g is
+  signal n1_o, n2_o, n3_o, n4_o, n5_o, n6_o, n7_o, n8_o : STD_LOGIC;
+begin
+
+  -- combinational logic
+  n1_o <= not d3;
+  n2_o <= not d0;
+  n3_o <= n8_o and n7_o and n1_o;
+  n4_o <= n2_o and n8_o and d2 and d3;
+  n5_o <= d0 and d1 and d2 and n1_o;
+  n6_o <= n3_o or n4_o or n5_o;
+  n7_o <= not d2;
+  n8_o <= not d1;
+
+  -- output drivers
+  g <= n6_o;
 
 end Behavioral;
