@@ -25,8 +25,8 @@ set_property -dict { PACKAGE_PIN K3    IOSTANDARD LVCMOS33 } [get_ports { m1[2] 
 set_property -dict { PACKAGE_PIN J1    IOSTANDARD LVCMOS33 } [get_ports { m1[3] }];#MSB
 
 # LEDs
-set_property -dict { PACKAGE_PIN K12    IOSTANDARD LVCMOS33 } [get_ports { error_led }];#LSB
-set_property -dict { PACKAGE_PIN M12    IOSTANDARD LVCMOS33 } [get_ports { timeup_led }];
+set_property -dict { PACKAGE_PIN K12    IOSTANDARD LVCMOS33 } [get_ports { error }];#LSB
+set_property -dict { PACKAGE_PIN M12    IOSTANDARD LVCMOS33 } [get_ports { timeup }];
 # set_property -dict { PACKAGE_PIN M14    IOSTANDARD LVCMOS33 } [get_ports { led[2] }];
 # set_property -dict { PACKAGE_PIN P13    IOSTANDARD LVCMOS33 } [get_ports { led[3] }];
 # set_property -dict { PACKAGE_PIN N11    IOSTANDARD LVCMOS33 } [get_ports { led[4] }];
@@ -43,25 +43,25 @@ set_property -dict { PACKAGE_PIN M12    IOSTANDARD LVCMOS33 } [get_ports { timeu
 # set_property -dict { PACKAGE_PIN M1    IOSTANDARD LVCMOS33 } [get_ports { led[15] }];#MSB
 
 # Push Button
-set_property -dict {PACKAGE_PIN J13 IOSTANDARD LVCMOS33 PULLDOWN true} [get_ports { start_stop ]}]; #Button-top
+set_property -dict {PACKAGE_PIN J13 IOSTANDARD LVCMOS33 PULLDOWN true} [get_ports { start ]}]; #Button-top
 # set_property -dict {PACKAGE_PIN L13 IOSTANDARD LVCMOS33 PULLDOWN true} [get_ports {pb[1]}]; #Button-bottom
 set_property -dict {PACKAGE_PIN J14 IOSTANDARD LVCMOS33 PULLDOWN true} [get_ports { set }]; #Button-left
 # set_property -dict {PACKAGE_PIN J11 IOSTANDARD LVCMOS33 PULLDOWN true} [get_ports {pb[3]}]; #Button-right
 set_property -dict {PACKAGE_PIN J12 IOSTANDARD LVCMOS33 PULLDOWN true} [get_ports { reset }]; #Button-center
 
 #7 segment display
-set_property -dict { PACKAGE_PIN H4    IOSTANDARD LVCMOS33 } [get_ports { d0 }]; #LSB (Rightmost)
-set_property -dict { PACKAGE_PIN H3    IOSTANDARD LVCMOS33 } [get_ports { d1 }];
-set_property -dict { PACKAGE_PIN H2    IOSTANDARD LVCMOS33 } [get_ports { d2 }];
-set_property -dict { PACKAGE_PIN H1    IOSTANDARD LVCMOS33 } [get_ports { d3 }]; #MSB (Leftmost)
+set_property -dict { PACKAGE_PIN H4    IOSTANDARD LVCMOS33 } [get_ports { common[0] }]; #LSB (Rightmost)
+set_property -dict { PACKAGE_PIN H3    IOSTANDARD LVCMOS33 } [get_ports { common[1] }];
+set_property -dict { PACKAGE_PIN H2    IOSTANDARD LVCMOS33 } [get_ports { common[2] }];
+set_property -dict { PACKAGE_PIN H1    IOSTANDARD LVCMOS33 } [get_ports { common[3] }]; #MSB (Leftmost)
 
-set_property -dict { PACKAGE_PIN L3    IOSTANDARD LVCMOS33 } [get_ports { a }];#A
-set_property -dict { PACKAGE_PIN P4    IOSTANDARD LVCMOS33 } [get_ports { b }];#B
-set_property -dict { PACKAGE_PIN P2    IOSTANDARD LVCMOS33 } [get_ports { c }];#C
-set_property -dict { PACKAGE_PIN M3    IOSTANDARD LVCMOS33 } [get_ports { d }];#D
-set_property -dict { PACKAGE_PIN M1    IOSTANDARD LVCMOS33 } [get_ports { e }];#E
-set_property -dict { PACKAGE_PIN J4    IOSTANDARD LVCMOS33 } [get_ports { f }];#F
-set_property -dict { PACKAGE_PIN K4    IOSTANDARD LVCMOS33 } [get_ports { g }];#G
+set_property -dict { PACKAGE_PIN L3    IOSTANDARD LVCMOS33 } [get_ports { segment[0] }];#A
+set_property -dict { PACKAGE_PIN P4    IOSTANDARD LVCMOS33 } [get_ports { segment[1] }];#B
+set_property -dict { PACKAGE_PIN P2    IOSTANDARD LVCMOS33 } [get_ports { segment[2] }];#C
+set_property -dict { PACKAGE_PIN M3    IOSTANDARD LVCMOS33 } [get_ports { segment[3] }];#D
+set_property -dict { PACKAGE_PIN M1    IOSTANDARD LVCMOS33 } [get_ports { segment[4] }];#E
+set_property -dict { PACKAGE_PIN J4    IOSTANDARD LVCMOS33 } [get_ports { segment[5] }];#F
+set_property -dict { PACKAGE_PIN K4    IOSTANDARD LVCMOS33 } [get_ports { segment[6] }];#G
 # set_property -dict { PACKAGE_PIN J2    IOSTANDARD LVCMOS33 } [get_ports { dp }];#DP
 
 # # 2x16 LCD
