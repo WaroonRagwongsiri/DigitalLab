@@ -12344,7 +12344,7 @@
       },
       "sch1564": {
         "id": "sch1564",
-        "name": "hex_7seg",
+        "name": "bcd_to_7_segment",
         "components": [
           {
             "id": "c2593",

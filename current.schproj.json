@@ -95847,7 +95847,7 @@
           "sch18658",
           "sch18660"
         ],
-        "activeId": "sch18213",
+        "activeId": "sch18451",
         "expanded": false
       },
       "prj21908": {
@@ -106543,7 +106543,7 @@
           },
           "sch1564": {
             "id": "sch1564",
-            "name": "hex_7seg",
+            "name": "bcd_to_7_segment",
             "components": [
               {
                 "id": "c2593",
@@ -114312,7 +114312,8 @@
           "sch14611",
           "sch21931",
           "sch14710",
-          "sch21420"
+          "sch21420",
+          "sch1564"
         ],
         "activeId": "sch22236",
         "schOrder": [
@@ -160081,7 +160082,7 @@
       },
       "sch1564": {
         "id": "sch1564",
-        "name": "hex_7seg",
+        "name": "bcd_to_7_segment",
         "components": [
           {
             "id": "c2593",
@@ -167850,7 +167851,8 @@
       "sch14611",
       "sch21931",
       "sch14710",
-      "sch21420"
+      "sch21420",
+      "sch1564"
     ],
     "activeId": "sch22236",
     "schOrder": [
@@ -167892,6 +167894,7 @@
     "sch14611",
     "sch21931",
     "sch14710",
-    "sch21420"
+    "sch21420",
+    "sch1564"
   ]
 }
