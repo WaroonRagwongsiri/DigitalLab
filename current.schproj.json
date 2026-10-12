@@ -96391,7 +96391,7 @@
                 "id": "c18597",
                 "type": "SCH:sch18579",
                 "x": 462,
-                "y": 407,
+                "y": 396,
                 "params": {},
                 "label": ""
               },
@@ -96822,7 +96822,7 @@
                 "id": "w18569",
                 "from": {
                   "cid": "c18562",
-                  "pid": "start_stop_signal"
+                  "pid": "start_state"
                 },
                 "to": {
                   "cid": "c17356",
@@ -96839,7 +96839,7 @@
                 },
                 "to": {
                   "cid": "c18562",
-                  "pid": "start_stop"
+                  "pid": "start"
                 },
                 "name": ""
               },
@@ -97019,41 +97019,11 @@
                 "pts": [
                   {
                     "x": 1122,
-                    "y": 429
+                    "y": 407
                   },
                   {
                     "x": 1122,
                     "y": 264
-                  }
-                ]
-              },
-              {
-                "id": "w22347",
-                "from": {
-                  "cid": "c18597",
-                  "pid": "f_100hz"
-                },
-                "to": {
-                  "cid": "c18562",
-                  "pid": "clk_100hz"
-                },
-                "name": "",
-                "autoPts": [
-                  {
-                    "x": 605,
-                    "y": 451
-                  },
-                  {
-                    "x": 605,
-                    "y": 407
-                  },
-                  {
-                    "x": 451,
-                    "y": 407
-                  },
-                  {
-                    "x": 451,
-                    "y": 352
                   }
                 ]
               },
@@ -97122,6 +97092,19 @@
                   "pid": "clk"
                 },
                 "name": ""
+              },
+              {
+                "id": "w22525",
+                "from": {
+                  "cid": "c18597",
+                  "pid": "f_100hz"
+                },
+                "to": {
+                  "cid": "c18562",
+                  "pid": "clk_100hz"
+                },
+                "name": "",
+                "my": 385
               }
             ],
             "locked": false
@@ -99942,8 +99925,7 @@
                   "fixed": true,
                   "axis": "h"
                 },
-                "_busNet": "current",
-                "_busW": 4
+                "_busNet": "current"
               },
               {
                 "id": "c17749",
@@ -99953,8 +99935,7 @@
                 "params": {
                   "axis": "h"
                 },
-                "_busNet": "current",
-                "_busW": 4
+                "_busNet": "current"
               },
               {
                 "id": "c17753",
@@ -99964,8 +99945,7 @@
                 "params": {
                   "axis": "h"
                 },
-                "_busNet": "current",
-                "_busW": 4
+                "_busNet": "current"
               },
               {
                 "id": "c17757",
@@ -99975,8 +99955,7 @@
                 "params": {
                   "axis": "h"
                 },
-                "_busNet": "current",
-                "_busW": 4
+                "_busNet": "current"
               },
               {
                 "id": "c17761",
@@ -102026,8 +102005,7 @@
                   "fixed": true,
                   "axis": "h"
                 },
-                "_busNet": "current",
-                "_busW": 4
+                "_busNet": "current"
               },
               {
                 "id": "c18074",
@@ -102037,8 +102015,7 @@
                 "params": {
                   "axis": "h"
                 },
-                "_busNet": "current",
-                "_busW": 4
+                "_busNet": "current"
               },
               {
                 "id": "c18078",
@@ -102048,8 +102025,7 @@
                 "params": {
                   "axis": "h"
                 },
-                "_busNet": "current",
-                "_busW": 4
+                "_busNet": "current"
               },
               {
                 "id": "c18082",
@@ -102189,8 +102165,7 @@
                 "params": {
                   "axis": "h"
                 },
-                "_busNet": "current",
-                "_busW": 4
+                "_busNet": "current"
               },
               {
                 "id": "c18185",
@@ -103530,8 +103505,7 @@
                   "fixed": true,
                   "axis": "h"
                 },
-                "_busNet": "bus_s",
-                "_busW": 2
+                "_busNet": "bus_s"
               },
               {
                 "id": "c22065",
@@ -103542,8 +103516,7 @@
                   "axis": "h",
                   "fixed": true
                 },
-                "_busNet": "bus_s",
-                "_busW": 2
+                "_busNet": "bus_s"
               },
               {
                 "id": "c22069",
@@ -103766,8 +103739,7 @@
                   "fixed": true,
                   "axis": "h"
                 },
-                "_busNet": "segment",
-                "_busW": 7
+                "_busNet": "segment"
               },
               {
                 "id": "c22175",
@@ -103778,8 +103750,7 @@
                   "axis": "v",
                   "fixed": true
                 },
-                "_busNet": "segment",
-                "_busW": 7
+                "_busNet": "segment"
               },
               {
                 "id": "c22179",
@@ -103790,8 +103761,7 @@
                   "axis": "v",
                   "fixed": true
                 },
-                "_busNet": "segment",
-                "_busW": 7
+                "_busNet": "segment"
               },
               {
                 "id": "c22183",
@@ -103802,8 +103772,7 @@
                   "axis": "v",
                   "fixed": true
                 },
-                "_busNet": "segment",
-                "_busW": 7
+                "_busNet": "segment"
               },
               {
                 "id": "c22187",
@@ -103814,8 +103783,7 @@
                   "axis": "v",
                   "fixed": true
                 },
-                "_busNet": "segment",
-                "_busW": 7
+                "_busNet": "segment"
               },
               {
                 "id": "c22191",
@@ -103826,8 +103794,7 @@
                   "axis": "v",
                   "fixed": true
                 },
-                "_busNet": "segment",
-                "_busW": 7
+                "_busNet": "segment"
               },
               {
                 "id": "c22195",
@@ -103838,8 +103805,7 @@
                   "axis": "v",
                   "fixed": true
                 },
-                "_busNet": "segment",
-                "_busW": 7
+                "_busNet": "segment"
               },
               {
                 "id": "c22199",
@@ -103913,8 +103879,7 @@
                   "fixed": true,
                   "axis": "h"
                 },
-                "_busNet": "common",
-                "_busW": 4
+                "_busNet": "common"
               },
               {
                 "id": "c22218",
@@ -103925,8 +103890,7 @@
                   "axis": "v",
                   "fixed": true
                 },
-                "_busNet": "common",
-                "_busW": 4
+                "_busNet": "common"
               },
               {
                 "id": "c22222",
@@ -103937,8 +103901,7 @@
                   "axis": "v",
                   "fixed": true
                 },
-                "_busNet": "common",
-                "_busW": 4
+                "_busNet": "common"
               },
               {
                 "id": "c22226",
@@ -103949,8 +103912,7 @@
                   "axis": "v",
                   "fixed": true
                 },
-                "_busNet": "common",
-                "_busW": 4
+                "_busNet": "common"
               },
               {
                 "id": "c22423",
@@ -106204,8 +106166,7 @@
                 "params": {
                   "axis": "h"
                 },
-                "_busNet": "out_data",
-                "_busW": 4
+                "_busNet": "out_data"
               },
               {
                 "id": "c14769",
@@ -106215,8 +106176,7 @@
                 "params": {
                   "axis": "h"
                 },
-                "_busNet": "out_data",
-                "_busW": 4
+                "_busNet": "out_data"
               },
               {
                 "id": "c14773",
@@ -106226,8 +106186,7 @@
                 "params": {
                   "axis": "h"
                 },
-                "_busNet": "out_data",
-                "_busW": 4
+                "_busNet": "out_data"
               }
             ],
             "wires": [
@@ -112098,10 +112057,10 @@
               {
                 "id": "c18522",
                 "type": "IN",
-                "x": 165,
+                "x": 198,
                 "y": 330,
                 "params": {
-                  "name": "start_stop",
+                  "name": "start",
                   "width": 1
                 },
                 "label": ""
@@ -112181,7 +112140,7 @@
                 "x": 605,
                 "y": 297,
                 "params": {
-                  "name": "start_stop_signal",
+                  "name": "start_state",
                   "width": 1
                 },
                 "label": ""
@@ -112676,23 +112635,23 @@
                 "label": ""
               },
               {
+                "id": "c22343",
+                "type": "OUT",
+                "x": 1100,
+                "y": 297,
+                "params": {
+                  "name": "f_100hz",
+                  "width": 1
+                },
+                "label": ""
+              },
+              {
                 "id": "c18593",
                 "type": "OUT",
                 "x": 1100,
                 "y": 330,
                 "params": {
                   "name": "f_1hz",
-                  "width": 1
-                },
-                "label": ""
-              },
-              {
-                "id": "c22343",
-                "type": "OUT",
-                "x": 1100,
-                "y": 418,
-                "params": {
-                  "name": "f_100hz",
                   "width": 1
                 },
                 "label": ""
@@ -114340,9 +114299,20 @@
         },
         "customs": {},
         "id": "prj21908",
-        "expanded": false,
+        "expanded": true,
         "openTabs": [
-          "sch22236"
+          "sch22236",
+          "sch17088",
+          "sch18519",
+          "sch18579",
+          "sch18221",
+          "sch17427",
+          "sch17532",
+          "sch17961",
+          "sch14611",
+          "sch21931",
+          "sch14710",
+          "sch21420"
         ],
         "activeId": "sch22236",
         "schOrder": [
@@ -149959,7 +149929,7 @@
             "id": "c18597",
             "type": "SCH:sch18579",
             "x": 462,
-            "y": 407,
+            "y": 396,
             "params": {},
             "label": ""
           },
@@ -150390,7 +150360,7 @@
             "id": "w18569",
             "from": {
               "cid": "c18562",
-              "pid": "start_stop_signal"
+              "pid": "start_state"
             },
             "to": {
               "cid": "c17356",
@@ -150407,7 +150377,7 @@
             },
             "to": {
               "cid": "c18562",
-              "pid": "start_stop"
+              "pid": "start"
             },
             "name": ""
           },
@@ -150587,41 +150557,11 @@
             "pts": [
               {
                 "x": 1122,
-                "y": 429
+                "y": 407
               },
               {
                 "x": 1122,
                 "y": 264
-              }
-            ]
-          },
-          {
-            "id": "w22347",
-            "from": {
-              "cid": "c18597",
-              "pid": "f_100hz"
-            },
-            "to": {
-              "cid": "c18562",
-              "pid": "clk_100hz"
-            },
-            "name": "",
-            "autoPts": [
-              {
-                "x": 605,
-                "y": 451
-              },
-              {
-                "x": 605,
-                "y": 407
-              },
-              {
-                "x": 451,
-                "y": 407
-              },
-              {
-                "x": 451,
-                "y": 352
               }
             ]
           },
@@ -150690,6 +150630,19 @@
               "pid": "clk"
             },
             "name": ""
+          },
+          {
+            "id": "w22525",
+            "from": {
+              "cid": "c18597",
+              "pid": "f_100hz"
+            },
+            "to": {
+              "cid": "c18562",
+              "pid": "clk_100hz"
+            },
+            "name": "",
+            "my": 385
           }
         ],
         "locked": false
@@ -153510,8 +153463,7 @@
               "fixed": true,
               "axis": "h"
             },
-            "_busNet": "current",
-            "_busW": 4
+            "_busNet": "current"
           },
           {
             "id": "c17749",
@@ -153521,8 +153473,7 @@
             "params": {
               "axis": "h"
             },
-            "_busNet": "current",
-            "_busW": 4
+            "_busNet": "current"
           },
           {
             "id": "c17753",
@@ -153532,8 +153483,7 @@
             "params": {
               "axis": "h"
             },
-            "_busNet": "current",
-            "_busW": 4
+            "_busNet": "current"
           },
           {
             "id": "c17757",
@@ -153543,8 +153493,7 @@
             "params": {
               "axis": "h"
             },
-            "_busNet": "current",
-            "_busW": 4
+            "_busNet": "current"
           },
           {
             "id": "c17761",
@@ -155594,8 +155543,7 @@
               "fixed": true,
               "axis": "h"
             },
-            "_busNet": "current",
-            "_busW": 4
+            "_busNet": "current"
           },
           {
             "id": "c18074",
@@ -155605,8 +155553,7 @@
             "params": {
               "axis": "h"
             },
-            "_busNet": "current",
-            "_busW": 4
+            "_busNet": "current"
           },
           {
             "id": "c18078",
@@ -155616,8 +155563,7 @@
             "params": {
               "axis": "h"
             },
-            "_busNet": "current",
-            "_busW": 4
+            "_busNet": "current"
           },
           {
             "id": "c18082",
@@ -155757,8 +155703,7 @@
             "params": {
               "axis": "h"
             },
-            "_busNet": "current",
-            "_busW": 4
+            "_busNet": "current"
           },
           {
             "id": "c18185",
@@ -157098,8 +157043,7 @@
               "fixed": true,
               "axis": "h"
             },
-            "_busNet": "bus_s",
-            "_busW": 2
+            "_busNet": "bus_s"
           },
           {
             "id": "c22065",
@@ -157110,8 +157054,7 @@
               "axis": "h",
               "fixed": true
             },
-            "_busNet": "bus_s",
-            "_busW": 2
+            "_busNet": "bus_s"
           },
           {
             "id": "c22069",
@@ -157334,8 +157277,7 @@
               "fixed": true,
               "axis": "h"
             },
-            "_busNet": "segment",
-            "_busW": 7
+            "_busNet": "segment"
           },
           {
             "id": "c22175",
@@ -157346,8 +157288,7 @@
               "axis": "v",
               "fixed": true
             },
-            "_busNet": "segment",
-            "_busW": 7
+            "_busNet": "segment"
           },
           {
             "id": "c22179",
@@ -157358,8 +157299,7 @@
               "axis": "v",
               "fixed": true
             },
-            "_busNet": "segment",
-            "_busW": 7
+            "_busNet": "segment"
           },
           {
             "id": "c22183",
@@ -157370,8 +157310,7 @@
               "axis": "v",
               "fixed": true
             },
-            "_busNet": "segment",
-            "_busW": 7
+            "_busNet": "segment"
           },
           {
             "id": "c22187",
@@ -157382,8 +157321,7 @@
               "axis": "v",
               "fixed": true
             },
-            "_busNet": "segment",
-            "_busW": 7
+            "_busNet": "segment"
           },
           {
             "id": "c22191",
@@ -157394,8 +157332,7 @@
               "axis": "v",
               "fixed": true
             },
-            "_busNet": "segment",
-            "_busW": 7
+            "_busNet": "segment"
           },
           {
             "id": "c22195",
@@ -157406,8 +157343,7 @@
               "axis": "v",
               "fixed": true
             },
-            "_busNet": "segment",
-            "_busW": 7
+            "_busNet": "segment"
           },
           {
             "id": "c22199",
@@ -157481,8 +157417,7 @@
               "fixed": true,
               "axis": "h"
             },
-            "_busNet": "common",
-            "_busW": 4
+            "_busNet": "common"
           },
           {
             "id": "c22218",
@@ -157493,8 +157428,7 @@
               "axis": "v",
               "fixed": true
             },
-            "_busNet": "common",
-            "_busW": 4
+            "_busNet": "common"
           },
           {
             "id": "c22222",
@@ -157505,8 +157439,7 @@
               "axis": "v",
               "fixed": true
             },
-            "_busNet": "common",
-            "_busW": 4
+            "_busNet": "common"
           },
           {
             "id": "c22226",
@@ -157517,8 +157450,7 @@
               "axis": "v",
               "fixed": true
             },
-            "_busNet": "common",
-            "_busW": 4
+            "_busNet": "common"
           },
           {
             "id": "c22423",
@@ -159772,8 +159704,7 @@
             "params": {
               "axis": "h"
             },
-            "_busNet": "out_data",
-            "_busW": 4
+            "_busNet": "out_data"
           },
           {
             "id": "c14769",
@@ -159783,8 +159714,7 @@
             "params": {
               "axis": "h"
             },
-            "_busNet": "out_data",
-            "_busW": 4
+            "_busNet": "out_data"
           },
           {
             "id": "c14773",
@@ -159794,8 +159724,7 @@
             "params": {
               "axis": "h"
             },
-            "_busNet": "out_data",
-            "_busW": 4
+            "_busNet": "out_data"
           }
         ],
         "wires": [
@@ -165666,10 +165595,10 @@
           {
             "id": "c18522",
             "type": "IN",
-            "x": 165,
+            "x": 198,
             "y": 330,
             "params": {
-              "name": "start_stop",
+              "name": "start",
               "width": 1
             },
             "label": ""
@@ -165749,7 +165678,7 @@
             "x": 605,
             "y": 297,
             "params": {
-              "name": "start_stop_signal",
+              "name": "start_state",
               "width": 1
             },
             "label": ""
@@ -166244,23 +166173,23 @@
             "label": ""
           },
           {
+            "id": "c22343",
+            "type": "OUT",
+            "x": 1100,
+            "y": 297,
+            "params": {
+              "name": "f_100hz",
+              "width": 1
+            },
+            "label": ""
+          },
+          {
             "id": "c18593",
             "type": "OUT",
             "x": 1100,
             "y": 330,
             "params": {
               "name": "f_1hz",
-              "width": 1
-            },
-            "label": ""
-          },
-          {
-            "id": "c22343",
-            "type": "OUT",
-            "x": 1100,
-            "y": 418,
-            "params": {
-              "name": "f_100hz",
               "width": 1
             },
             "label": ""
@@ -167908,9 +167837,20 @@
     },
     "customs": {},
     "id": "prj21908",
-    "expanded": false,
+    "expanded": true,
     "openTabs": [
-      "sch22236"
+      "sch22236",
+      "sch17088",
+      "sch18519",
+      "sch18579",
+      "sch18221",
+      "sch17427",
+      "sch17532",
+      "sch17961",
+      "sch14611",
+      "sch21931",
+      "sch14710",
+      "sch21420"
     ],
     "activeId": "sch22236",
     "schOrder": [
@@ -167941,6 +167881,17 @@
   },
   "activeId": "sch22236",
   "openTabs": [
-    "sch22236"
+    "sch22236",
+    "sch17088",
+    "sch18519",
+    "sch18579",
+    "sch18221",
+    "sch17427",
+    "sch17532",
+    "sch17961",
+    "sch14611",
+    "sch21931",
+    "sch14710",
+    "sch21420"
   ]
 }
