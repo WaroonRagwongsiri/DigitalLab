@@ -114650,7 +114650,59 @@
           "sch6861",
           "sch6782",
           "sch9934"
-        ]
+        ],
+        "pins": {
+          "map": {
+            "clk": {
+              "sig": "clk"
+            },
+            "segment": {
+              "sig": "seven_segment",
+              "lo": 0
+            },
+            "m1": {
+              "sig": "sw",
+              "lo": 12
+            },
+            "m0": {
+              "sig": "sw",
+              "lo": 8
+            },
+            "s1": {
+              "sig": "sw",
+              "lo": 4
+            },
+            "s0": {
+              "sig": "sw",
+              "lo": 0
+            },
+            "common": {
+              "sig": "digit",
+              "lo": 0
+            },
+            "timeup": {
+              "sig": "led",
+              "lo": 0
+            },
+            "error": {
+              "sig": "led",
+              "lo": 1
+            },
+            "set": {
+              "sig": "pb",
+              "lo": 2
+            },
+            "reset": {
+              "sig": "pb",
+              "lo": 4
+            },
+            "start": {
+              "sig": "pb",
+              "lo": 0
+            }
+          },
+          "clockMHz": 50
+        }
       },
       "prj22525": {
         "name": "lab10",
@@ -168530,7 +168582,59 @@
       "sch6861",
       "sch6782",
       "sch9934"
-    ]
+    ],
+    "pins": {
+      "map": {
+        "clk": {
+          "sig": "clk"
+        },
+        "segment": {
+          "sig": "seven_segment",
+          "lo": 0
+        },
+        "m1": {
+          "sig": "sw",
+          "lo": 12
+        },
+        "m0": {
+          "sig": "sw",
+          "lo": 8
+        },
+        "s1": {
+          "sig": "sw",
+          "lo": 4
+        },
+        "s0": {
+          "sig": "sw",
+          "lo": 0
+        },
+        "common": {
+          "sig": "digit",
+          "lo": 0
+        },
+        "timeup": {
+          "sig": "led",
+          "lo": 0
+        },
+        "error": {
+          "sig": "led",
+          "lo": 1
+        },
+        "set": {
+          "sig": "pb",
+          "lo": 2
+        },
+        "reset": {
+          "sig": "pb",
+          "lo": 4
+        },
+        "start": {
+          "sig": "pb",
+          "lo": 0
+        }
+      },
+      "clockMHz": 50
+    }
   },
   "activeId": "sch22236",
   "openTabs": [
